@@ -1,0 +1,46 @@
+footer {
+    position:relative;
+    padding:6rem;
+    background-color:#111;
+    color: rgba(#464646, 1);
+    font-family:$font-3;
+    font-weight:900;
+    h5, h6 {
+        font-weight:900;
+        font-size:17px;
+        line-height:1.6;
+    }
+    h6 {
+        &:hover {
+            cursor:pointer;
+            color:rgba(#555, 1);
+        }
+    }
+    .footer__heading {
+        color:rgba(white, 0.9);
+    }
+    .developer__section {
+        font-weight:900;
+        font-size:13px;
+        color:#005E64;
+        span {
+            color:#04777E;
+        }
+    }
+    .form_group_footer {
+        position:relative;
+        label {
+            margin-top:1.2rem;
+        }
+        input {
+            background-color:rgba(#E7E3E3, 1) !important;
+        }
+        .fa-send-o {
+            position:absolute;
+            right:10px;
+            bottom:11px;
+            
+        }
+    }
+    
+}

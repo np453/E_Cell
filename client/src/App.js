@@ -1,10 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import HomePage from './views/homepage'
+import "./sass/main.scss"
+import Navbar from './components/naavbar';
+import Footer from './components/footer';
 function App() {
   return (
-    <div className="App">
-        <h1>test</h1>
+    <div>
+      <Navbar />
+       <Router>
+        <switch>
+          <Route path="/" exact component={HomePage} />
+        </switch>
+      </Router>
+      <Footer />
     </div>
   );
 }

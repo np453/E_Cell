@@ -5,6 +5,7 @@ import "./sass/main.scss"
 import Navbar from './components/naavbar';
 import Footer from './components/footer';
 function App() {
+
   return (
     <div>
       <Navbar />

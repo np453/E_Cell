@@ -13,7 +13,6 @@ const TestPage = props => {
     const [content, setContent] = useState("Innovate")
     const [contentClass, setContentClass] = useState("first_content_word")
     const [showArrow, setArrowVisibility] = useState(false)
-
     const scaleAnim = useTransform(scrollYProgress, [0, 0.33], [1, 1.5])
     const yPosAnim = useTransform(scrollYProgress, [0, 0.33], [0, -0])
     const yPosAnim2 = useTransform(scrollYProgress, [0.33, 0.67], [-10, 5])
@@ -190,6 +189,9 @@ const TestPage = props => {
       </Scene>
     </Controller>     
         </div>
+        
+
+
         
         </React.Fragment>
     );

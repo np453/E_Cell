@@ -1,195 +1,103 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useViewportScroll, useTransform } from 'framer-motion'
-import { Controller, Scene } from 'react-scrollmagic';
-import { Tween, Timeline } from 'react-gsap';
-import ScrollReveal from 'scrollreveal';
-import { VideoScroll } from 'react-video-scroll'
-import video from '../assets/756501.webm';
-import axios from 'axios';
-import img_1 from '../assets/about_us_img_1.png'
+import React, { Component } from 'react';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+class Testpage extends Component {
+ componentDidMount() {
+    gsap.registerPlugin(ScrollTrigger);
 
-const TestPage = props => {
-    const { scrollYProgress } = useViewportScroll()
-    const [content, setContent] = useState("Innovate")
-    const [contentClass, setContentClass] = useState("first_content_word")
-    const [showArrow, setArrowVisibility] = useState(false)
-
-    const scaleAnim = useTransform(scrollYProgress, [0, 0.33], [1, 1.5])
-    const yPosAnim = useTransform(scrollYProgress, [0, 0.33], [0, -0])
-    const yPosAnim2 = useTransform(scrollYProgress, [0.33, 0.67], [-10, 5])
-    const yPosAnim3 = useTransform(scrollYProgress, [0.67, 1], [0, 5])
-    const opacity = useTransform(scrollYProgress, [0, 0.33, 0.331], [0.8, 1, 0])
-    const opacity2 = useTransform(scrollYProgress, [0.33, 0.67, 0.671], [0, 1, 0])
-    const opacity3 = useTransform(scrollYProgress, [0.671, 1, 1], [0,1, 0])
-    const contents = [
-        {
-            contentClass:"first_content_word",
-            content:"Incubate."
-        },
-        {
-            contentClass:"content-2",
-            content:"Innovate."
-        },
-        {
-            contentClass:"content-3",
-            content:"Involve."
-        },
-        {
-            contentClass:"content-4",
-            content:"setup."
-        },
-        {
-            contentClass:"content-5",
-            content:"motivate."
-        },
-        {
-            contentClass:"content-5",
-            content:"focus."
-        },
-        {
-            contentClass:"content-5",
-            content:"energise."
-        },
-        {
-            contentClass:"content-5",
-            content:"staminize."
-        },
-        {
-            contentClass:"content-5",
-            content:"entrepreneur."
-        },
-        {
-            contentClass:"content-5",
-            content:"power up."
-        },
-        {
-            contentClass:"last_content_word",
-            content:"get ready."
-        },
-        {
-            contentClass:"content-2",
-            content:"Innovate."
-        },
-        {
-            contentClass:"content-3",
-            content:"Involve."
-        },
-        {
-            contentClass:"content-4",
-            content:"entrepreneur."
-        },
-        {
-            contentClass:"content-5",
-            content:"motivate."
-        },
-        {
-            contentClass:"content-5",
-            content:"focus."
-        },
-        {
-            contentClass:"content-5",
-            content:"energise."
-        },
-        {
-            contentClass:"content-5",
-            content:"staminize."
-        },
-        {
-            contentClass:"content-5",
-            content:"spirits."
-        },
-        {
-            contentClass:"content-5",
-            content:"power up."
-        },
-        {
-            contentClass:"last_content_word",
-            content:"get ready."
-        },
-    ]
-    const setStyles = (wrapperEl, videoEl, playbackRate) => {
-        wrapperEl.style.marginTop = `calc(180% - ${Math.floor(videoEl.duration) *playbackRate +'px'})`
-        wrapperEl.style.marginBottom = `calc(180% - ${Math.floor(videoEl.duration) *playbackRate +'px'})`
-      }
-    const showArrowVisibility = () => { setArrowVisibility(true) }
-    useEffect(() => {
-        // const {data} = await axios.get('http://localhost:4444/upload/img')
-        // setGallery(data)
-        ScrollReveal().reveal(".content", { scale:8, duration:1000 })
-        ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
-        for(let i=0;i<contents.length;i++) {
-            setTimeout(() => {
-                setContent(contents[i].content)
-                setContentClass(contents[i].contentClass)
-            }, 100*i)
-            ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
+    let container = document.querySelector(".portfolio");
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        pin: true,
+        scrub: 1,
+        trigger: container,
+        end: () => container.scrollWidth - document.documentElement.clientWidth
+      },
+      defaults: { ease: "none", duration: 1 }
+    });
+    
+    tl.to(".parallax", { x: 300 })
+      .to(".panel", { x: () => -(container.scrollWidth - document.documentElement.clientWidth) }, 0)
+      .from(".secondAn", {
+        opacity: 0,
+        scale: 0.5,
+        duration: 0.2,
+        stagger: {
+          amount: 0.8
         }
-    }, []);
-    return (
-        <React.Fragment>
-            <div className="container-fluid landingPage p-0"> 
-            <div className="row m-0">
-                <div className="col-md-12 d-flex justify-content-center">
-                <motion.div className="" >
-                <motion.h1 style={{ y:yPosAnim}} className="content landingPage_content_heading"><span className={contentClass}>{content}</span></motion.h1>
-                
-            </motion.div>  
-                </div>
-            </div> 
-            <div className="row m-0">
-                <div className="col-md-12 d-flex justify-content-center">
-                    { showArrow && <i className=" fa fa-2x fa-arrow-down"></i> } 
-                </div>
+      }, 0);
+    
+    gsap.from(".firstAn", {
+      duration: 1,
+      opacity: 0,
+      scale: .5,
+      scrollTrigger: {
+        trigger: container,
+        start: "top 90%",
+        end: "bottom 10%",
+        toggleActions: "play none none reverse"
+      }
+    });
+    
+ }
+ 
+    render() {
+        return (
+            <div>
+              <div>
+            <div class="spacer">
+    <h1>Scroll Down</h1>
+    </div>
+
+    <section class="section portfolio">
+    <h2 class="portfolio_title text-stroke parallax">Gallery</h2>
+        <div class="panel">
+            <div class="panel_item">
+            <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
             </div>
-            <Controller>
-        <Scene
-            triggerHook="onLeave"
-            duration={1000}
-            pin
-        >
-        {(progress) => (
-          <div className="sticky">
-            <Timeline totalProgress={progress} paused>
-              <Tween
-                  from={{ y: '0%', opacity:0 }}
-                  to={{ y: '-20%', opacity:1 }}
-              >
-                <div className="about__us__section container vh-100 d-flex justify-content-center align-items-center">
-                <div className="animation">
-                  <h1>About us</h1>
-                  <p>E-Cell, IIT Kanpur aims to induce an entrepreneurial mindset into the students and air an innovative streak 
-                      in them. We are here to water the ‘Ideas’ in the bud and help them bloom into impactful endeavors through
-                       networking student enterprises 
-                      from campus to incubators, seeding funds and angel investors to transform the newly proposed ideas into successful start-ups.
-                      </p>               
-                </div>
-                </div>
-              </Tween>
-              <Timeline 
-                target={
-                  <div className="heading">
-                    <img src={img_1} className="img img-fluid" alt=""/>
-                  </div>
-                }
-              >
-                <Tween
-                  from={{ opacity: 0 }}
-                  to={{ opacity: 1 }}
-                />
-                <Tween
-                 to={{x:"50%", opacity:0}}
-                />
-              </Timeline>
-            </Timeline>
-          </div>
-        )}
-      </Scene>
-    </Controller>   
         </div>
-       
-        </React.Fragment>
-    );
+
+        <div class="panel">
+            <div class="panel_item">
+            <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
+            </div>
+        </div>
+        <div class="panel">
+        <div class="panel_item">
+          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel_item">
+          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel_item">
+          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel_item">
+          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel_item">
+          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
+        </div>
+      </div>
+    </section>
+
+    <div class="spacer">
+    <h1>The End</h1>
+    </div>
+
+
+        </div>  
+            </div>
+        );
+    }
 }
 
-
-export default TestPage
+export default Testpage;

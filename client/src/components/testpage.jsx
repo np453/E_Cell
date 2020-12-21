@@ -4,10 +4,10 @@ import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 import ScrollReveal from 'scrollreveal';
 import { VideoScroll } from 'react-video-scroll'
-// import video from '../assets/756501.webm';
-import img_1 from '../assets/img_about_us_1.png';
-import img_2 from '../assets/img_about_us_2.png'
+import video from '../assets/756501.webm';
 import axios from 'axios';
+import img_1 from '../assets/about_us_img_1.png'
+
 const TestPage = props => {
     const { scrollYProgress } = useViewportScroll()
     const [content, setContent] = useState("Innovate")
@@ -142,21 +142,21 @@ const TestPage = props => {
                 </div>
             </div>
             <Controller>
-      <Scene
-        triggerHook="onLeave"
-        duration={1000}
-        pin
-      >
+        <Scene
+            triggerHook="onLeave"
+            duration={1000}
+            pin
+        >
         {(progress) => (
-          <div className="sticky about_us_section">
+          <div className="sticky">
             <Timeline totalProgress={progress} paused>
-            <Tween
+              <Tween
                   from={{ y: '0%', opacity:0 }}
                   to={{ y: '-20%', opacity:1 }}
               >
-                <div className="about__us__section container d-flex justify-content-center mt-5">
+                <div className="about__us__section container vh-100 d-flex justify-content-center align-items-center">
                 <div className="animation">
-                  <h1 className="text-center">About us</h1>
+                  <h1>About us</h1>
                   <p>E-Cell, IIT Kanpur aims to induce an entrepreneurial mindset into the students and air an innovative streak 
                       in them. We are here to water the ‘Ideas’ in the bud and help them bloom into impactful endeavors through
                        networking student enterprises 
@@ -165,32 +165,28 @@ const TestPage = props => {
                 </div>
                 </div>
               </Tween>
-              <Timeline target={
-                  <div className="container d-flex justify-content-center">
-                    <img src={img_1} className="img img-fluid img_1" alt=""/>
+              <Timeline 
+                target={
+                  <div className="heading">
+                    <img src={img_1} className="img img-fluid" alt=""/>
                   </div>
                 }
               >
-                <Tween from={{ opacity: 0, y:0 }} to={{ opacity: 1 }}/>
-                <Tween to={{ y: '-20%', opacity:0 }} />
-                
-              </Timeline>
-              <Timeline target={
-                  <div className="container d-flex justify-content-center">
-                    <img src={img_2} className="img img-fluid img_1" alt=""/>
-                  </div>
-                }
-              >
-                <Tween from={{ opacity: 0, y:0 }} to={{ opacity: 1 }} />
-                <Tween to={{ y: '-20%', opacity:0 }} />
+                <Tween
+                  from={{ opacity: 0 }}
+                  to={{ opacity: 1 }}
+                />
+                <Tween
+                 to={{x:"50%", opacity:0}}
+                />
               </Timeline>
             </Timeline>
           </div>
         )}
       </Scene>
-    </Controller>     
+    </Controller>   
         </div>
-        
+       
         </React.Fragment>
     );
 }

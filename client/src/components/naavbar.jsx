@@ -8,7 +8,7 @@ export default class Navbar extends Component {
                 <nav className="navbar navbar-expand-lg">
                     <div className="navbar-brand">E-cell, MNNIT</div>
                     <div className="navbar-nav ml-auto">
-                        <div className="nav-links">dfkdsjf</div>
+                        <div className="nav-links">follow us</div>
                     </div>
                 </nav>
             </div>

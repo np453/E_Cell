@@ -19,7 +19,7 @@ class Image extends React.Component {
       const data = new FormData() 
     //   data.append('title', this.state.data.title)
       data.append('file', this.state.data.file)
-    axios.post("/gallery", data, {
+    axios.post("http://localhost:1212/gallery", data, {
         })
         .then(res => { 
         // console.log(res.statusText)
@@ -32,26 +32,24 @@ class Image extends React.Component {
   //   this.setState({ selectedFile: file})
   // }
   onClickHandler = () => {
-      const data = new FormData() 
-        // data.append('title', this.state.data.title)
-        data.append('file', this.state.data.file)
-        const config = {
-            headers: {
-                'content-type': 'multipart/form-data'
-            }
-        };
-      axios.post("http://localhost:1212/gallery", data, config)
-        .then(res => { // then print response status
-          console.log('upload success')
-        })
-        .catch(err => { // then print response status
-            console.log('upload fail')
-        })
-      }
-  
+    const data = new FormData() 
+      data.append('file', this.state.data.file)
+      const config = {
+          headers: {
+              'content-type': 'multipart/form-data'
+          }
+      };
+    axios.post("http://localhost:1212/gallery", data, config)
+      .then(res => { // then print response status
+        console.log('upload success')
+      })
+      .catch(err => { // then print response status
+          console.log('upload fail')
+      })
+    }
 
   render() {
-    // console.log(this.state.data)
+    console.log(this.state.data)
       return (
         <div className="container">
         <div className="row">

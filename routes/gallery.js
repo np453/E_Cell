@@ -4,6 +4,7 @@ const multer = require('multer')
 const fs = require('fs');
 const gallery = require("../model/gallery")
 const bp = require('body-parser')
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, 'public')
@@ -16,10 +17,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }).single('file')
 
 router.post('/', upload , async(req, res) => {
+        console.log(req.file)
         let fullpath = req.file.path;
         let imgData  = fs.readFileSync(fullpath).toString('base64')
-        let work = new ourWorks({
-            title:req.body.title,
+        let work = new gallery({
             file : {
                 data : Buffer(imgData, 'base64'),
                 contentType : req.file.mimetype
@@ -38,7 +39,7 @@ router.post('/', upload , async(req, res) => {
 });
 
  router.get('/img', async(req, res) => {
-  const imData = await File.find({ })
+  const imData = await gallery.find({ })
   const img = [];
   for(let i=0;i<imData.length;i++) {
     img.push( {buffer:Buffer.from(imData[i].file.data.buffer, 'base64').toString('base64'), contentType:imData[i].file.contentType} )

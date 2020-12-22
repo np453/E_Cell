@@ -1,5 +1,20 @@
 .navbar__container {
+    z-index: 0;
     font-family: $font-1;
     background: rgba(black, 1);
     color: rgba(white, 0.9);
+    .sideBar {
+        list-style: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        z-index: 1;
+        overflow-x: hidden;
+        transition: all 0.3s;
+        .sideBar-item {
+            padding: 2rem;
+        }
+    }
 }

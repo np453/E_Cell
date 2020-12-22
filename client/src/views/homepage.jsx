@@ -192,7 +192,7 @@ const TestPage = props => {
     </Controller>     
         </div>
         <Gallery />
-        <Tp />
+        {/* <Tp /> */}
         </React.Fragment>
     );
 }

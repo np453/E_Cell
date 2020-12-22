@@ -12,3 +12,30 @@
         color: rgba(white, 0.6);
     }
 }
+
+@media (min-width:121px) and (max-width:375px) {
+    .landingPage {
+        .landingPage_content_heading {
+            margin-top: 3rem;
+            font-size: 40px;
+        }
+    }
+}
+
+@media (min-width:375.98px) and (max-width:550px) {
+    .landingPage {
+        .landingPage_content_heading {
+            margin-top: 3rem;
+            font-size: 40px;
+        }
+    }
+}
+
+@media (min-width:550.98px) and (max-width:767.98px) {
+    .landingPage {
+        .landingPage_content_heading {
+            margin-top: 3rem;
+            font-size: 40px;
+        }
+    }
+}

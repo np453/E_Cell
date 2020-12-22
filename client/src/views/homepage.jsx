@@ -7,6 +7,8 @@ import { VideoScroll } from 'react-video-scroll'
 // import video from '../assets/756501.webm';
 import img_1 from '../assets/img_about_us_1.png';
 import img_2 from '../assets/img_about_us_2.png'
+import Gallery from '../components/Gallery';
+import Tp from '../components/testPage';
 import axios from 'axios';
 const TestPage = props => {
     const { scrollYProgress } = useViewportScroll()
@@ -189,10 +191,8 @@ const TestPage = props => {
       </Scene>
     </Controller>     
         </div>
-        
-
-
-        
+        <Gallery />
+        <Tp />
         </React.Fragment>
     );
 }

@@ -1,28 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 
-*, *:before, *:after {
-	box-sizing: border-box;
-	position: relative;
-	letter-spacing: 0.04em;
-}
-body { 
-  font-family: 'Montserrat', sans-serif;
-  background-color: #FEFEFE;
-  overflow-x: hidden;
-}
-.spacer {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 h1 {
   font-size: 3rem;
   color: #000;
 }
 .section {
   height: auto;
-  width: 100%;
+  // width: 100%;
   position: relative;
   padding: 0;
   overflow-x: hidden;
@@ -32,22 +16,23 @@ h1 {
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;
-	background-color: #1F242D;
+	background-color: black;
   overflow: hidden;
 }
 .portfolio_title {
-	position: absolute;
+  position: absolute;
+  font-family: $font-1;
 	top: 0;
 	left: -15rem;
 	font-size: 24rem;
 	letter-spacing: 0;
-	-webkit-text-stroke-color: #343A42;
+	-webkit-text-stroke-color: #c4cdd8;
 	display: inline-block;
 }
 .text-stroke {
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #343A42;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: rgba(#29C0C0, 0.3);
 }
 .grid {
   display: flex;

@@ -4,7 +4,7 @@ import HomePage from './views/homepage'
 import "./sass/main.scss"
 import Navbar from './components/naavbar';
 import Footer from './components/footer';
-import TestPage from './components/testpage';
+import Gallery from './components/Gallery';
 function App() {
 
   return (
@@ -13,7 +13,7 @@ function App() {
        <Router>
         <switch>
           <Route path="/" exact component={HomePage} />
-          <Route path="/test" exact component={TestPage} />
+          <Route path="/gallery" exact component={Gallery} />
         </switch>
       </Router>
       <Footer />

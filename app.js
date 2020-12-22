@@ -11,7 +11,7 @@ const path = require('path');
 //Models
 
 //Port
-const PORT = 1212s;
+const PORT = 1212;
 
 //.env file
 dotenv.config();
@@ -39,7 +39,7 @@ AWS.config.region = process.env.aws_reigon;
 const email="acw.dnsp@gmail.com";
 var ses = new AWS.SES();
 //connect to DB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));
+// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));
 app.use(express.static("client/build"));
 
 // Share Rotary story section

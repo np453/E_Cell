@@ -1,103 +1,77 @@
 import React, { Component } from 'react';
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-class Testpage extends Component {
- componentDidMount() {
-    gsap.registerPlugin(ScrollTrigger);
 
-    let container = document.querySelector(".portfolio");
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        pin: true,
-        scrub: 1,
-        trigger: container,
-        end: () => container.scrollWidth - document.documentElement.clientWidth
-      },
-      defaults: { ease: "none", duration: 1 }
-    });
-    
-    tl.to(".parallax", { x: 300 })
-      .to(".panel", { x: () => -(container.scrollWidth - document.documentElement.clientWidth) }, 0)
-      .from(".secondAn", {
-        opacity: 0,
-        scale: 0.5,
-        duration: 0.2,
-        stagger: {
-          amount: 0.8
-        }
-      }, 0);
-    
-    gsap.from(".firstAn", {
-      duration: 1,
-      opacity: 0,
-      scale: .5,
-      scrollTrigger: {
-        trigger: container,
-        start: "top 90%",
-        end: "bottom 10%",
-        toggleActions: "play none none reverse"
-      }
-    });
-    
- }
- 
+class TestPage extends Component {
     render() {
         return (
-            <div>
-              <div>
-            <div class="spacer">
-    <h1>Scroll Down</h1>
-    </div>
-
-    <section class="section portfolio">
-    <h2 class="portfolio_title text-stroke parallax">Gallery</h2>
-        <div class="panel">
-            <div class="panel_item">
-            <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-            </div>
-        </div>
-
-        <div class="panel">
-            <div class="panel_item">
-            <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-            </div>
-        </div>
-        <div class="panel">
-        <div class="panel_item">
-          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-        </div>
-      </div>
-      <div class="panel">
-        <div class="panel_item">
-          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-        </div>
-      </div>
-      <div class="panel">
-        <div class="panel_item">
-          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-        </div>
-      </div>
-      <div class="panel">
-        <div class="panel_item">
-          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-        </div>
-      </div>
-      <div class="panel">
-        <div class="panel_item">
-          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-        </div>
-      </div>
-    </section>
-
-    <div class="spacer">
-    <h1>The End</h1>
-    </div>
-
-
-        </div>  
+            <div className="container">
+              <ul id="hexGrid">
+  <li class="hex">
+    <a class="hexIn" href="#">
+      <img className="img img-fluid" src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </a>
+  </li>
+  <li class="hex">
+    <a class="hexIn" href="#">
+      <img className="img img-fluid" src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </a>
+  </li>
+  <li class="hex">
+    <a class="hexIn" href="#">
+      <img className="img img-fluid" src="https://farm3.staticflickr.com/2878/10944255073_973d2cd25c.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </a>
+  </li>
+  <li class="hex">
+    <a class="hexIn" href="#">
+      <img className="img img-fluid" src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </a>
+  </li>
+  <li class="hex">
+    <a class="hexIn" href="#">
+      <img className="img img-fluid" src="https://farm5.staticflickr.com/4144/5053682635_b348b24698.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </a>
+  </li>
+  <li class="hex">
+    <a class="hexIn" href="#">
+      <img className="img img-fluid" src="https://farm3.staticflickr.com/2827/10384422264_d9c7299146.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </a>
+  </li>
+  <li class="hex">
+    <a class="hexIn" href="#">
+      <img className="img img-fluid" src="https://farm7.staticflickr.com/6217/6216951796_e50778255c.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </a>
+  </li>
+  <li class="hex">
+    <a class="hexIn" href="#">
+      <img className="img img-fluid" src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </a>
+  </li>
+  <li class="hex">
+    <a class="hexIn" href="#">
+      <img className="img img-fluid" src="https://farm3.staticflickr.com/2827/10384422264_d9c7299146.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </a>
+  </li>
+</ul> 
             </div>
         );
     }
 }
 
-export default Testpage;
+export default TestPage;

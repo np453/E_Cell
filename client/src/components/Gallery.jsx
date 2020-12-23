@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import img from '../assets/img_about_us_1.png';
+import axios from 'axios';
 class Testpage extends Component {
- componentDidMount() {
+  state = {
+    galleryImg : []
+}
+ componentDidMount = async() => {
+  const {data:Img} = await axios.get("http://localhost:4444/upload/img")
+  this.setState({galleryImg:Img})
     gsap.registerPlugin(ScrollTrigger);
 
     let container = document.querySelector(".portfolio");
@@ -17,7 +24,7 @@ class Testpage extends Component {
     });
     
     tl.to(".parallax", { x: 300 })
-      .to(".panel", { x: () => -(container.scrollWidth - document.documentElement.clientWidth) }, 0)
+      .to(".panel", { x: () => -(container.scrollWidth - document.documentElement.clientWidth) - 500 }, 0)
       .from(".secondAn", {
         opacity: 0,
         scale: 0.5,
@@ -30,11 +37,10 @@ class Testpage extends Component {
     gsap.from(".firstAn", {
       duration: 1,
       opacity: 0,
-      scale: .5,
       scrollTrigger: {
         trigger: container,
-        start: "top 90%",
-        end: "bottom 10%",
+        start: "top 50%",
+        end: "bottom 50%",
         toggleActions: "play none none reverse"
       }
     });
@@ -48,43 +54,15 @@ class Testpage extends Component {
            
 
     <section class="section portfolio">
-    <h2 class="portfolio_title text-stroke parallax">Gallery</h2>
-        <div class="panel">
-            <div class="panel_item">
-            <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-            </div>
-        </div>
-
-        <div class="panel">
-            <div class="panel_item">
-            <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-            </div>
-        </div>
+    {/* <h2 class="portfolio_title text-stroke parallax">Gallery</h2> */}
+        {this.state.galleryImg.map(m => 
         <div class="panel">
         <div class="panel_item">
-          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
+          <img className="panel_img firstAn img img-fluid" src={`data:${m.contentType};base64,`+m.buffer} alt=""/>
         </div>
-      </div>
-      <div class="panel">
-        <div class="panel_item">
-          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-        </div>
-      </div>
-      <div class="panel">
-        <div class="panel_item">
-          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-        </div>
-      </div>
-      <div class="panel">
-        <div class="panel_item">
-          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-        </div>
-      </div>
-      <div class="panel">
-        <div class="panel_item">
-          <img class="panel_img firstAn img img-fluid" src="https://via.placeholder.com/800x600.jpg" />
-        </div>
-      </div>
+      </div>  
+          
+        )}
     </section>
 
         </div>  

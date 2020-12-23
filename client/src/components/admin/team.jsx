@@ -50,27 +50,27 @@ class Team extends React.Component {
   render() {
       return (
         <div className="container">
-        <div className="row">
+        <div className="row m-3">
           <div className="offset-md-3 col-md-6">
              <div className="form-group files d-flex flex-column">
-                <label for="category">Category</label>
-                <input type="text" name="category" onChange={this.handleRadio}/>
                 <label for="name">Name</label>
                 <input type="text" name="name" onChange={this.handleRadio}/>
                 <label for="email">E-Mail</label>
                 <input type="text" name="email" onChange={this.handleRadio}/>
+                <label for="category">Team</label>
+                <input type="text" name="category" onChange={this.handleRadio}/>
+                <h6 className="mb-5">for eg. <strong>Marketing team, Web team</strong></h6>
                 <label for="designation">Designation</label>
                 <input type="text" name="designation" onChange={this.handleRadio}/>
-                <label for="facebook">Facebook</label>
+                <h6 className="mb-5">for eg. <strong>Head of marketing team</strong></h6>
+                <label for="facebook">Facebook Id url</label>
                 <input type="text" name="facebook" onChange={this.handleRadio}/>
-                <label for="instagram">Instagram</label>
+                <label for="instagram">Instagram Id url</label>
                 <input type="text" name="instagram" onChange={this.handleRadio}/>
-                <label for="linkedin">Linkedin</label>
-                <input type="text" name="linkedin" onChange={this.handleRadio}/>
-                <label for="file">Photo</label>
+                <label for="file">Profile Photo</label>
                 <input name="file" type="file" className="form-control" onChange={this.handleRadio}/>
             </div>  
-            <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
+            <button type="button" className="btn btn-primary btn-block" onClick={this.onClickHandler}>Submit form</button>
 
         </div>
     </div>

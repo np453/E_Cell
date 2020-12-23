@@ -7,6 +7,8 @@ import { VideoScroll } from 'react-video-scroll'
 // import video from '../assets/756501.webm';
 import img_1 from '../assets/img_about_us_1.png';
 import img_2 from '../assets/img_about_us_2.png'
+import ren_logo from '../assets/ren_logo.png'
+import ren_logo_1 from '../assets/ren_logo_1.png'
 import Gallery from '../components/Gallery';
 // import Tp from '../components/testPage';
 import axios from 'axios';
@@ -143,37 +145,37 @@ const TestPage = props => {
                 </div>
             </div>
             <Controller>
-      <Scene
-        triggerHook="onLeave"
-        duration={1000}
-        pin
-      >
-        {(progress) => (
-          <div className="sticky about_us_section">
-            <Timeline totalProgress={progress} paused>
-            <Tween
-                  from={{ y: '0%', opacity:0 }}
-                  to={{ y: '-20%', opacity:1 }}
-              >
-                <div className="about__us__section container d-flex justify-content-center mt-5">
-                <div className="animation">
-                  <h1 className="text-center">About us</h1>
-                  <p>E-Cell, IIT Kanpur aims to induce an entrepreneurial mindset into the students and air an innovative streak 
-                      in them. We are here to water the ‘Ideas’ in the bud and help them bloom into impactful endeavors through
-                       networking student enterprises 
-                      from campus to incubators, seeding funds and angel investors to transform the newly proposed ideas into successful start-ups.
-                      </p>               
-                </div>
-                </div>
-              </Tween>
-              <Timeline target={
-                  <div className="container d-flex justify-content-center">
-                    <img src={img_1} className="img img-fluid img_1" alt=""/>
-                  </div>
-                }
-              >
-                <Tween from={{ opacity: 0, y:0 }} to={{ opacity: 1 }}/>
-                <Tween to={{ y: '-20%', opacity:0 }} />
+            <Scene
+                triggerHook="onLeave"
+                duration={1000}
+                pin
+            >
+                { progress => (
+                <div className="sticky about_us_section">
+                    <Timeline totalProgress={progress} paused>
+                    <Tween
+                        from={{ y: 250, opacity:0 }}
+                        to={{ y: 0, opacity:1 }}
+                    >
+                        <div className="about__us__section container d-flex justify-content-center mt-5">
+                        <div className="animation">
+                        <h1 className="text-center">About us</h1>
+                        <p>E-Cell, IIT Kanpur aims to induce an entrepreneurial mindset into the students and air an innovative streak 
+                            in them. We are here to water the ‘Ideas’ in the bud and help them bloom into impactful endeavors through
+                            networking student enterprises 
+                            from campus to incubators, seeding funds and angel investors to transform the newly proposed ideas into successful start-ups.
+                            </p>               
+                        </div>
+                        </div>
+                    </Tween>
+                    <Timeline target={
+                        <div className="container d-flex justify-content-center">
+                            <img src={img_1} className="img img-fluid img_1" alt=""/>
+                        </div>
+                        }
+                    >
+                <Tween from={{ opacity: 0, y:100 }} to={{ opacity: 1 }}/>
+                <Tween to={{ y: 0, opacity:0 }} />
                 
               </Timeline>
               <Timeline target={
@@ -189,9 +191,49 @@ const TestPage = props => {
           </div>
         )}
       </Scene>
-    </Controller>     
+    </Controller>  
+    <Controller>
+            <Scene
+                triggerHook="onLeave"
+                duration={1000}
+                pin
+            >
+                { progress => (
+                <div className="sticky what_we_do_section">
+                    <Timeline totalProgress={progress} paused>
+                    <Tween
+                        from={{ y: 250, opacity:0 }}
+                        to={{ y: 0, opacity:1 }}
+                    >
+                        <div className="container d-flex justify-content-center mt-5">
+                        <div className="animation">
+                        <h1 className="text-center">What we do</h1>
+                        <h4 className="text-center">Events. Workshops. talks.</h4>            
+                        </div>
+                        </div>
+                    </Tween>
+                    <Timeline target={
+                        <div className="container ren_logo d-flex justify-content-center">
+                            <img src={ren_logo} className="img img-fluid img_1" alt=""/>
+                            {/* <img src={ren_logo_1} className="img img-fluid img_1 ren_logo_1" alt=""/> */}
+                        </div>
+                        }
+                    >
+                        
+                <Tween from={{  y:0, opacity:0 }} to={{ opacity:1 }}/>
+                <Tween to={{ y: -100, opacity:1 }} />
+                <Tween to={{ y: -180, opacity:0 }} />
+                
+              </Timeline>
+              
+            </Timeline>
+            
+          </div>
+        )}
+      </Scene>
+    </Controller>  
+    <Gallery />  
         </div>
-        <Gallery />
         {/* <Tp /> */}
         </React.Fragment>
     );

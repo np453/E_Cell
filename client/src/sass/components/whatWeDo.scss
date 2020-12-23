@@ -1,0 +1,28 @@
+.what_we_do_section {
+    height: 30vh;
+    h4 {
+        color: rgba(white, 0.9);
+        font-family: $font-1;
+        margin-bottom: 2.5rem;
+    }
+
+    .ren_logo {
+        margin-top: 4rem;
+        // height: 140vh;
+    }
+    .ren_logo_1 {
+        width:15rem;
+        height: auto;
+    }
+    h1 {
+        font-size: 66px;
+        color: rgba(white, 0.8);
+        font-family: $font-1;
+        margin-top: 3rem;
+    }
+    p {
+        font-size: 20px;
+        color: rgba(white, 0.8);
+        font-family: $font-1;
+    }
+}

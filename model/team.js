@@ -8,7 +8,6 @@ const team = new mongoose.Schema({
     email:String,
     designation:String,
     facebook:String,
-    linkedin:String,
     instagram:String,
     file: {
         data: Buffer, 

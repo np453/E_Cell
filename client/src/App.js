@@ -11,6 +11,7 @@ import Register from './components/admin/adminregister';
 import Team from './components/admin/team';
 import Speaker from './components/admin/speaker';
 import Dashboard from './components/admin/admindashboard';
+import Works from './components/admin/whatwedo';
 function App() {
 
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/admin_login" exact component={Login} />
           <Route path="/admin_register" exact component={Register} />
           <Route path="/admin_dashboard" exact component={Dashboard} />
+          <Route path="/admin_works" exact component={Works} />
         </switch>
       </Router>
       <Footer />

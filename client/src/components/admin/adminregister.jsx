@@ -2,13 +2,15 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import jwt_decode from 'jwt-decode';
 import Cookies from 'js-cookie';
+import { Redirect } from 'react-router-dom';
 
 class Register extends Component {
     state={
         data:{
             email:"",
             password:""
-        }
+        },
+        redirect:false
     }
     handlesubmit = async(e) => {
         e.preventDefault();
@@ -18,6 +20,7 @@ class Register extends Component {
         }
         const {data} = await axios.post('http://localhost:1212/admin/register',payload);
         console.log(data);
+        this.setState({redirect:true})
     }
     handleInputChange = ({currentTarget:input}) => {
         const data = {...this.state.data};
@@ -25,6 +28,9 @@ class Register extends Component {
         this.setState({ data });
     };
     render() {
+        if(this.state.redirect) {
+            return <Redirect to="/admin_login"/>
+        }
         return (
             <div className="d-flex flex-column">
                 <form onSubmit={this.handlesubmit}>

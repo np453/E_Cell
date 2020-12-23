@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie';
+import { Redirect } from 'react-router-dom';
 class Team extends React.Component {
 
       state ={
@@ -48,6 +50,10 @@ class Team extends React.Component {
   
 
   render() {
+    if(!Cookies.get('admintoken')) {
+      // this.setState({redirect:false})
+      return <Redirect to="/admin_login"/>
+  }
       return (
         <div className="container">
         <div className="row">

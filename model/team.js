@@ -3,6 +3,7 @@ const email = require('./email');
 
 
 const team = new mongoose.Schema({
+    category:String,
     name:String,
     email:String,
     designation:String,

@@ -13,9 +13,9 @@ const gallery = require('./routes/gallery');
 const speaker = require('./routes/speaker');
 const whatwedo = require('./routes/whatwedo');
 //Models
-// app.use('/team', team);
 
-// app.use('/speaker', speaker);
+
+
 // app.use('/whatwedo', whatwedo);
 //Port
 const PORT = 1212;
@@ -31,6 +31,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json());
 app.use('/gallery', gallery);
 app.use('/admin', auth);
+app.use('/team', team);
+app.use('/speaker', speaker);
 
 //connect to DB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));

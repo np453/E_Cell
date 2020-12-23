@@ -1,0 +1,11 @@
+.dashboard_Link{
+    cursor:pointer;
+    font-weight: 500;
+    font-family: $font-2;
+    margin-top: 1.2rem;
+    color: black;
+    &:hover{
+        color: chocolate;
+       
+    }
+}

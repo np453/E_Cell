@@ -10,6 +10,7 @@ import Login from './components/admin/login';
 import Register from './components/admin/adminregister';
 import Team from './components/admin/team';
 import Speaker from './components/admin/speaker';
+import Dashboard from './components/admin/admindashboard';
 function App() {
 
   return (
@@ -22,8 +23,9 @@ function App() {
           <Route path="/admin_image" exact component={Image} />
           <Route path="/admin_team" exact component={Team} />
           <Route path="/admin_speaker" exact component={Speaker} />
-          <Route path="/adminlogin" exact component={Login} />
-          <Route path="/adminregister" exact component={Register} />
+          <Route path="/admin_login" exact component={Login} />
+          <Route path="/admin_register" exact component={Register} />
+          <Route path="/admin_dashboard" exact component={Dashboard} />
         </switch>
       </Router>
       <Footer />

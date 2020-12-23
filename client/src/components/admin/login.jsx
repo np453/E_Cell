@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import jwt_decode from 'jwt-decode';
 import Cookies from 'js-cookie';
+import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
     state={
@@ -9,7 +10,8 @@ class Login extends Component {
             email:"",
             password:""
         },
-        id:""
+        id:"",
+        redirect:false
     }
     handlesubmit=async(e)=>{
         e.preventDefault();
@@ -20,7 +22,9 @@ class Login extends Component {
         const {data} = await axios.post('http://localhost:1212/admin',admindata);
         console.log(data);
         this.setState({id:jwt_decode(data)._id})
-        Cookies.set('admintoken',this.state.id);
+        Cookies.set('admintoken',this.state.id, { expires: 1 });
+        this.setState({redirect:true})
+        // return <Redirect to="/admin_dashboard"/>
 
     }
     handleInputChange = ({currentTarget:input}) => {
@@ -29,8 +33,12 @@ class Login extends Component {
         this.setState({ data });
     };
     render() {
+        if(this.state.redirect) {
+            
+            return <Redirect to="/admin_dashboard"/>
+        }
         return (
-            <div className="d-flex flex-column">
+            <div className=" container d-flex flex-column">
                 <form onSubmit={this.handlesubmit}>
                                 <label for="email">email</label>
                                 <input  id="email" name="email" type="text" onChange={this.handleInputChange} value={this.state.data.email}/>

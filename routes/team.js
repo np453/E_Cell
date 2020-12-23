@@ -55,14 +55,5 @@ router.get('/', async(req, res) => {
     
  });
 
-//  router.get('/img', async(req, res) => {
-//   const imData = await File.find({ })
-//   const img = [];
-//   for(let i=0;i<imData.length;i++) {
-//     img.push( {buffer:Buffer.from(imData[i].file.data.buffer, 'base64').toString('base64'), contentType:imData[i].file.contentType} )
-//   }
-
-//   res.send(img)
-// });
 
 module.exports = router;

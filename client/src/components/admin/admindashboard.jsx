@@ -11,7 +11,7 @@ class Dashboard extends Component {
         // if(Cookies.get('admintoken')){
         //     this.setState({redirect:false})
         // }
-        console.log(this.state.redirect)
+        // console.log(this.state.redirect)
         if(!Cookies.get('admintoken')) {
             this.setState({redirect:false})
             return <Redirect to="/admin_login"/>
@@ -24,6 +24,7 @@ class Dashboard extends Component {
                 <Link to="/admin_team"><span className="dashboard_Link">Team API</span></Link>
                 <Link to="/admin_speaker"><span className="dashboard_Link">Speaker API</span></Link>
                 <Link to="/admin_works"><span className="dashboard_Link">Works API</span></Link>
+                <Link to="/admin_sponsor"><span className="dashboard_Link">Sponsors API</span></Link>
             </div>
             </div>
         );

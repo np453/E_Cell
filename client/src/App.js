@@ -12,6 +12,7 @@ import Team from './components/admin/team';
 import Speaker from './components/admin/speaker';
 import Dashboard from './components/admin/admindashboard';
 import Works from './components/admin/whatwedo';
+import Sponsor from './components/admin/sponsor';
 function App() {
 
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/admin_register" exact component={Register} />
           <Route path="/admin_dashboard" exact component={Dashboard} />
           <Route path="/admin_works" exact component={Works} />
+          <Route path="/admin_sponsor" exact component={Sponsor} />
         </switch>
       </Router>
       <Footer />

@@ -6,13 +6,12 @@ class Team extends React.Component {
 
       state ={
         data : {
-          category:"",
+          team:"",
           name:"",
           email:"",
           designation:"",
           facebook:"",
           linkedin:"",
-          instagram:"",
           file: null,
         }
       };
@@ -26,13 +25,12 @@ class Team extends React.Component {
 
   onClickHandler = () => {
       const data = new FormData() 
-        data.append('category', this.state.data.category)
+        data.append('team', this.state.data.team)
         data.append('name', this.state.data.name)
         data.append('email', this.state.data.email)
         data.append('designation', this.state.data.designation)
         data.append('facebook', this.state.data.facebook)
         data.append('linkedin', this.state.data.linkedin)
-        data.append('instagram', this.state.data.instagram)
         data.append('file', this.state.data.file)
         const config = {
             headers: {
@@ -63,16 +61,16 @@ class Team extends React.Component {
                 <input type="text" name="name" onChange={this.handleRadio}/>
                 <label for="email">E-Mail</label>
                 <input type="text" name="email" onChange={this.handleRadio}/>
-                <label for="category">Team</label>
-                <input type="text" name="category" onChange={this.handleRadio}/>
+                <label for="team">Team</label>
+                <input type="text" name="team" onChange={this.handleRadio}/>
                 <h6 className="mb-5">for eg. <strong>Marketing team, Web team</strong></h6>
                 <label for="designation">Designation</label>
                 <input type="text" name="designation" onChange={this.handleRadio}/>
                 <h6 className="mb-5">for eg. <strong>Head of marketing team</strong></h6>
                 <label for="facebook">Facebook Id url</label>
                 <input type="text" name="facebook" onChange={this.handleRadio}/>
-                <label for="instagram">Instagram Id url</label>
-                <input type="text" name="instagram" onChange={this.handleRadio}/>
+                <label for="linkedin">Linked in Id url</label>
+                <input type="text" name="linkedin" onChange={this.handleRadio}/>
                 <label for="file">Profile Photo</label>
                 <input name="file" type="file" className="form-control" onChange={this.handleRadio}/>
             </div>  

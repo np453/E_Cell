@@ -9,10 +9,11 @@ class Getapi extends Component {
     handleshow=async()=>{
         const data=await Axios.get('/team');
         this.setState({team:data.data});
-        console.log(this.state.team)
+        console.log(this.state.team[0]._id)
     }
     handledelete=async()=>{
-        
+        const data= await Axios.put(`http://localhost:1212/team/delete/${this.state.team[0]._id}`)
+        console.log(data)
     }
     
     render() {
@@ -23,8 +24,8 @@ class Getapi extends Component {
                 <div className="d-flex flex-row">
                     {this.state.team.map(m=>
                         <div>
-                            <span>{m.name}</span>
-                            <span>Update</span>
+                            <span>{m.name}</span><br></br>
+                            {/* <span>Update</span> */}
                             <span onClick={this.handledelete}>Delete</span>
                         </div>
                         )}

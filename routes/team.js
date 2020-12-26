@@ -46,14 +46,16 @@ router.get('/', async(req, res) => {
   const allWorks = await team.find({ })
   const works = [];
   for(let i=0;i<allWorks.length;i++) {
-    works.push( {team:allWorks[i].team,name:allWorks[i].name,email:allWorks[i].email,designation:allWorks[i].designation,
+    works.push( {_id:allWorks[i]._id,team:allWorks[i].team,name:allWorks[i].name,email:allWorks[i].email,designation:allWorks[i].designation,
         facebook:allWorks[i].facebook,linkedin:allWorks[i].linkedin,
          buffer:Buffer.from(allWorks[i].file.data.buffer, 'base64').toString('base64'), contentType:allWorks[i].file.contentType} )
   }
   res.send(works)
     
  });
-router.get('/delete/:id',async(req,res)=>{
+router.put('/delete/:id',async(req,res)=>{
+  const data = await team.findByIdAndRemove({_id:req.params.id}, console.log("deleted") )
+  res.send(data);
 
 })
 

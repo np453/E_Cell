@@ -31,6 +31,7 @@ app.use('/admin', auth);
 app.use('/team', team);
 app.use('/speaker', speaker);
 app.use('/works', whatwedo);
+app.use('/sponsor', speaker);
 
 //connect to DB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));

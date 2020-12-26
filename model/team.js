@@ -3,12 +3,12 @@ const email = require('./email');
 
 
 const team = new mongoose.Schema({
-    category:String,
+    team:String,
     name:String,
     email:String,
     designation:String,
     facebook:String,
-    instagram:String,
+    linkedin:String,
     file: {
         data: Buffer, 
         contentType: String 

@@ -232,7 +232,10 @@ const TestPage = props => {
         )}
       </Scene>
     </Controller>  
-    <Gallery />  
+    <Gallery />
+    <div className="container what_we_do_section d-flex justify-content-center">
+        <h1>Workshops</h1>
+    </div>
         </div>
         {/* <Tp /> */}
         </React.Fragment>

@@ -63,10 +63,10 @@ class Team extends React.Component {
                 <input type="text" name="email" onChange={this.handleRadio}/>
                 <label for="team">Team</label>
                 <input type="text" name="team" onChange={this.handleRadio}/>
-                <h6 className="mb-5">for eg. <strong>Marketing team, Web team</strong></h6>
+                <h6 className="mb-3">for eg. <strong>Marketing team, Web team</strong></h6>
                 <label for="designation">Designation</label>
                 <input type="text" name="designation" onChange={this.handleRadio}/>
-                <h6 className="mb-5">for eg. <strong>Head of marketing team</strong></h6>
+                <h6 className="mb-3">for eg. <strong>Head of marketing team</strong></h6>
                 <label for="facebook">Facebook Id url</label>
                 <input type="text" name="facebook" onChange={this.handleRadio}/>
                 <label for="linkedin">Linked in Id url</label>

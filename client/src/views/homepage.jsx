@@ -73,6 +73,14 @@ const TestPage = props => {
             contentClass:"content-2",
             content:"Innovate."
         },
+        // {
+        //     contentClass:"content-2",
+        //     content:"Innovate."
+        // },
+        // {
+        //     contentClass:"content-2",
+        //     content:"Innovate."
+        // },
         {
             contentClass:"content-3",
             content:"Involve."

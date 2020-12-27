@@ -29,6 +29,7 @@ class Getapi extends Component {
                             <span onClick={this.handledelete}>Delete</span>
                         </div>
                         )}
+                         <img src="https://i.ibb.co/BKKWkJH/favpng-dollar-sign-currency-symbol-drawing-clip-art.png" alt="favpng-pound-sign-pound-sterling-currency-symbol" border="0"></img>
                 </div>
 
             </div>
@@ -38,3 +39,8 @@ class Getapi extends Component {
 }
 
 export default Getapi;
+// https://i.ibb.co/Gn5jBbW/favpng-pound-sign-pound-sterling-currency-symbol.png
+// https://i.ibb.co/DWVz9DW/favpng-currency-symbol-dollar-sign-united-states-dollar.png
+// https://i.ibb.co/BKKWkJH/favpng-dollar-sign-currency-symbol-drawing-clip-art.png
+// https://i.ibb.co/SPmjZLG/favpng-dollar-sign-currency-symbol-united-states-dollar.png
+// https://i.ibb.co/ct7ZNdN/favpng-euro-sign-currency-symbol-dollar-sign.png

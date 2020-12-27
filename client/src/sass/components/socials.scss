@@ -1,0 +1,22 @@
+.socials_container {
+    height: 100vh !important;
+    font-family: $font-1;
+    svg {
+        width: 280px;
+    }
+    h2 {
+        font-size: 85px;
+        
+        background: linear-gradient(90.11deg, #9C3D30 0.13%, #835BDA 99.94%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    h4 {
+        font-size:30px;
+        color: rgba(#d3d3d3, 1);
+
+    }
+    h5 {
+        color: rgba(#C87D5C, 1);
+    }
+}

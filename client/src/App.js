@@ -14,6 +14,7 @@ import Dashboard from './components/admin/admindashboard';
 import Works from './components/admin/whatwedo';
 import Sponsor from './components/admin/sponsor';
 import Getapi from './components/admin/getapi';
+import Testcar from './components/test';
 function App() {
 
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/admin_works" exact component={Works} />
           <Route path="/admin_sponsor" exact component={Sponsor} />
           <Route path="/admin_show" exact component={Getapi} />
+          <Route path="/test" exact component={Testcar} />
         </switch>
       </Router>
       <Footer />

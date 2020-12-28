@@ -7,9 +7,10 @@ import { VideoScroll } from 'react-video-scroll'
 // import video from '../assets/756501.webm';
 import img_1 from '../assets/img_about_us_1.png';
 import img_2 from '../assets/img_about_us_2.png'
-import ren_logo from '../assets/ren_logo.png'
+import ren_logo from '../assets/ren_logo.svg'
 import ren_logo_1 from '../assets/ren_logo_1.png'
 import Gallery from '../components/Gallery';
+import Socials from '../components/socials'
 // import Tp from '../components/testPage';
 import axios from 'axios';
 const TestPage = props => {
@@ -245,6 +246,10 @@ const TestPage = props => {
         <h1>Workshops</h1>
     </div>
         </div>
+        <div className="social_wrapper">
+          <Socials></Socials>  
+        </div>
+        
         {/* <Tp /> */}
         </React.Fragment>
     );

@@ -1,0 +1,27 @@
+.social_text{
+    font-weight: 700;
+    font-size: 4rem;
+    font-family: $font-1;
+    //background: linear-gradient(90.11deg, #9C3D30 0.13%, #835BDA 99.94%);
+    background: linear-gradient(90.11deg, #9C3D30 0.13%, #835BDA 99.94%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.social_wrapper{
+    background: black;
+}
+.social_1{
+    font-weight: 700;
+    color:#D3D3D3;
+    font-size: 1.2rem;
+    font-family: $font-1;
+    justify-content: right;
+}
+.social_count{
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: $font-1;
+    color: #C87D5C;
+
+}

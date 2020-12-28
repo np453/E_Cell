@@ -4,7 +4,6 @@ import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 import ScrollReveal from 'scrollreveal';
 import { VideoScroll } from 'react-video-scroll'
-import Socials from '../components/socials'
 // import video from '../assets/756501.webm';
 import img_1 from '../assets/img_about_us_1.png';
 import img_2 from '../assets/img_about_us_2.png'
@@ -224,9 +223,7 @@ const TestPage = props => {
         <h1>Workshops</h1>
     </div>
         </div>
-        <div className="social_wrapper">
-          <Socials></Socials>  
-        </div>
+        
         
         {/* <Tp /> */}
         <Socials />

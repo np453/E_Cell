@@ -15,6 +15,7 @@ import Gallery from '../components/Gallery';
 import TopSection from '../components/topSection'
 import back_collage from '../assets/background_collage.png';
 import axios from 'axios';
+import Navbar from '../components/naavbar';
 const TestPage = props => {
     const { scrollYProgress } = useViewportScroll()
     const [content, setContent] = useState("get ready.")
@@ -27,6 +28,31 @@ const TestPage = props => {
     const opacity = useTransform(scrollYProgress, [0, 0.33, 0.331], [0.8, 1, 0])
     const opacity2 = useTransform(scrollYProgress, [0.33, 0.67, 0.671], [0, 1, 0])
     const opacity3 = useTransform(scrollYProgress, [0.671, 1, 1], [0,1, 0])
+    const sideBarItems = [
+        {
+          item:"sadsad"
+        },
+        {
+          item:"ddsadfdsf"
+        },
+        {
+          item:"ddsadfdsf"
+        }
+      ]
+      const navLinks = [
+        {
+          navLinkName:"About us",
+          link:""
+        },
+        {
+          navLinkName:"past sponsors",
+          link:"/sponsors"
+        },
+        {
+          navLinkName:"follow us",
+          link:""
+        },
+      ]
     const contents = [
         {
             contentClass:"first_content_word",
@@ -124,6 +150,16 @@ const TestPage = props => {
     return (
         <React.Fragment>
             <div className="container-fluid landingPage p-0"> 
+            <Navbar 
+       sidebarBackground="#c4c4c4" 
+       sideBarItems={sideBarItems} 
+       brand="E-cell MNNIT" 
+       navLinks={navLinks} 
+       navbarColor="#fff" 
+       navbarBrandColor="#000"
+       linkColor="#222"
+       linkOpacity="0.7"
+       />
             <TopSection />
             <div className="row m-0">
                 <div className="col-md-12 d-flex justify-content-center">

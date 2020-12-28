@@ -1,35 +1,35 @@
-import React, { Component } from 'react'
-export default class Navbar extends Component {
-    state = {
-        isOpen:false,
-        width:0
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
+const Navbar = props => {
+    const [isOpen, setOpen] = useState(false);
+    const [width, setWidth] = useState(0);
+    const toggleSideBar = () => {
+        setWidth("33.34%")
     }
-    toggleSideBar = () => {
-        this.setState({width:"33.34%"})
+    const toggleSideBarClose = () => {
+        setWidth(0)
     }
-    toggleSideBarClose = () => {
-        this.setState({width:0})
-    }
-    render() {
         return (
-            <div className="navbar__container container-fluid p-0">
-                <ul className="sideBar p-0" style={{backgroundColor:"#222", width: `${this.state.width}` }}>
-                    <li className="sideBar-item" onClick={this.toggleSideBarClose}>Close <i className="fa fa-times"></i></li>
-                    <li className="sideBar-item">dfdsfdf</li>
-                    <li className="sideBar-item">dgdfgdfgdfg</li>
-                    <li className="sideBar-item">dvdfvsvds</li>
-                    <li className="sideBar-item">dscdsvdsmf</li>
+            <div style={{backgroundColor:props.navbarColor}} className="navbar__container container-fluid p-0">
+                <ul className="sideBar p-0" style={{backgroundColor:props.sidebarBackground, width: `${width}` }}>
+                    <li className="sideBar-item" onClick={toggleSideBarClose}>Close <i className="fa fa-times"></i></li>
+                    {props.sideBarItems.map(m => 
+                        <li className="sideBar-item">{m.item}</li>    
+                    )}
                 </ul>
                 <div className="container">
-                <nav className="navbar navbar-expand-lg">
-                    <div className="navbar-brand">E-cell, MNNIT</div>
+                <nav className="navbar  navbar-expand-lg">
+                    <div className="navbar-brand" style={{color:props.navbarBrandColor}}>{props.brand}</div>
                     <div className="navbar-nav ml-auto">
-                        <div onClick={this.toggleSideBar} className="nav-links">follow us</div>
-                        
+                        {props.navLinks.map(m => 
+                            <Link to={m.link} className="p-2" style={{color:props.linkColor, textDecoration:"none", opacity:props.linkOpacity}}><div className="nav-links">{m.navLinkName}</div></Link>    
+                        )}
                     </div>
                 </nav>
             </div>
             </div>
         )
-    }
 }
+
+
+export default Navbar;

@@ -96,10 +96,10 @@ const TestPage = props => {
         //     contentClass:"content-5",
         //     content:"staminize."
         // },
-        // {
-        //     contentClass:"last_content_word",
-        //     content:"get ready."
-        // },
+        {
+            contentClass:"last_content_word",
+            content:"get ready."
+        },
     ]
     const setStyles = (wrapperEl, videoEl, playbackRate) => {
         wrapperEl.style.marginTop = `calc(180% - ${Math.floor(videoEl.duration) *playbackRate +'px'})`

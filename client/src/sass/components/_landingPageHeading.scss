@@ -1,41 +1,48 @@
 .landingPage {
     background-color : black;
-    .landingPage_content_heading {
-        color: rgba(white, 0.7);
-        font-family: $font-1;
-        // font-weight: 900;
-        margin-top: 3rem;
-        font-size: 200px;
-    }
     .fa-arrow-down {
         margin-top: 4rem;
         color: rgba(white, 0.6);
     }
 }
-
+.landingPage_content_heading {
+    color: rgba(white, 0.7);
+    font-family: $font-1;
+    // font-weight: 900;
+    // margin-top: 3rem;
+    font-size: 200px;
+    position: absolute;
+    z-index: 2;
+}
+.change_content_section {
+    // background-color: black;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background: url('../../assets/background_collage.png') !important;
+    // background-position: center !important;
+    // background-size: cover !important;
+    // background-repeat: no-repeat !important;
+}
 @media (min-width:121px) and (max-width:375px) {
-    .landingPage {
         .landingPage_content_heading {
             margin-top: 3rem;
             font-size: 40px;
         }
-    }
 }
 
 @media (min-width:375.98px) and (max-width:550px) {
-    .landingPage {
         .landingPage_content_heading {
             margin-top: 3rem;
             font-size: 40px;
         }
-    }
 }
 
 @media (min-width:550.98px) and (max-width:767.98px) {
-    .landingPage {
         .landingPage_content_heading {
             margin-top: 3rem;
             font-size: 40px;
         }
-    }
 }

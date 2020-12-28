@@ -4,6 +4,7 @@ import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 import ScrollReveal from 'scrollreveal';
 import { VideoScroll } from 'react-video-scroll'
+import Socials from '../components/socials'
 // import video from '../assets/756501.webm';
 import img_1 from '../assets/img_about_us_1.png';
 import img_2 from '../assets/img_about_us_2.png'
@@ -12,10 +13,12 @@ import ren_logo_1 from '../assets/ren_logo_1.png'
 import Gallery from '../components/Gallery';
 import Socials from '../components/socials'
 // import Tp from '../components/testPage';
+import TopSection from '../components/topSection'
+import back_collage from '../assets/background_collage.png';
 import axios from 'axios';
 const TestPage = props => {
     const { scrollYProgress } = useViewportScroll()
-    const [content, setContent] = useState("Innovate")
+    const [content, setContent] = useState("get ready.")
     const [contentClass, setContentClass] = useState("first_content_word")
     const [showArrow, setArrowVisibility] = useState(false)
     const scaleAnim = useTransform(scrollYProgress, [0, 0.33], [1, 1.5])
@@ -28,96 +31,76 @@ const TestPage = props => {
     const contents = [
         {
             contentClass:"first_content_word",
+            content:"get ready."
+        },
+        {
+            contentClass:"content-2",
+            content:"Involve."
+        },
+        {
+            contentClass:"content-3",
+            content:"Ideate."
+        },
+        {
+            contentClass:"content-4",
             content:"Incubate."
         },
         {
-            contentClass:"content-2",
+            contentClass:"content-5",
             content:"Innovate."
         },
         {
-            contentClass:"content-3",
-            content:"Involve."
-        },
-        {
-            contentClass:"content-4",
-            content:"setup."
-        },
-        {
             contentClass:"content-5",
-            content:"motivate."
+            content:"Let's go."
         },
-        {
-            contentClass:"content-5",
-            content:"focus."
-        },
-        {
-            contentClass:"content-5",
-            content:"energise."
-        },
-        {
-            contentClass:"content-5",
-            content:"staminize."
-        },
+        // {
+        //     contentClass:"content-5",
+        //     content:"energise."
+        // },
+        // {
+        //     contentClass:"content-5",
+        //     content:"staminize."
+        // },
         {
             contentClass:"content-5",
             content:"entrepreneur."
         },
-        {
-            contentClass:"content-5",
-            content:"power up."
-        },
-        {
-            contentClass:"last_content_word",
-            content:"get ready."
-        },
-        {
-            contentClass:"content-2",
-            content:"Innovate."
-        },
         // {
-        //     contentClass:"content-2",
-        //     content:"Innovate."
+        //     contentClass:"content-5",
+        //     content:"power up."
         // },
         // {
         //     contentClass:"content-2",
         //     content:"Innovate."
         // },
-        {
-            contentClass:"content-3",
-            content:"Involve."
-        },
-        {
-            contentClass:"content-4",
-            content:"entrepreneur."
-        },
-        {
-            contentClass:"content-5",
-            content:"motivate."
-        },
-        {
-            contentClass:"content-5",
-            content:"focus."
-        },
-        {
-            contentClass:"content-5",
-            content:"energise."
-        },
-        {
-            contentClass:"content-5",
-            content:"staminize."
-        },
-        {
-            contentClass:"content-5",
-            content:"spirits."
-        },
-        {
-            contentClass:"content-5",
-            content:"power up."
-        },
-        {
-            contentClass:"last_content_word",
-            content:"get ready."
-        },
+        // {
+        //     contentClass:"content-3",
+        //     content:"Involve."
+        // },
+        // {
+        //     contentClass:"content-4",
+        //     content:"entrepreneur."
+        // },
+        // {
+        //     contentClass:"content-5",
+        //     content:"motivate."
+        // },
+        // {
+        //     contentClass:"content-5",
+        //     content:"focus."
+        // },
+        // {
+        //     contentClass:"content-5",
+        //     content:"energise."
+        // },
+        // {
+        //     contentClass:"content-5",
+        //     content:"staminize."
+        // },
+        // {
+        //     contentClass:"last_content_word",
+        //     content:"get ready."
+        // },
     ]
     const setStyles = (wrapperEl, videoEl, playbackRate) => {
         wrapperEl.style.marginTop = `calc(180% - ${Math.floor(videoEl.duration) *playbackRate +'px'})`
@@ -127,27 +110,22 @@ const TestPage = props => {
     useEffect(() => {
         // const {data} = await axios.get('http://localhost:4444/upload/img')
         // setGallery(data)
-        ScrollReveal().reveal(".content", { scale:8, duration:1000 })
+        ScrollReveal().reveal(".landingPage_content_heading", { duration:700, viewFactor:0.85, afterReveal:changeContent })
         ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
+    }, []);
+    const changeContent = () => {
         for(let i=0;i<contents.length;i++) {
             setTimeout(() => {
                 setContent(contents[i].content)
                 setContentClass(contents[i].contentClass)
-            }, 100*i)
+            }, 500*i)
             ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
         }
-    }, []);
+    }
     return (
         <React.Fragment>
             <div className="container-fluid landingPage p-0"> 
-            <div className="row m-0">
-                <div className="col-md-12 d-flex justify-content-center">
-                <motion.div className="" >
-                <motion.h1 style={{ y:yPosAnim}} className="content landingPage_content_heading"><span className={contentClass}>{content}</span></motion.h1>
-                
-            </motion.div>  
-                </div>
-            </div> 
+            <TopSection />
             <div className="row m-0">
                 <div className="col-md-12 d-flex justify-content-center">
                     { showArrow && <i className=" fa fa-2x fa-arrow-down"></i> } 
@@ -251,6 +229,11 @@ const TestPage = props => {
         </div>
         
         {/* <Tp /> */}
+        <Socials />
+        <div style={{background:"black"}}className="row m-0 change_content_section">
+            <img src={back_collage} className="img img-fluid" alt=""/>
+            <motion.h1 className="content landingPage_content_heading"><span className={contentClass}>{content}</span></motion.h1>
+        </div> 
         </React.Fragment>
     );
 }

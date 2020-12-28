@@ -1,0 +1,10 @@
+.landing_page_top_section__container {
+    background-color: rgba(white, 1);
+    height: 100vh;
+    position: relative;
+    .page_curve {
+        position: absolute;
+        width: 100%;
+        bottom: -0.5rem;
+    }
+}

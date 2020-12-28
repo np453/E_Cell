@@ -7,4 +7,9 @@
 @import "./components/speakersSection";
 @import "./components/admindashboard";
 @import "./components/whatWeDo";
-@import "./components/social";
+@import "./components/socials";
+@import "./components/topSection";
+
+body {
+    background-color: black !important;
+}

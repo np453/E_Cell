@@ -16,8 +16,23 @@ footer {
             color:rgba(#555, 1);
         }
     }
-    .footer__heading {
-        color:rgba(white, 0.9);
+    .footer__heading_1 {
+        color:rgba(white, 0.7);
+        font-family: $font-1;
+        .h_ {
+            font-size: 15px;
+        }
+        .h__ {
+            font-size: 30px;
+        }
+        .h___{
+            font-size: 17px;
+        }
+        .collab_line {
+            color: rgba(white, 0.3);
+            font-family: $font-3;
+            font-size: 10px;
+        }
     }
     .developer__section {
         font-weight:900;

@@ -4,13 +4,13 @@ import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 import ScrollReveal from 'scrollreveal';
 import { VideoScroll } from 'react-video-scroll'
-import Socials from '../components/socials'
 // import video from '../assets/756501.webm';
 import img_1 from '../assets/img_about_us_1.png';
 import img_2 from '../assets/img_about_us_2.png'
-import ren_logo from '../assets/ren_logo.png'
+import ren_logo from '../assets/ren_logo.svg'
 import ren_logo_1 from '../assets/ren_logo_1.png'
 import Gallery from '../components/Gallery';
+import Socials from '../components/socials'
 // import Tp from '../components/testPage';
 import TopSection from '../components/topSection'
 import back_collage from '../assets/background_collage.png';
@@ -259,6 +259,8 @@ const TestPage = props => {
         <h1>Workshops</h1>
     </div>
         </div>
+        
+        
         {/* <Tp /> */}
         <Socials />
         <div style={{background:"black"}}className="row m-0 change_content_section">

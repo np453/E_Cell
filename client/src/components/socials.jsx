@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import socialsvg from '../assets/social.svg'
 
 class Socials extends Component {
     render() {

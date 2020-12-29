@@ -3,7 +3,8 @@ import {Carousel} from 'react-bootstrap'
 class Test extends Component {
   render() {
     return (
-      <div className="container col-md-6">
+      <div className="container-fluid p-5">
+          <div className="container carousel_container ">
         <Carousel>
   <Carousel.Item interval={1000}>
     <img
@@ -16,34 +17,45 @@ class Test extends Component {
       <div className="row">Nulla vitae elit libero, a pharetra augue mollis interdum.</div>
       <div className="row">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
     </div>
-    <Carousel.Caption>
+    <Carousel.Caption style={{top:"0%"}}>
       <h3>First slide label</h3>
       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
     </Carousel.Caption>
   </Carousel.Item>
-  <Carousel.Item interval={500}>
+  <Carousel.Item interval={1000}>
     <img
       className="d-block w-100"
-      src="holder.js/800x400?text=Second slide&bg=282c34"
-      alt="Third slide"
+      src=""
+      alt="First slide"
     />
-    <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div className="col-md-12">
+      <div className="row">Bill Gates</div>
+      <div className="row">Nulla vitae elit libero, a pharetra augue mollis interdum.</div>
+      <div className="row">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    </div>
+    <Carousel.Caption style={{top:"0%"}}>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
     </Carousel.Caption>
   </Carousel.Item>
-  <Carousel.Item>
+  <Carousel.Item interval={1000}>
     <img
       className="d-block w-100"
-      src="holder.js/800x400?text=Third slide&bg=20232a"
-      alt="Third slide"
+      src=""
+      alt="First slide"
     />
-    <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    <div className="col-md-12">
+      <div className="row">Bill Gates</div>
+      <div className="row">Nulla vitae elit libero, a pharetra augue mollis interdum.</div>
+      <div className="row">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    </div>
+    <Carousel.Caption style={{top:"0%"}}>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
+      </div>
       </div>
     );
   }

@@ -15,6 +15,7 @@ import Sponsor from './components/admin/sponsor';
 import Getapi from './components/admin/getapi';
 import Navbar from './components/naavbar';
 import Testcar from './components/test';
+import TestPage from './components/testpage';
 function App() {
   return (
     <div>
@@ -31,7 +32,7 @@ function App() {
           <Route path="/admin_works" exact component={Works} />
           <Route path="/admin_sponsor" exact component={Sponsor} />
           <Route path="/admin_show" exact component={Getapi} />
-          <Route path="/test" exact component={Testcar} />
+          <Route path="/test" exact component={TestPage} />
         </switch>
       </Router>
       <Footer />

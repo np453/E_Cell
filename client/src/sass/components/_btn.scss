@@ -1,0 +1,21 @@
+.speakers_section_container {
+    .button_wrapper {
+        display: flex;
+        justify-content: center;
+        background : linear-gradient(180deg, #29C2C2 0%, rgba(96, 172, 168, 0.3) 100%);
+        width: 150px;
+        // padding: 0.2rem;
+        border-radius: 1.15rem;
+        margin: 2rem ;
+    }
+    button {
+        padding: 0.35rem;
+        margin: 0.05rem;
+        width: 148px;
+        border-radius: 1.2rem;
+        background-color: black;
+        color:rgba(#29C0C0, 0.9);
+        border: none !important;
+        outline: none !important;
+    }
+  }

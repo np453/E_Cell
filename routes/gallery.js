@@ -20,6 +20,7 @@ router.post('/', upload , async(req, res) => {
         console.log(req.file)
         let fullpath = req.file.path;
         let imgData  = fs.readFileSync(fullpath).toString('base64')
+        console.log(req);
         let work = new gallery({
             file : {
                 data : Buffer(imgData, 'base64'),

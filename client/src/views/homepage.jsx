@@ -276,9 +276,6 @@ const TestPage = props => {
         {/* <Tp /> */}
         <SpeakersSection />
         <Socials />
-        <div className="row d-flex justify-content-center">
-            <div className="col-md-6">
-        <Hexagon></Hexagon></div></div>
         <div style={{background:"black"}}className="row m-0 change_content_section">
             <img src={back_collage} className="img img-fluid" alt=""/>
             <motion.h1 className="content landingPage_content_heading"><span className={contentClass}>{content}</span></motion.h1>

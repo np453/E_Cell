@@ -1,98 +1,52 @@
 import React, { Component } from 'react';
-import Carousel from 'react-responsive-carousel';
-import Blockquote from '../assets/blockquote.svg'
-
-class Testcar extends Component {
-    render() {
-        return (
-          <div class="grid">
-          <ul id="hexGrid">
-            <li class="hex">
-              <div class="hexIn">
-                <a class="hexLink" href="#">
-                  <div class='img' style={{backgroundImage:`url('https://images.unsplash.com/photo-1417436026361-a033044d901f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=faa4e192f33e0d6b7ce0e54f15140e42')`}}></div>
-                  <h1 id="demo1">This is a title</h1>
-                  <p id="demo2">Some sample text about the article this hexagon leads to</p>
-                </a>
-              </div>
-            </li>
-            <li class="hex">
-              <div class="hexIn">
-                <a class="hexLink" href="#">
-                  <div class='img' style={{backgroundImage:`url('https://images.unsplash.com/photo-1417436026361-a033044d901f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=faa4e192f33e0d6b7ce0e54f15140e42')`}}></div>
-                  <h1 id="demo1">This is a title</h1>
-                  <p id="demo2">Some sample text about the article this hexagon leads to</p>
-                </a>
-              </div>
-            </li>
-            <li class="hex">
-              <div class="hexIn">
-                <a class="hexLink" href="#">
-                  <div class='img' style={{backgroundImage:`url('https://images.unsplash.com/photo-1417436026361-a033044d901f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=faa4e192f33e0d6b7ce0e54f15140e42')`}}></div>
-                  <h1 id="demo1">This is a title</h1>
-                  <p id="demo2">Some sample text about the article this hexagon leads to</p>
-                </a>
-              </div>
-            </li>
-            <li class="hex">
-              <div class="hexIn">
-                <a class="hexLink" href="#">
-                  <div class='img' style={{backgroundImage:`url('https://images.unsplash.com/photo-1417436026361-a033044d901f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=faa4e192f33e0d6b7ce0e54f15140e42')`}}></div>
-                  <h1 id="demo1">This is a title</h1>
-                  <p id="demo2">Some sample text about the article this hexagon leads to</p>
-                </a>
-              </div>
-            </li>
-            <li class="hex">
-              <div class="hexIn">
-                <a class="hexLink" href="#">
-                  <div class='img' style={{backgroundImage:`url('https://images.unsplash.com/photo-1417436026361-a033044d901f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=faa4e192f33e0d6b7ce0e54f15140e42')`}}></div>
-                  <h1 id="demo1">This is a title</h1>
-                  <p id="demo2">Some sample text about the article this hexagon leads to</p>
-                </a>
-              </div>
-            </li>
-            <li class="hex">
-              <div class="hexIn">
-                <a class="hexLink" href="#">
-                  <div class='img' style={{backgroundImage:`url('https://images.unsplash.com/photo-1417436026361-a033044d901f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=faa4e192f33e0d6b7ce0e54f15140e42')`}}></div>
-                  <h1 id="demo1">This is a title</h1>
-                  <p id="demo2">Some sample text about the article this hexagon leads to</p>
-                </a>
-              </div>
-            </li>
-            <li class="hex">
-              <div class="hexIn">
-                <a class="hexLink" href="#">
-                  <div class='img' style={{backgroundImage:`url('https://images.unsplash.com/photo-1417436026361-a033044d901f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=faa4e192f33e0d6b7ce0e54f15140e42')`}}></div>
-                  <h1 id="demo1">This is a title</h1>
-                  <p id="demo2">Some sample text about the article this hexagon leads to</p>
-                </a>
-              </div>
-            </li>
-            <li class="hex">
-              <div class="hexIn">
-                <a class="hexLink" href="#">
-                  <div class='img' style={{backgroundImage:`url('https://images.unsplash.com/photo-1417436026361-a033044d901f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=faa4e192f33e0d6b7ce0e54f15140e42')`}}></div>
-                  <h1 id="demo1">This is a title</h1>
-                  <p id="demo2">Some sample text about the article this hexagon leads to</p>
-                </a>
-              </div>
-            </li>
-            <li class="hex">
-              <div class="hexIn">
-                <a class="hexLink" href="#">
-                  <div class='img' style={{backgroundImage:`url('https://images.unsplash.com/photo-1417436026361-a033044d901f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=faa4e192f33e0d6b7ce0e54f15140e42')`}}></div>
-                  <h1 id="demo1">This is a title</h1>
-                  <p id="demo2">Some sample text about the article this hexagon leads to</p>
-                </a>
-              </div>
-            </li>
-          </ul>
-            </div>
-            
-        );
-    }
+import {Carousel} from 'react-bootstrap'
+class Test extends Component {
+  render() {
+    return (
+      <div className="container col-md-6">
+        <Carousel>
+  <Carousel.Item interval={1000}>
+    <img
+      className="d-block w-100"
+      src=""
+      alt="First slide"
+    />
+    <div className="col-md-12">
+      <div className="row">Bill Gates</div>
+      <div className="row">Nulla vitae elit libero, a pharetra augue mollis interdum.</div>
+      <div className="row">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    </div>
+    <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item interval={500}>
+    <img
+      className="d-block w-100"
+      src="holder.js/800x400?text=Second slide&bg=282c34"
+      alt="Third slide"
+    />
+    <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="holder.js/800x400?text=Third slide&bg=20232a"
+      alt="Third slide"
+    />
+    <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>
+      </div>
+    );
+  }
 }
 
-export default Testcar;
+export default Test;

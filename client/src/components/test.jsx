@@ -3,7 +3,7 @@ import {Carousel} from 'react-bootstrap'
 class Test extends Component {
   render() {
     return (
-      <div className="container col-md-6">
+      <div className="container col-md-6 my__carousel_main">
         <Carousel>
   <Carousel.Item interval={1000}>
     <img

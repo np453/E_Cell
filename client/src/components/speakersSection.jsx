@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
-
-class TestPage extends Component {
+import axios from 'axios';
+import blob from '../assets/speakers_blob.png';
+class SpeakersSection extends Component {
+    state = {
+        speakers : []
+    }
+    componentDidMount() {
+        
+    }
+    
     render() {
         return (
-          <div className="row d-flex justify-content-center">
-            <div className="col-md-8">
+            <div className="speakers_section_container container d-flex justify-content-center flex-column">
+                <div className="col-md-12 d-flex justify-content-center">
+                    <h1 className="speakers_section_main_page_heading">Prominant Speakers</h1>
+                </div>
+                <div className="col-md-12 d-flex justify-content-center">
+            <div className="col-md-10 speakers_container">
             <div class="grid">
           <ul id="hexGrid">
             <li class="hex">
@@ -93,9 +105,14 @@ class TestPage extends Component {
             </div>
           </div>
           </div>
-      
+              <div className="row d-flex justify-content-center">
+              <div className="button_wrapper">
+                <button>view all speakers</button>
+              </div>
+              </div>
+            </div>
         );
     }
 }
 
-export default TestPage;
+export default SpeakersSection;

@@ -12,9 +12,11 @@ import ren_logo_1 from '../assets/ren_logo_1.png'
 import Gallery from '../components/Gallery';
 import Socials from '../components/socials'
 // import Tp from '../components/testPage';
+import SpeakersSection from '../components/speakersSection'
 import TopSection from '../components/topSection'
 import back_collage from '../assets/background_collage.png';
 import axios from 'axios';
+import LandingPageLogo from '../assets/logo.svg'
 import Navbar from '../components/naavbar';
 import Hexagon from '../components/speaker_hex';
 const TestPage = props => {
@@ -154,12 +156,13 @@ const TestPage = props => {
             <Navbar 
        sidebarBackground="#c4c4c4" 
        sideBarItems={sideBarItems} 
-       brand="E-cell MNNIT" 
+    //    brand="E-cell MNNIT" 
        navLinks={navLinks} 
        navbarColor="#fff" 
        navbarBrandColor="#000"
        linkColor="#222"
        linkOpacity="0.7"
+       navBrandLogo={LandingPageLogo}
        />
             <TopSection />
             <div className="row m-0">
@@ -183,10 +186,18 @@ const TestPage = props => {
                         <div className="about__us__section container d-flex justify-content-center mt-5">
                         <div className="animation">
                         <h1 className="text-center">About us</h1>
-                        <p>E-Cell, IIT Kanpur aims to induce an entrepreneurial mindset into the students and air an innovative streak 
-                            in them. We are here to water the ‘Ideas’ in the bud and help them bloom into impactful endeavors through
-                            networking student enterprises 
-                            from campus to incubators, seeding funds and angel investors to transform the newly proposed ideas into successful start-ups.
+                        <p className="text-center">E-Cell MNNIT was launched in October 2014 with a vision to channelize
+                             and nurture college students by guiding their aspirations, efforts and 
+                             passion towards entrepreneurship. It aims to deliver technical know-how of 
+                             launching, running and thriving any venture, thus encouraging the students 
+                             to think out of the box and evolve an effective B-Plan. 
+                            <div className="col-md-12 text-center">
+                            We believe that entrepreneurship is the key that can unlock India's latent 
+                            inventive potential. It will not only push India to the forefront of the world
+                             but also help raise the quality of life in
+                            the country. We help to turn dreams into reality!
+                            </div>
+
                             </p>               
                         </div>
                         </div>
@@ -263,6 +274,7 @@ const TestPage = props => {
         
         
         {/* <Tp /> */}
+        <SpeakersSection />
         <Socials />
         <div className="row d-flex justify-content-center">
             <div className="col-md-6">

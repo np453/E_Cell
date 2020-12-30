@@ -130,10 +130,19 @@ class Dashboard extends Component {
         
         return (
             <div className="admin_dashboard container-fluid p-0 bg-white">
-             <div className="container">
-              <div className="row">
-                
-                <div className="col-md-12">
+            <div className="container">
+            <div className="row">
+                <div className="col-md-2 api_list">
+                    <h3>API</h3>
+                    <div className="d-flex flex-column">
+                <Link to="/admin_image"><span className="dashboard_Link">Gallery</span></Link>
+                <Link to="/admin_team"><span className="dashboard_Link">Team API</span></Link>
+                <Link to="/admin_speaker"><span className="dashboard_Link">Speaker API</span></Link>
+                <Link to="/admin_works"><span className="dashboard_Link">Works API</span></Link>
+                <Link to="/admin_sponsor"><span className="dashboard_Link">Sponsors API</span></Link>
+            </div>
+                </div>
+                <div className="col-md-10">
                     <div className="row">
                         <div className="col m-2 border rounded p-3">
                             {/*Image Upload form*/}

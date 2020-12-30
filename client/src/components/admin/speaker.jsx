@@ -62,7 +62,6 @@ class Speaker extends React.Component {
 
         </div>
     </div>
-    
     </div>
       )
   }

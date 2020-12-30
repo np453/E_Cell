@@ -7,7 +7,7 @@ class Test extends Component {
     return (
       <div className="container-fluid p-3">
           <div className=" vh-100 carousel_container" >
-        <Carousel>
+        <Carousel interval={4000}>
             <Carousel.Item>
                 <div className="carousel_item_wrapper">
                     <div className="container">

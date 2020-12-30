@@ -38,6 +38,10 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 app.use(express.static("client/build"));
 
 
+app.get('/media/test/:file_name',(req,res)=>{
+  res.sendFile(path.join(__dirname+"/media/test/"+req.params.file_name));
+})
+
 
 app.use(express.json());
 app.use(function(req, res, next) {

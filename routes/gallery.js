@@ -7,7 +7,7 @@ const bp = require('body-parser')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'public')
+      cb(null, 'client/src/assets')
     },
     filename: function (req, file, cb) {
       cb(null, Date.now() + '-' +file.originalname )
@@ -20,10 +20,10 @@ router.post('/', upload , async(req, res) => {
         console.log(req.file)
         let fullpath = req.file.path;
         let imgData  = fs.readFileSync(fullpath).toString('base64')
-        console.log(req);
+        console.log(req.file.filename);
         let work = new gallery({
             file : {
-                data : Buffer(imgData, 'base64'),
+                data : Buffer.from(imgData, 'base64'),
                 contentType : req.file.mimetype
             }
         })

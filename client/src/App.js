@@ -33,6 +33,7 @@ function App() {
           <Route path="/admin_sponsor" exact component={Sponsor} />
           <Route path="/admin_show" exact component={Getapi} />
           <Route path="/test" exact component={Test} />
+          <Route path="/test101" exact component={TestPage} />
         </switch>
       </Router>
       <Footer />

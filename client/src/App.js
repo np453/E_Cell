@@ -32,7 +32,7 @@ function App() {
           <Route path="/admin_works" exact component={Works} />
           <Route path="/admin_sponsor" exact component={Sponsor} />
           <Route path="/admin_show" exact component={Getapi} />
-          <Route path="/test" exact component={Test } />
+          <Route path="/test" exact component={Test} />
         </switch>
       </Router>
       <Footer />

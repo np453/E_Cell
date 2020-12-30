@@ -7,8 +7,8 @@ class TestPage extends Component {
       const imgn="1609337587086-download.png";
       const img= require('../assets/facebook.svg');
         return (
-          <div style={{background:"url('../assets/facebook.svg')"}}>
-            <img src="{img}"></img>
+          <div>
+            <img src={img}></img>
           </div>
       
         );

@@ -1,28 +1,32 @@
-.carousel {
-  height: 80vh;
-  color: rgba(white, 1);
-    .carousel-indicators {
-      li {
-        width: 0.5rem;
-        height: 0.5rem;
-        border-radius: 50%;
-      }
-    }
-    .carousel-control-next {
-      position: absolute;
-      right: -12%;
-    }
-    .carousel-control-prev {
-      position: absolute;
-      left: -12%;
-    }
-  }
-  .carousel_container {
-    background: #222;
-  }
-  .carousel-control-next-icon {
-    background-image: url("../../assets/carousel_arrow_next.svg") !important;
-  }
-  .carousel-control-prev-icon {
-    background-image: url("../../assets/carousel_arrow_prev.svg") !important;
-  }
+// .carousel {
+//   height: 80vh;
+//   color: rgba(white, 1);
+//     .carousel-indicators {
+//       li {
+//         width: 0.5rem;
+//         height: 0.5rem;
+//         border-radius: 50%;
+//       }
+//     }
+//     .carousel-control-next {
+//       position: absolute;
+//       right: -12%;
+//     }
+//     .carousel-control-prev {
+//       position: absolute;
+//       left: -12%;
+//     }
+//   }
+//   .carousel_container {
+//     background: #222;
+//   }
+//   .carousel-control-next-icon {
+//     background-image: url("../../assets/carousel_arrow_next.svg") !important;
+//   }
+//   .carousel-control-prev-icon {
+//     background-image: url("../../assets/carousel_arrow_prev.svg") !important;
+//   }
+// .carousal_img{
+//     position :absolute;
+//     border-radius: 5rem;
+// }

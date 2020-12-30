@@ -16,23 +16,7 @@ class Image extends React.Component {
         if(input.name === 'file')data[input.name] = input.files[0]
         this.setState({ data });
     };
-  onFormSubmit = async(e) => {
-      e.preventDefault();
-      const data = new FormData() 
-    //   data.append('title', this.state.data.title)
-      data.append('file', this.state.data.file)
-    axios.post("http://localhost:1212/gallery", data, {
-        })
-        .then(res => { 
-        // console.log(res.statusText)
-    })
-    //   console.log(response)
-  }
 
-  // onChangeHandler= e =>{
-  //   let file = e.target.files[0]
-  //   this.setState({ selectedFile: file})
-  // }
   onClickHandler = () => {
     const data = new FormData() 
       data.append('file', this.state.data.file)
@@ -65,11 +49,9 @@ class Image extends React.Component {
               <input name="file" type="file" className="form-control" onChange={this.handleRadio}/>
             </div>  
             <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
-
+          </div>
         </div>
-    </div>
-    
-    </div>
+      </div>
       )
   }
 }

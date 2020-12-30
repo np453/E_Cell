@@ -5,10 +5,10 @@ class TestPage extends Component {
     render() {
       const path="../assets/";
       const imgn="1609337587086-download.png";
-      const img= require('../assets/facebook.svg');
+      const imgname = 'facebook.svg';
         return (
           <div>
-            <img src={img}></img>
+            <img src={require(path+imgn).default}></img>
           </div>
       
         );

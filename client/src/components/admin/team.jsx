@@ -55,30 +55,43 @@ class Team extends React.Component {
       return (
         <div className="container">
         <div className="row m-3">
-          <div className="offset-md-3 col-md-6">
-             <div className="form-group files d-flex flex-column">
-                <label for="name">Name</label>
-                <input type="text" name="name" onChange={this.handleRadio}/>
-                <label for="email">E-Mail</label>
-                <input type="text" name="email" onChange={this.handleRadio}/>
-                <label for="team">Team</label>
-                <input type="text" name="team" onChange={this.handleRadio}/>
+          <div className="">
+             <form className="form-group form-inline files d-flex flex-column">
+                <div className="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" onChange={this.handleRadio}/>
+                </div>
+                <div className="form-group">
+                  <label for="email">E-Mail</label>
+                  <input type="text" name="email" onChange={this.handleRadio}/>
+                </div>
+                <div className="form-group">
+                  <label for="team">Team</label>
+                  <input type="text" name="team" onChange={this.handleRadio}/>
+                </div>
                 <h6 className="mb-3">for eg. <strong>Marketing team, Web team</strong></h6>
-                <label for="designation">Designation</label>
-                <input type="text" name="designation" onChange={this.handleRadio}/>
+                <div className="form-group">
+                  <label for="designation">Designation</label>
+                  <input type="text" name="designation" onChange={this.handleRadio}/>
+                </div>
                 <h6 className="mb-3">for eg. <strong>Head of marketing team</strong></h6>
-                <label for="facebook">Facebook Id url</label>
-                <input type="text" name="facebook" onChange={this.handleRadio}/>
-                <label for="linkedin">Linked in Id url</label>
-                <input type="text" name="linkedin" onChange={this.handleRadio}/>
-                <label for="file">Profile Photo</label>
-                <input name="file" type="file" className="form-control" onChange={this.handleRadio}/>
-            </div>  
+                <div className="form-group">
+                  <label for="facebook">Facebook Id url</label>
+                  <input type="text" name="facebook" onChange={this.handleRadio}/>
+                </div>
+                <div className="form-group">
+                  <label for="linkedin">Linked in Id url</label>
+                  <input type="text" name="linkedin" onChange={this.handleRadio}/>
+                </div>
+                <div className="form-group">
+                  <label for="file">Profile Photo</label>
+                  <input name="file" type="file" className="form-control" onChange={this.handleRadio}/>
+                </div>
+            </form>  
             <button type="button" className="btn btn-primary btn-block" onClick={this.onClickHandler}>Submit form</button>
 
         </div>
     </div>
-    
     </div>
       )
   }

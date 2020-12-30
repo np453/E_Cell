@@ -57,10 +57,8 @@ class Sponsor extends React.Component {
                 <input name="file" type="file" className="form-control" onChange={this.handleRadio}/>
             </div>  
             <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
-
         </div>
     </div>
-    
     </div>
       )
   }

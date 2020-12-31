@@ -10,8 +10,7 @@ const team = new mongoose.Schema({
     facebook:String,
     linkedin:String,
     file: {
-        data: Buffer, 
-        contentType: String 
+        filename:String 
     },
 });
 

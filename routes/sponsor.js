@@ -6,7 +6,7 @@ const bp = require('body-parser');
 const sponsor = require('../model/sponsor');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'media/test')
+    cb(null, 'media/sponsor')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )
@@ -16,18 +16,16 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }).single('file')
 
 router.post('/', upload , async(req, res) => {
-        let fullpath = req.file.path;
-        let imgData  = fs.readFileSync(fullpath).toString('base64')
-        let work = new sponsor({
+        
+        let company = new sponsor({
             
             name:req.body.name,
             file : {
-                data : Buffer.from(imgData, 'base64'),
-                contentType : req.file.mimetype
+              filename:req.file.filename
             }
         })
-        const savedWork = await work.save()
-        res.send(savedWork)
+        const savedcompany = await company.save()
+        res.send(savedcompany)
         
           if (err instanceof multer.MulterError) {
               return res.status(500).json(err)
@@ -39,13 +37,19 @@ router.post('/', upload , async(req, res) => {
 });
 
 router.get('/', async(req, res) => {
-  const allWorks = await speaker.find({ })
-  const works = [];
-  for(let i=0;i<allWorks.length;i++) {
-    works.push( {name:allWorks[i].name, buffer:Buffer.from(allWorks[i].file.data.buffer, 'base64').toString('base64'), contentType:allWorks[i].file.contentType} )
+  const allcompanies = await sponsor.find({ })
+  const companies = [];
+  for(let i=0;i<allcompanies.length;i++) {
+    companies.push( {_id:allcompanies[i]._id,name:allcompanies[i].name,filename:allcompanies[i].file.filename} )
   }
-  res.send(works)
+  res.send(companies)
     
  });
+ router.put('/delete/:id',async(req,res)=>{
+  const data = await sponsor.findByIdAndRemove({_id:req.params.id}, console.log("deleted") )
+  res.send(data);
+
+})
+
 
 module.exports = router;

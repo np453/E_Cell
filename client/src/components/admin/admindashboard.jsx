@@ -36,7 +36,7 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("http://localhost:1212/gallery", data, config)
+        axios.post("http://localhost:1212/front", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
@@ -145,8 +145,8 @@ class Dashboard extends Component {
                 <div className="col-md-10">
                     <div className="row">
                         <div className="col m-2 border rounded p-3">
-                            {/*Image Upload form*/}
-                            <h3 className="text-center">Image upload</h3>
+                            {/* Front Image Upload form*/}
+                            <h3 className="text-center">Front Image upload</h3>
                             <div className="container">
                                 <div className="row">
                                 <div className="offset-md-3 col-md-6">
@@ -158,6 +158,9 @@ class Dashboard extends Component {
                                 </div>
                             </div>
                         </div>
+                        {/* image upload section ends */}
+
+
                         <div className="col border rounded m-2 p-3">
                             {/*Team upload form*/}
                             <h3 className="text-center">Teams api form</h3>
@@ -202,6 +205,8 @@ class Dashboard extends Component {
                             </div>
                             </div>
                         </div>
+                        {/* team api section ends */}
+
                         <div className="row m-0">
                             <div className="col border rounded m-2">
                                 {/*Speaker api form */}
@@ -227,6 +232,10 @@ class Dashboard extends Component {
                                 </div>
                                 </div>
                             </div>
+                            {/* speaker api section ends */}
+
+
+                            {/* works api section */}
                             <div className="col border rounded m-2 p-3">
                                 <h3 className="text-center">Works api form</h3>
                             <div className="container">
@@ -246,6 +255,9 @@ class Dashboard extends Component {
                                 </div>
                                 </div>
                             </div>
+                            {/* works api section ends */}
+
+
                             {/*Sponsor api form */}
                             <div className="col border rounded m-2 p-3">
                                 <h3 className="text-center">sponsors api form</h3>
@@ -264,6 +276,9 @@ class Dashboard extends Component {
                                 </div>
                             </div>
                         </div>
+                        {/* sponsor section ends */}
+
+
                     </div>
                 </div>
             </div>

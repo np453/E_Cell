@@ -4,8 +4,7 @@ const speaker = new mongoose.Schema({
     name:String,
     description:String,
     file: {
-        data: Buffer, 
-        contentType: String 
+        filename:String 
     },
 });
 

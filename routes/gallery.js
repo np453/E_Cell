@@ -7,7 +7,7 @@ const bp = require('body-parser')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'media/test')
+      cb(null, 'media/gallery')
     },
     filename: function (req, file, cb) {
       cb(null, Date.now() + '-' +file.originalname )
@@ -17,18 +17,15 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }).single('file')
 
 router.post('/', upload , async(req, res) => {
-        console.log(req.file)
-        let fullpath = req.file.path;
-        let imgData  = fs.readFileSync(fullpath).toString('base64')
+
         console.log(req.file.filename);
-        let work = new gallery({
+        let img = new gallery({
             file : {
-                data : Buffer.from(imgData, 'base64'),
-                contentType : req.file.mimetype
+                filename:req.file.filename
             }
         })
-        const savedWork = await work.save()
-        res.send(savedWork)
+        const savedimg = await img.save()
+        res.send(savedimg)
         
           if (err instanceof multer.MulterError) {
               return res.status(500).json(err)
@@ -43,10 +40,16 @@ router.post('/', upload , async(req, res) => {
   const imData = await gallery.find({ })
   const img = [];
   for(let i=0;i<imData.length;i++) {
-    img.push( {buffer:Buffer.from(imData[i].file.data.buffer, 'base64').toString('base64'), contentType:imData[i].file.contentType} )
+    img.push( {_id:imData[i]._id,filename:imData[i].file.filename} )
   }
 
   res.send(img)
 });
+
+router.put('/delete/:id',async(req,res)=>{
+  const data = await gallery.findByIdAndRemove({_id:req.params.id}, console.log("deleted") )
+  res.send(data);
+
+})
 
 module.exports = router;

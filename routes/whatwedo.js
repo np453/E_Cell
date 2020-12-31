@@ -3,10 +3,10 @@ const mongoose = require('mongoose')
 const multer = require('multer')
 const fs = require('fs');
 const bp = require('body-parser');
-const speaker = require('../model/speaker');
+const Works = require('../model/whatwedo');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'media/test')
+    cb(null, 'media/works')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )
@@ -16,14 +16,12 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }).single('file')
 
 router.post('/', upload , async(req, res) => {
-        let fullpath = req.file.path;
-        let imgData  = fs.readFileSync(fullpath).toString('base64')
-        let work = new speaker({
+    
+        let work = new Works({
             title:req.body.title,
             description:req.body.description,
             file : {
-                data : Buffer.from(imgData, 'base64'),
-                contentType : req.file.mimetype
+              filename:req.file.filename
             }
         })
         const savedWork = await work.save()
@@ -39,14 +37,19 @@ router.post('/', upload , async(req, res) => {
 });
 
 router.get('/', async(req, res) => {
-  const allWorks = await speaker.find({ })
+  const allWorks = await Works.find({ })
   const works = [];
   for(let i=0;i<allWorks.length;i++) {
-    works.push( {title:allWorks[i].title,description:allWorks[i].description,
+    works.push( {_id:allWorks[i]._id,title:allWorks[i].title,description:allWorks[i].description,
          buffer:Buffer.from(allWorks[i].file.data.buffer, 'base64').toString('base64'), contentType:allWorks[i].file.contentType} )
   }
   res.send(works)
     
  });
+ router.put('/delete/:id',async(req,res)=>{
+  const data = await Works.findByIdAndRemove({_id:req.params.id}, console.log("deleted") )
+  res.send(data);
+
+})
 
 module.exports = router;

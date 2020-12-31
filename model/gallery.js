@@ -3,8 +3,7 @@ var mongoose = require('mongoose');
 
 const gallery = new mongoose.Schema({
     file: {
-        data: Buffer, 
-        contentType: String 
+        filename:String
     },
 });
 

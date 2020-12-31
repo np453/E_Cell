@@ -6,7 +6,7 @@ const team = require("../model/team")
 const bp = require('body-parser')
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'media/test')
+    cb(null, 'media/team')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )
@@ -16,9 +16,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }).single('file')
 
 router.post('/', upload , async(req, res) => {
-        let fullpath = req.file.path;
-        let imgData  = fs.readFileSync(fullpath).toString('base64')
-        let work = new team({
+        
+        let member = new team({
             team:req.body.team,
             name:req.body.name,
             email:req.body.email,
@@ -26,12 +25,11 @@ router.post('/', upload , async(req, res) => {
             facebook:req.body.facebook,
             linkedin:req.body.linkedin,
             file : {
-                data : Buffer.from(imgData, 'base64'),
-                contentType : req.file.mimetype
+              filename:req.file.filename
             }
         })
-        const savedWork = await work.save()
-        res.send(savedWork)
+        const savedmember = await member.save()
+        res.send(savedmember)
         
           if (err instanceof multer.MulterError) {
               return res.status(500).json(err)
@@ -43,14 +41,13 @@ router.post('/', upload , async(req, res) => {
 });
 
 router.get('/', async(req, res) => {
-  const allWorks = await team.find({ })
-  const works = [];
-  for(let i=0;i<allWorks.length;i++) {
-    works.push( {_id:allWorks[i]._id,team:allWorks[i].team,name:allWorks[i].name,email:allWorks[i].email,designation:allWorks[i].designation,
-        facebook:allWorks[i].facebook,linkedin:allWorks[i].linkedin,
-         buffer:Buffer.from(allWorks[i].file.data.buffer, 'base64').toString('base64'), contentType:allWorks[i].file.contentType} )
+  const allmembers = await team.find({ })
+  const members = [];
+  for(let i=0;i<allmembers.length;i++) {
+    members.push( {_id:allmembers[i]._id,team:allmembers[i].team,name:allmembers[i].name,email:allmembers[i].email,designation:allmembers[i].designation,
+        facebook:allmembers[i].facebook,linkedin:allmembers[i].linkedin,filename:allmembers[i].file.filename} )
   }
-  res.send(works)
+  res.send(members)
     
  });
 router.put('/delete/:id',async(req,res)=>{

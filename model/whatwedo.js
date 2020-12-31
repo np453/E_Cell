@@ -5,8 +5,7 @@ const works = new mongoose.Schema({
     title:String,
     description:String,
     file: {
-        data: Buffer, 
-        contentType: String 
+        filename:String
     }
 });
 

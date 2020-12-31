@@ -12,6 +12,12 @@ const team = require('./routes/team');
 const gallery = require('./routes/gallery');
 const speaker = require('./routes/speaker');
 const whatwedo = require('./routes/whatwedo');
+const sponsor = require('./routes/sponsor');
+const front = require('./routes/front');
+const ispeaker = require('./routes/ispeaker');
+const contact = require('./routes/contact');
+const showcase = require('./routes/showcase');
+
 //Models
 
 //Port
@@ -31,15 +37,37 @@ app.use('/admin', auth);
 app.use('/team', team);
 app.use('/speaker', speaker);
 app.use('/works', whatwedo);
-app.use('/sponsor', speaker);
+app.use('/sponsor', sponsor);
+app.use('/ispeaker', ispeaker);
+app.use('/front', front);
+app.use('/contact', contact);
+app.use('/showcase', showcase);
 
 //connect to DB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));
 app.use(express.static("client/build"));
 
 
-app.get('/media/test/:file_name',(req,res)=>{
-  res.sendFile(path.join(__dirname+"/media/test/"+req.params.file_name));
+app.get('/media/front/:file_name',(req,res)=>{
+  res.sendFile(path.join(__dirname+"/media/front/"+req.params.file_name));
+})
+app.get('/media/sponsor/:file_name',(req,res)=>{
+  res.sendFile(path.join(__dirname+"/media/sponsor/"+req.params.file_name));
+})
+app.get('/media/speaker/:file_name',(req,res)=>{
+  res.sendFile(path.join(__dirname+"/media/speaker/"+req.params.file_name));
+})
+app.get('/media/team/:file_name',(req,res)=>{
+  res.sendFile(path.join(__dirname+"/media/team/"+req.params.file_name));
+})
+app.get('/media/ispeaker/:file_name',(req,res)=>{
+  res.sendFile(path.join(__dirname+"/media/ispeaker/"+req.params.file_name));
+})
+app.get('/media/works/:file_name',(req,res)=>{
+  res.sendFile(path.join(__dirname+"/media/works/"+req.params.file_name));
+})
+app.get('/media/showcase/:file_name',(req,res)=>{
+  res.sendFile(path.join(__dirname+"/media/showcase/"+req.params.file_name));
 })
 
 

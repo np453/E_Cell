@@ -13,6 +13,7 @@ import Gallery from '../components/Gallery';
 import Socials from '../components/socials'
 // import Tp from '../components/testPage';
 import SpeakersSection from '../components/speakersSection'
+import ImgCarousel from '../components/imgCarousel';
 import TopSection from '../components/topSection'
 import back_collage from '../assets/background_collage.png';
 import axios from 'axios';
@@ -138,8 +139,9 @@ const TestPage = props => {
     useEffect(() => {
         // const {data} = await axios.get('http://localhost:4444/upload/img')
         // setGallery(data)
-        ScrollReveal().reveal(".landingPage_content_heading", { duration:700, viewFactor:0.85, afterReveal:changeContent })
+        // ScrollReveal().reveal(".landingPage_content_heading", { duration:700, viewFactor:0.85, afterReveal:changeContent })
         ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
+        ScrollReveal().reveal(".change_content_section", { duration:700, viewFactor:0.85, afterReveal:changeContent })
     }, []);
     const changeContent = () => {
         for(let i=0;i<contents.length;i++) {
@@ -173,7 +175,7 @@ const TestPage = props => {
             <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={1000}
+                duration={4000}
                 pin
             >
                 { progress => (
@@ -181,7 +183,7 @@ const TestPage = props => {
                     <Timeline totalProgress={progress} paused>
                     <Tween
                         from={{ y: 250, opacity:0 }}
-                        to={{ y: 0, opacity:1 }}
+                        to={{ y: -100, opacity:1 }}
                     >
                         <div className="about__us__section container d-flex justify-content-center mt-5">
                         <div className="animation">
@@ -208,8 +210,8 @@ const TestPage = props => {
                         </div>
                         }
                     >
-                <Tween from={{ opacity: 0, y:100 }} to={{ opacity: 1 }}/>
-                <Tween to={{ y: 0, opacity:0 }} />
+                <Tween from={{ opacity: 0, y:100 }} to={{ y:-80, opacity: 1 }}/>
+                <Tween to={{ y: -50, opacity:0 }} />
                 
               </Timeline>
               <Timeline target={
@@ -218,8 +220,8 @@ const TestPage = props => {
                   </div>
                 }
               >
-                <Tween from={{ opacity: 0, y:0 }} to={{ opacity: 1 }} />
-                <Tween to={{ y: '-20%', opacity:0 }} />
+                <Tween from={{ opacity: 0, y:0 }} to={{ y:-80, opacity: 1 }} />
+                <Tween to={{ y: -50, opacity:0 }} />
               </Timeline>
             </Timeline>
           </div>
@@ -229,15 +231,15 @@ const TestPage = props => {
     <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={1000}
+                duration={3000}
                 pin
             >
                 { progress => (
                 <div className="sticky what_we_do_section">
                     <Timeline totalProgress={progress} paused>
                     <Tween
-                        from={{ y: 250, opacity:0 }}
-                        to={{ y: 0, opacity:1 }}
+                        from={{ y: 550, opacity:0 }}
+                        to={{ y: -50, opacity:1 }}
                     >
                         <div className="container d-flex justify-content-center mt-5">
                         <div className="animation">
@@ -266,20 +268,110 @@ const TestPage = props => {
         )}
       </Scene>
     </Controller>  
-    <Gallery />
-    <div className="container what_we_do_section d-flex justify-content-center">
-        <h1>Workshops</h1>
-    </div>
-        </div>
+    {/* <Gallery /> */}
+    <Controller>
+            <Scene
+                triggerHook="onLeave"
+                duration={2000}
+                pin
+            >
+                { progress => (
+                <div className="sticky what_we_do_section">
+                    <Timeline totalProgress={progress} paused>
+                    <Tween
+                        from={{ x: 50,y:-20, opacity:0 }}
+                        to={{ x: 0,y:0, opacity:1 }}
+                    >
+                      <div className="container what_we_do_section d-flex justify-content-center">
+                        <h1>Workshops</h1>
+                        
+                    </div>
+                    </Tween>
+            </Timeline>
+            
+          </div>
+        )}
+      </Scene>
+    </Controller> 
+    <Controller>
+        <Scene
+            triggerHook="onLeave"
+            duration={1000}
+            pin
+            >
+                { progress => (
+                <div className="">
+                    <Timeline totalProgress={progress} paused>
+                        <Tween
+                            from={{ x: -50,y:20, opacity:0 }}
+                            to={{ x: 0,y:0, opacity:1 }}
+                        >
+                        <div>
+                        <SpeakersSection />
+                        </div>
+                        
+                        </Tween>
+                    </Timeline>
+                </div>
+            )}
+      </Scene>    
+    </Controller>
+    <Controller>
+        <Scene
+            triggerHook="onLeave"
+            duration={800}
+            pin
+            >
+                { progress => (
+                <div className="">
+                    <Timeline totalProgress={progress} paused>
+                        <Tween
+                            from={{ x: -50,y:-20, scale:0 }}
+                            to={{ x: 0,y:200, scale:1 }}
+                            // to={{ x: 0,y:50, opacity:1 }}
+                        >
+                        <div className="vh-100 d-flex justify-content-center align-items-center">
+                        <ImgCarousel />
+                        </div>
+                        
+                        </Tween>
+                    </Timeline>
+                </div>
+            )}
+      </Scene>    
+    </Controller>
+    <Controller>
+        <Scene
+            triggerHook="onLeave"
+            duration={800}
+            pin
+            >
+                { progress => (
+                <div className="">
+                    <Timeline totalProgress={progress} paused>
+                        <Tween
+                            from={{ x: -50,y:-20, opacity:0 }}
+                            to={{ x: 0,y:200, opacity:1 }}
+                            // to={{ x: 0,y:50, opacity:1 }}
+                        >
+                        <div className="vh-100 d-flex justify-content-center align-items-center">
+                        <Socials />
+                        </div>
+                        
+                        </Tween>
+                    </Timeline>
+                </div>
+            )}
+      </Scene>    
+    </Controller>
+    <div style={{background:"black"}}className="row m-0 change_content_section vh-100">
+                            <img src={back_collage} className="img img-fluid" alt=""/>
+                            <motion.h1 className="content landingPage_content_heading"><span className={contentClass}>{content}</span></motion.h1>
+                        </div> 
         
         
-        {/* <Tp /> */}
-        <SpeakersSection />
-        <Socials />
-        <div style={{background:"black"}}className="row m-0 change_content_section">
-            <img src={back_collage} className="img img-fluid" alt=""/>
-            <motion.h1 className="content landingPage_content_heading"><span className={contentClass}>{content}</span></motion.h1>
-        </div> 
+        </div>    
+    
         </React.Fragment>
     );
 }

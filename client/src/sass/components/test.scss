@@ -8,6 +8,11 @@
         width: 0.5rem;
         height: 0.5rem;
         border-radius: 50%;
+        background-color: #343232;
+      }
+      .active {
+        background-color: #004168 !important;
+        color: #004168 !important;
       }
     }
     .carousel-control-next {

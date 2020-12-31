@@ -57,5 +57,34 @@ footer {
             
         }
     }
-    
+    .ecell_newsletter_section_footer {
+        margin-top: -6.7rem;
+        background: linear-gradient(90deg, #27C8EC 0%, #08A9DC 100%);
+        padding: 2rem;
+        border-radius:0 0.4rem 0.4rem 0.4rem;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-bottom: 0.6rem solid #5f5d5d;
+            border-left: 0.4rem solid transparent;
+            // bottom: 10px;
+            left: -7px;
+            top: 1px;
+        }
+        .paper_clip {
+            z-index: 1;
+            position: absolute;
+            right: 0.6rem;
+            top: -0.3rem;
+            transform: rotateZ(10deg);
+        }
+        .graphic_circle {
+            z-index: 0;
+            position: absolute;
+            right: 6px;
+            top: 4px;
+        }
+    }
 }

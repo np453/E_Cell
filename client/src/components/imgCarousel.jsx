@@ -6,6 +6,10 @@ class ImgCarousel extends Component {
   render() {
     return (
       <div className="container-fluid p-3">
+          <div className="img_carousel_main_heading_wrapper">
+            <h1 className="img_carousel_main_heading text-center">Words of</h1>
+            <h1 className="img_carousel_main_heading text-center">inspiration from our alumni</h1>
+          </div>
           <div className=" vh-100 carousel_container" >
         <Carousel interval={4000}>
             <Carousel.Item>

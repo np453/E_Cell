@@ -32,3 +32,27 @@
         
     }
 }
+
+.top_section_right_side_image_collage {
+    position: absolute;
+    right: 0;
+    width: 40%;
+    top: -1%;
+    .row {
+        &:nth-child(2) {
+            width: 104%;
+            margin-left: -4% !important;
+        }
+        &:nth-child(3) {
+            width: 110%;
+            margin-left: -10% !important;
+        }
+    }
+    .top_section_right_side_each_image {
+        border-radius: 1rem;
+        padding: 0.2rem;
+        object-fit: cover;
+        width: 100%;
+        height: 100%; 
+    }
+}

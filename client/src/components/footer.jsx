@@ -1,6 +1,23 @@
+import { AlexaForBusiness } from 'aws-sdk';
 import React, { Component } from 'react'
+import axios from 'axios';
 import iice_logo from '../assets/iice_logo.png'
 export default class Footer extends Component {
+    state={
+        email:""
+    }
+    handlechange=(e)=>{
+         const value =e.target.value;
+         this.setState({email:value});
+    }
+    handleSubmit=async (e)=>{
+        e.preventDefault();
+        const payload={
+            email:this.state.email
+        }
+        const data = await axios.post('/contact',payload);
+
+    }
     render() {
         return (
             <div className="footer_container">
@@ -47,8 +64,8 @@ export default class Footer extends Component {
                             <h5>Know about our activities</h5>
                             <form action="" className="form-group form_group_footer">
                                 <label htmlFor="footer_email">email</label>
-                                <input className="form-control" name="footer_email"type="text"/>
-                                <i class="fa fa-send-o"></i>
+                                <input className="form-control" value={this.state.email} onChange={this.handlechange} name="footer_email"type="text"/>
+                                <i class="fa fa-send-o" style={{cursor:'pointer',zIndex:"1"}} onClick={this.handleSubmit}></i>
                             </form>
                             </div>
                         </div>

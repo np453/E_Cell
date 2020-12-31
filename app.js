@@ -47,7 +47,7 @@ app.use('/showcase', showcase);
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));
 app.use(express.static("client/build"));
 
-
+// Media APIs
 app.get('/media/front/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/front/"+req.params.file_name));
 })

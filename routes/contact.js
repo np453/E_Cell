@@ -10,12 +10,6 @@ router.post('/', async(req, res) => {
     })
     const savedcontact = await contact.save()
     res.send(savedcontact)
-    
-      if (err instanceof multer.MulterError) {
-          return res.status(500).json(err)
-      } else if (err) {
-          return res.status(500).json(err)
-      } 
       
       return res.status(200).send(req.file)
 });

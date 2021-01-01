@@ -148,7 +148,7 @@ const TestPage = props => {
             setTimeout(() => {
                 setContent(contents[i].content)
                 setContentClass(contents[i].contentClass)
-            }, 500*i)
+            }, 200*i)
             ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
         }
     }
@@ -327,7 +327,7 @@ const TestPage = props => {
                     <Timeline totalProgress={progress} paused>
                         <Tween
                             from={{ x: -50,y:-20, scale:0 }}
-                            to={{ x: 0,y:200, scale:1 }}
+                            to={{ x: 0,y:100, scale:1 }}
                             // to={{ x: 0,y:50, opacity:1 }}
                         >
                         <div className="vh-100 d-flex justify-content-center align-items-center">
@@ -351,7 +351,7 @@ const TestPage = props => {
                     <Timeline totalProgress={progress} paused>
                         <Tween
                             from={{ x: -50,y:-20, opacity:0 }}
-                            to={{ x: 0,y:200, opacity:1 }}
+                            to={{ x: 0,y:100, opacity:1 }}
                             // to={{ x: 0,y:50, opacity:1 }}
                         >
                         <div className="vh-100 d-flex justify-content-center align-items-center">
@@ -365,9 +365,9 @@ const TestPage = props => {
       </Scene>    
     </Controller>
     <div style={{background:"black"}}className="row m-0 change_content_section vh-100">
-                            <img src={back_collage} className="img img-fluid" alt=""/>
-                            <motion.h1 className="content landingPage_content_heading"><span className={contentClass}>{content}</span></motion.h1>
-                        </div> 
+        <img src={back_collage} className="img img-fluid" alt=""/>
+        <motion.h1 className="content landingPage_content_heading"><span className={contentClass}>{content}</span></motion.h1>
+    </div> 
         
         
         </div>    

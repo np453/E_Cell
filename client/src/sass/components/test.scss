@@ -25,7 +25,7 @@
     }
   }
   .carousel_container {
-    background: rgba(#222,0.2);
+    // background: rgba(#222,0.2);
     width: 44%;
     margin: 0 auto;
 
@@ -36,7 +36,18 @@
   .carousel-control-prev-icon {
     background-image: url("../../assets/carousel_arrow_prev.svg") !important;
   }
-  
+  .img_carousel_main_heading_wrapper {
+    margin: 4rem 0;
+    .img_carousel_main_heading {
+      font-size: 56px;
+      font-family: $font-1;
+      font-weight: 700;
+      background: linear-gradient(90.11deg, #2982D3 0.12%, #84CBD0 100.83%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
 
 .img_wrapper {
   display: flex;

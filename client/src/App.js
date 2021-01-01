@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import HomePage from './views/homepage'
+import TopSection2 from './views/topSection2'
 import "./sass/main.scss"
 import Footer from './components/footer';
 import Gallery from './components/Gallery';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/admin_show" exact component={Getapi} />
           <Route path="/test" exact component={Test} />
           <Route path="/test101" exact component={TestPage} />
+          <Route path="/2" exact component={TopSection2} />
         </switch>
       </Router>
       <Footer />

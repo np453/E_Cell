@@ -13,6 +13,7 @@ import TestPage from './components/testpage';
 import Test from './components/test';
 import Dashboard from './components/admin/admindashboard';
 import Loading from './components/loading';
+import TopSection3 from './views/topSection3';
 function App() {
   return (
     <div>
@@ -27,6 +28,7 @@ function App() {
           <Route path="/test" exact component={Test} />
           <Route path="/test101" exact component={TestPage} />
           <Route path="/2" exact component={TopSection2} />
+          <Route path="/3" exact component={TopSection3} />
         </switch>
       </Router>
       <Footer />

@@ -14,7 +14,7 @@ import Socials from '../components/socials'
 // import Tp from '../components/testPage';
 import SpeakersSection from '../components/speakersSection'
 import ImgCarousel from '../components/imgCarousel';
-import TopSection from '../components/topSection'
+import TopSection from './topSection2'
 import back_collage from '../assets/background_collage.png';
 import axios from 'axios';
 import LandingPageLogo from '../assets/logo.svg'
@@ -82,59 +82,11 @@ const TestPage = props => {
             contentClass:"content-5",
             content:"Let's go."
         },
-        // {
-        //     contentClass:"content-5",
-        //     content:"energise."
-        // },
-        // {
-        //     contentClass:"content-5",
-        //     content:"staminize."
-        // },
-        {
-            contentClass:"content-5",
-            content:"entrepreneur."
-        },
-        // {
-        //     contentClass:"content-5",
-        //     content:"power up."
-        // },
-        // {
-        //     contentClass:"content-2",
-        //     content:"Innovate."
-        // },
-        // {
-        //     contentClass:"content-3",
-        //     content:"Involve."
-        // },
-        // {
-        //     contentClass:"content-4",
-        //     content:"entrepreneur."
-        // },
-        // {
-        //     contentClass:"content-5",
-        //     content:"motivate."
-        // },
-        // {
-        //     contentClass:"content-5",
-        //     content:"focus."
-        // },
-        // {
-        //     contentClass:"content-5",
-        //     content:"energise."
-        // },
-        // {
-        //     contentClass:"content-5",
-        //     content:"staminize."
-        // },
         {
             contentClass:"last_content_word",
             content:"get ready."
         },
     ]
-    const setStyles = (wrapperEl, videoEl, playbackRate) => {
-        wrapperEl.style.marginTop = `calc(180% - ${Math.floor(videoEl.duration) *playbackRate +'px'})`
-        wrapperEl.style.marginBottom = `calc(180% - ${Math.floor(videoEl.duration) *playbackRate +'px'})`
-      }
     const showArrowVisibility = () => { setArrowVisibility(true) }
     useEffect(() => {
         // const {data} = await axios.get('http://localhost:4444/upload/img')
@@ -155,7 +107,7 @@ const TestPage = props => {
     return (
         <React.Fragment>
             <div className="container-fluid landingPage p-0"> 
-            <Navbar 
+            {/* <Navbar 
        sidebarBackground="#c4c4c4" 
        sideBarItems={sideBarItems} 
     //    brand="E-cell MNNIT" 
@@ -165,7 +117,7 @@ const TestPage = props => {
        linkColor="#222"
        linkOpacity="0.7"
        navBrandLogo={LandingPageLogo}
-       />
+       /> */}
             <TopSection />
             <div className="row m-0">
                 <div className="col-md-12 d-flex justify-content-center">
@@ -351,7 +303,7 @@ const TestPage = props => {
                     <Timeline totalProgress={progress} paused>
                         <Tween
                             from={{ x: -50,y:-20, opacity:0 }}
-                            to={{ x: 0,y:100, opacity:1 }}
+                            to={{ x: 0,y:200, opacity:1 }}
                             // to={{ x: 0,y:50, opacity:1 }}
                         >
                         <div className="vh-100 d-flex justify-content-center align-items-center">

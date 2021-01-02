@@ -17,11 +17,15 @@
         bottom: -0.5rem;
     }
     .follow_us {
-        margin: 1rem 0 0 0;
+        // margin: 1rem 0 0 0;
+        
+        
     }
     .social_media_container {
-        padding: 0 0 0 0.5rem;
-        
+        // padding: 0 0 0 0.5rem;
+        h1 {
+            color: rgba(white, 1);
+        }
         .social_media_item {
             opacity: 0.9;
             &:hover {
@@ -32,8 +36,25 @@
         
     }
 }
-.bulb {
+.topSection_bulb {
  width: 300px;
+}
+.img_container_t3 {
+    width: 70% !important;
+}
+.img_container_t3_ {
+    background-color: rosybrown;
+    border-radius: 0.2rem;
+    transform: rotate3d(.5,-.866,0,15deg) rotate(-1deg);
+}
+.t3_main_heading {
+    // height: 40vh;
+    // margin: 4rem;
+    h1 {
+        color: rgba(white, 0.9);
+        font-size: 60px;
+        font-weight: 900;
+    }
 }
 .landing_page_top_section__container2 {
     background-color: black;

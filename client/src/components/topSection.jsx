@@ -33,7 +33,7 @@ class TopSection extends Component {
                     <div className="col-md-6 p-3">
                         <div className="row">
                         <h1 className="landing_page_main_heading">
-                            Entrepreneurship Cell<br/>
+                            ENTREPRENEURSHIP CELL<br/>
                             MNNIT Allahabad
                         </h1>
                         </div>

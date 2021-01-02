@@ -29,7 +29,7 @@ class Socials extends Component {
                     </div>
                     <div className="col-md-4">
                         <h4>instagram followers</h4>
-                        <h5>950+</h5>
+                        <h5>1050+</h5>
                     </div>
                     <div className="col-md-4">
                         <h4>Linkedin followers</h4>

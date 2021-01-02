@@ -19,7 +19,9 @@ class Dashboard extends Component {
             facebook:"",
             linkedin:"",
             file: null,
-            sponsorName:""
+            sponsorName:"",
+            cite:"",
+            carouseldescription:""
           }
     }
     handleRadio = ({currentTarget:input}) => {
@@ -103,7 +105,7 @@ class Dashboard extends Component {
                       console.log('upload fail')
                   })
                 }
-                onClickHandlerWorks = () => {
+         onClickHandlerWorks = () => {
                     const data = new FormData() 
                       
                       data.append('title', this.state.data.workTitle)
@@ -121,7 +123,32 @@ class Dashboard extends Component {
                       .catch(err => { // then print response status
                           console.log('upload fail')
                       })
-                    }
+        }
+        onClickHandlercarousel=()=>{
+            const data = new FormData() 
+                      
+                      data.append('cite', this.state.data.cite)
+                      data.append('description', this.state.data.carouseldescription)
+                      data.append('file', this.state.data.file)
+                      console.log(this.state.data.carouseldescription)
+                      const config = {
+                          headers: {
+                              'content-type': 'multipart/form-data'
+                          }
+                      };
+                    axios.post("http://localhost:1212/carousel", data, config)
+                      .then(res => { // then print response status
+                        console.log('upload success')
+                      })
+                      .catch(err => { // then print response status
+                          console.log('upload fail')
+                      })
+        }
+
+
+
+
+
     render() {
         if(!Cookies.get('admintoken')) {
             this.setState({redirect:false})
@@ -159,6 +186,28 @@ class Dashboard extends Component {
                             </div>
                         </div>
                         {/* image upload section ends */}
+
+                        {/* carousel upload section */}
+                        <div className="col border rounded m-2 p-3">
+                                <h3 className="text-center">Carousel api form</h3>
+                            <div className="container">
+                                    <div className="row">
+                                    <div className="offset-md-3 col-md-6">
+                                        <div className="form-group files d-flex flex-column">
+                                            
+                                            <label for="cite">Cite</label>
+                                            <input type="text" name="cite" onChange={this.handleRadio} />
+                                            <label for="carouseldescription">Description</label>
+                                            <input type="text" name="carouseldescription" onChange={this.handleRadio} />
+                                            <label for="file">Photo</label>
+                                            <input name="file" type="file" className="form-control" onChange={this.handleRadio}/>
+                                        </div>  
+                                        <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandlercarousel}>Upload</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        {/* carousel upload section ends */}
 
 
                         <div className="col border rounded m-2 p-3">
@@ -216,12 +265,12 @@ class Dashboard extends Component {
                                     <div className="">
                                         <div className="form-group files">
                                             <div className="form-group">
-                                            <label style={{width:"95px"}} className="p-2" for="name">Name</label>
-                                            <input type="text" name="name" onChange={this.handleRadio}/>
+                                            <label style={{width:"95px"}} className="p-2" for="speakerName">Name</label>
+                                            <input type="text" name="speakerName" onChange={this.handleRadio}/>
                                             </div>
                                             <div className="form-group">
-                                            <label style={{width:"95px"}} className="p-2" for="description">Description</label>
-                                            <input type="text" name="description" onChange={this.handleRadio}/>
+                                            <label style={{width:"95px"}} className="p-2" for="speakerDescription">Description</label>
+                                            <input type="text" name="speakerDescription" onChange={this.handleRadio}/>
                                             </div>
                                             <label className="p-2" for="file">Photo</label>
                                             <input name="file" type="file" className="form-control" onChange={this.handleRadio}/>
@@ -243,10 +292,10 @@ class Dashboard extends Component {
                                     <div className="offset-md-3 col-md-6">
                                         <div className="form-group files d-flex flex-column">
                                             
-                                            <label for="name">Title</label>
-                                            <input type="text" name="title" onChange={this.handleRadio} />
-                                            <label for="description">Description</label>
-                                            <input type="text" name="description" onChange={this.handleRadio} />
+                                            <label for="workTitle">Title</label>
+                                            <input type="text" name="workTitle" onChange={this.handleRadio} />
+                                            <label for="workDescription">Description</label>
+                                            <input type="text" name="workDescription" onChange={this.handleRadio} />
                                             <label for="file">Photo</label>
                                             <input name="file" type="file" className="form-control" onChange={this.handleRadio}/>
                                         </div>  
@@ -265,8 +314,8 @@ class Dashboard extends Component {
                                     <div className="row">
                                     <div className="">
                                         <div className="form-group files d-flex flex-column">
-                                            <label for="name">Name</label>
-                                            <input type="text" name="name" onChange={this.handleRadio} />
+                                            <label for="sponsorName">Name</label>
+                                            <input type="text" name="sponsorName" onChange={this.handleRadio} />
                                             <label for="file">Photo</label>
                                             <input name="file" type="file" className="form-control" onChange={this.handleRadio}/>
                                         </div>  

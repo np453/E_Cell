@@ -32,7 +32,17 @@
         
     }
 }
-
+.bulb {
+ width: 300px;
+}
+.landing_page_top_section__container2 {
+    background-color: black;
+    .landing_page_main_heading2 {
+        color: rgba(white, 1);
+        // font-family: $font-1;
+        font-size: 70px;
+    }
+}
 .top_section_right_side_image_collage {
     position: absolute;
     right: 0;

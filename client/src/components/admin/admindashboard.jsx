@@ -158,7 +158,7 @@ class Dashboard extends Component {
         return (
             <div className="admin_dashboard container-fluid p-0 bg-white">
             <div className="container">
-            <div className="row">
+            <div className="row" style={{width:"100%"}}>
                 <div className="col-md-2 api_list">
                     <h3>API</h3>
                     <div className="d-flex flex-column">

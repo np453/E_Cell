@@ -35,7 +35,7 @@ const Navbar = props => {
                     <div className="collapse navbar-collapse">
                     <div className="navbar-nav ml-auto">
                         {props.navLinks.map(m => 
-                            <Link to={m.link} className="p-2" style={{color:props.linkColor, textDecoration:"none", opacity:props.linkOpacity}}><div className="nav-links">{m.navLinkName}</div></Link>    
+                            <Link to={m.link} className="p-2" style={{color:props.linkColor, textDecoration:"none", opacity:props.linkOpacity, fontFamily:"sans-serif"}}><div className="nav-links">{m.navLinkName}</div></Link>    
                         )}
                     </div>
                     </div>

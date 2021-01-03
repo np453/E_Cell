@@ -1,8 +1,6 @@
 .speaker_wrapper{
-    border-radius: 2%;
-    background-color: #010220;
-    border: 4px solid #1D2B5C;
-    width: 30% !important;
+    border-radius: 1%;
+    // border: 4px solid #1D2B5C;
     .speaker_heading{
         color:#fff;
         font-size: 1.5rem;
@@ -16,15 +14,26 @@
 .speaker_img{
     border-radius: 50%;
     width: 40%;
-
 }
-.hr_line{
-    background-color:#265178;
+hr {
+    width: 100%;
     height: 2px;
-    width: 80%;
-    justify-content: center;
-}
-.content_wrapper{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid white;
+    background-color: white;
+    z-index: 1;
+  }
+// .hr_line{
+//     background-color:#265178;
+//     height: 2px;
+//     width: 80%;
+//     justify-content: center;
+// }
+.speaker_card_content_{
     color: #fff;
-    text-align: center;
+    text-align: justify;
+    padding: 0.2rem;
+    font-size: 13px;
 }

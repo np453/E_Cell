@@ -15,6 +15,7 @@ import Dashboard from './components/admin/admindashboard';
 import Loading from './components/loading';
 import TopSection3 from './views/topSection3';
 import SpeakerPageContainer from './containers/SpeakerPageContainer';
+import Donate_jon_btn from './components/join_donate_btn'
 function App() {
   return (
     <div>
@@ -30,7 +31,7 @@ function App() {
           <Route path="/test101"  exact component={TestPage} />
           <Route path="/2"  exact component={TopSection2} />
           <Route path="/3"  exact component={TopSection3} />
-          <Route path="/speakers"  exact component={SpeakerPageContainer} />
+          <Route path="/speaker"  exact component={SpeakerPageContainer} />
         </switch>
       </Router>
       <Footer />

@@ -96,7 +96,7 @@
   .blockquote {
     position: absolute;
     z-index: -1;
-    bottom: 20%;
+    bottom: 6rem;
     left: 0;
     svg {
       transform: scale(0.5);
@@ -485,7 +485,7 @@
     }
   }
   
-  @media (min-width:1150px) {
+  @media only screen and (min-width:1150px) {
     .carousel {
       width: 60%;
       height: 59vh;
@@ -515,7 +515,7 @@
     }
     .item_content {
       // margin-top: 8rem;
-      margin-top: 6rem;
+      margin-top: 12.5%;
       p {
         text-align: justify;
         // margin-top: 2rem;
@@ -531,10 +531,10 @@
      }
     }
     .blockquote {
-      bottom: 16%;
+      bottom: 20%;
       left: 2%;
       svg {
-        transform: scale(0.55);
+        transform: scale(0.75);
       }
     }
   }

@@ -2,7 +2,7 @@ import React from 'react'
 import s1 from '../assets/s1.png'
 const Speaker = props => {
     return (
-        <div style={{backgroundColor:props.cardColor, border:"3px solid"+props.borderColor}} className="col-md-3 speaker_wrapper m-3">
+        <div style={{backgroundColor:props.cardColor, border:"3px solid"+props.borderColor, opacity:"0.85"}} className="col-md-3 speaker_wrapper m-3">
             <div className="row m-0 justify-content-center">
                 <img className="m-3 img img-fluid speaker_img" src={s1}></img>
             </div>

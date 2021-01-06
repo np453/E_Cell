@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import blob from '../assets/speakers_blob.png';
+import { Link } from 'react-router-dom';
 class SpeakersSection extends Component {
     state = {
         speakers : []
@@ -107,7 +108,7 @@ class SpeakersSection extends Component {
           </div>
               <div className="row d-flex justify-content-center">
               <div className="button_wrapper">
-                <button>view all speakers</button>
+                <Link to="/speaker"><button>view all speakers</button></Link>
               </div>
               </div>
             </div>

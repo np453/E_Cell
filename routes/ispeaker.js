@@ -38,7 +38,7 @@ router.get('/', async(req, res) => {
   const allimgs = await ispeaker.find({ })
   const imgs = [];
   for(let i=0;i<allimgs.length;i++) {
-    imgs.push( {_id:allimgs[i]._id,filename:allimgs[i].file.filename} )
+    imgs.push( {_id:allimgs[i]._id,route:"ispeaker",filename:allimgs[i].file.filename} )
   }
   res.send(imgs)
     

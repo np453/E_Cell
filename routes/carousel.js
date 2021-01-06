@@ -34,7 +34,7 @@ router.get('/', async(req, res) => {
   const allsets = await sets.find({ })
   const Sets = [];
   for(let i=0;i<allsets.length;i++) {
-    Sets.push( {_id:allsets[i]._id,cite:allsets[i].cite,description:allsets[i].description,
+    Sets.push( {_id:allsets[i]._id,route:"carousel",cite:allsets[i].cite,description:allsets[i].description,
          buffer:Buffer.from(allsets[i].file.data.buffer, 'base64').toString('base64'), contentType:allsets[i].file.contentType} )
   }
   res.send(Sets)

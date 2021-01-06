@@ -44,7 +44,7 @@ router.get('/', async(req, res) => {
   const allmembers = await team.find({ })
   const members = [];
   for(let i=0;i<allmembers.length;i++) {
-    members.push( {_id:allmembers[i]._id,team:allmembers[i].team,name:allmembers[i].name,email:allmembers[i].email,designation:allmembers[i].designation,
+    members.push( {_id:allmembers[i]._id,route:"team",team:allmembers[i].team,name:allmembers[i].name,email:allmembers[i].email,designation:allmembers[i].designation,
         facebook:allmembers[i].facebook,linkedin:allmembers[i].linkedin,filename:allmembers[i].file.filename} )
   }
   res.send(members)

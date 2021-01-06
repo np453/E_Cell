@@ -40,7 +40,7 @@ router.post('/', upload , async(req, res) => {
   const imData = await gallery.find({ })
   const img = [];
   for(let i=0;i<imData.length;i++) {
-    img.push( {_id:imData[i]._id,filename:imData[i].file.filename} )
+    img.push( {_id:imData[i]._id,route:"gallery",filename:imData[i].file.filename} )
   }
 
   res.send(img)

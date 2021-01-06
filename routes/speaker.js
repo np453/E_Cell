@@ -43,7 +43,7 @@ router.get('/', async(req, res) => {
   const allspeakers = await speaker.find({ })
   const people = [];
   for(let i=0;i<allspeakers.length;i++) {
-    people.push( {_id:allspeakers[i]._id,name:allspeakers[i].name,description:allspeakers[i].description,filename:allspeakers[i].file.filename} )
+    people.push( {_id:allspeakers[i]._id,route:"speaker",name:allspeakers[i].name,description:allspeakers[i].description,filename:allspeakers[i].file.filename} )
   }
   res.send(peoples)
     

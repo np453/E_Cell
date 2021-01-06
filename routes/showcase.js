@@ -40,7 +40,7 @@ router.get('/', async(req, res) => {
   const allimgs = await showcase.find({ })
   const imgs = [];
   for(let i=0;i<allimgs.length;i++) {
-    imgs.push( {_id:allimgs[i]._id,name:allimgs[i].name,quote:allimgs[i].quote,filename:allimgs[i].file.filename} )
+    imgs.push( {_id:allimgs[i]._id,route:"showcase",name:allimgs[i].name,quote:allimgs[i].quote,filename:allimgs[i].file.filename} )
   }
   res.send(imgs)
     

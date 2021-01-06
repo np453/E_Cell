@@ -7,6 +7,7 @@ import { Redirect } from 'react-router-dom';
 class Dashboard extends Component {
     state={
         redirect:true,
+        show:[],
         data : {
             team:"",
             name:"",
@@ -144,8 +145,18 @@ class Dashboard extends Component {
                           console.log('upload fail')
                       })
         }
+    handleclick_getapi=async(route)=>{
+        const data= await axios.get(`http://localhost:1212/${route}`);
+        this.setState({show:data.data});
+        console.log(this.state.show);
 
+    }
 
+     handledelete=async(id,route)=>{
+        await axios.put(`http://localhost:1212/${route}/delete/${id}`);
+        const data = axios.get(`/${route}`);
+        this.setState({show:data.data});
+     }
 
 
 
@@ -162,12 +173,25 @@ class Dashboard extends Component {
                 <div className="col-md-2 api_list">
                     <h3>API</h3>
                     <div className="d-flex flex-column">
-                <Link to="/admin_image"><span className="dashboard_Link">Gallery</span></Link>
-                <Link to="/admin_team"><span className="dashboard_Link">Team API</span></Link>
-                <Link to="/admin_speaker"><span className="dashboard_Link">Speaker API</span></Link>
-                <Link to="/admin_works"><span className="dashboard_Link">Works API</span></Link>
-                <Link to="/admin_sponsor"><span className="dashboard_Link">Sponsors API</span></Link>
-            </div>
+                        <span onclick={this.handleclick_getapi("ispeaker")} className="dashboard_Link">Speaker Showcase</span>
+                        <span onclick={this.handleclick_getapi("front")} className="dashboard_Link">Front Section</span>
+                        <span onclick={this.handleclick_getapi("carousel")} className="dashboard_Link">Carousel</span>
+                        <span onclick={this.handleclick_getapi("team")} className="dashboard_Link">Team API</span>
+                        <span onclick={this.handleclick_getapi("speaker")} className="dashboard_Link">Speaker API</span>
+                        <span onclick={this.handleclick_getapi("works")} className="dashboard_Link">Works API</span>
+                        <span onclick={this.handleclick_getapi("sponsor")} className="dashboard_Link">Sponsors API</span>
+                    </div>
+                    <div className="row">
+                            <div className="d-flex flex-row">
+                            {this.state.show.map(m=>
+                                <div className="">
+                                    <span>{m[3]}</span><br></br>
+                                    {/* <span>Update</span> */}
+                                    <span className="ml-2" onClick={this.handledelete(m._id,m.route)}>Delete</span>
+                                </div>
+                                )}
+                             </div>
+                    </div>
                 </div>
                 <div className="col-md-10">
                     <div className="row">

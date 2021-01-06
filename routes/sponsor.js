@@ -40,7 +40,7 @@ router.get('/', async(req, res) => {
   const allcompanies = await sponsor.find({ })
   const companies = [];
   for(let i=0;i<allcompanies.length;i++) {
-    companies.push( {_id:allcompanies[i]._id,name:allcompanies[i].name,filename:allcompanies[i].file.filename} )
+    companies.push( {_id:allcompanies[i]._id,route:"sponsor",name:allcompanies[i].name,filename:allcompanies[i].file.filename} )
   }
   res.send(companies)
     

@@ -40,7 +40,7 @@ router.get('/', async(req, res) => {
   const allWorks = await Works.find({ })
   const works = [];
   for(let i=0;i<allWorks.length;i++) {
-    works.push( {_id:allWorks[i]._id,title:allWorks[i].title,description:allWorks[i].description,
+    works.push( {_id:allWorks[i]._id,route:"works",title:allWorks[i].title,description:allWorks[i].description,
          buffer:Buffer.from(allWorks[i].file.data.buffer, 'base64').toString('base64'), contentType:allWorks[i].file.contentType} )
   }
   res.send(works)

@@ -45,7 +45,7 @@ router.get('/', async(req, res) => {
   for(let i=0;i<allspeakers.length;i++) {
     people.push( {_id:allspeakers[i]._id,route:"speaker",name:allspeakers[i].name,description:allspeakers[i].description,filename:allspeakers[i].file.filename} )
   }
-  res.send(peoples)
+  res.send(people)
     
  });
  router.put('/delete/:id',async(req,res)=>{

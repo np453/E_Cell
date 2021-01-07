@@ -40,9 +40,9 @@ app.use('/speaker', speaker);
 app.use('/works', whatwedo);
 app.use('/sponsor', sponsor);
 app.use('/ispeaker', ispeaker);
-app.use('/front', front);
+// app.use('/front', front);
 app.use('/contact', contact);
-app.use('/showcase', showcase);
+// app.use('/showcase', showcase);
 app.use('/carousel', carousel);
 
 //connect to DB

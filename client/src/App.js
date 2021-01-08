@@ -22,7 +22,7 @@ function App() {
     <div>
        <Router>
         <switch>
-        <Route path="/lg" exact component={Loading} />
+          <Route path="/lg" exact component={Loading} />
           <Route path="/" exact  component={HomePage} />
           <Route path="/admin_login" exact component={Login} />
           {/* <Route path="/admin_register"  component={Register} /> */}

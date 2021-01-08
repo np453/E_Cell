@@ -1,6 +1,11 @@
+import Axios from 'axios';
 import React, { Component } from 'react';
-
+import axios from 'axios';
 class Hexagon extends Component {
+    componentDidMount = async() => {
+      const { data:speaker } = await axios.get('/ispeaker');
+      console.log(speaker)
+    }
     render() {
         return (
             <div className="row d-flex justify-content-center">

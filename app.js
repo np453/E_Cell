@@ -35,7 +35,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json());
-app.use(helmet());
+// app.use(helmet());
 app.use('/gallery', gallery);
 app.use('/admin', auth);
 app.use('/team', team);
@@ -43,37 +43,45 @@ app.use('/speaker', speaker);
 app.use('/works', whatwedo);
 app.use('/sponsor', sponsor);
 app.use('/ispeaker', ispeaker);
-// app.use('/front', front);
+app.use('/front', front);
 app.use('/contact', contact);
-// app.use('/showcase', showcase);
+app.use('/showcase', showcase);
 app.use('/carousel', carousel);
 
 //connect to DB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));
-app.use(express.static("client/build"));
-app.get('*', (req,res) =>{
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
+// app.use(express.static("client/build"));
+// app.get('*', (req,res) =>{
+//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
+// });
 
+app.use(express.static(path.join(__dirname, 'media')));
+// app.use('/static/front/', express.static(__dirname+'/media/front/'));
 // Media APIs
 app.get('/media/front/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/front/"+req.params.file_name));
 })
+
 app.get('/media/sponsor/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/sponsor/"+req.params.file_name));
 })
+
 app.get('/media/speaker/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/speaker/"+req.params.file_name));
 })
+
 app.get('/media/team/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/team/"+req.params.file_name));
 })
+
 app.get('/media/ispeaker/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/ispeaker/"+req.params.file_name));
 })
+
 app.get('/media/works/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/works/"+req.params.file_name));
 })
+
 app.get('/media/showcase/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/showcase/"+req.params.file_name));
 })

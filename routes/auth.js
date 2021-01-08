@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
 dotenv.config();
 
+// Post route for admin login
 router.post('/', async (req, res) => {
     //checking email
     const user = await User.findOne({email:req.body.email});
@@ -20,6 +21,7 @@ router.post('/', async (req, res) => {
     
 });
 
+// register route for admin register
 router.post('/register', async(req, res) => {
     //checking if a user already exists in the database
     const emailExist = await User.findOne({email:req.body.email});

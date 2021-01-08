@@ -399,6 +399,7 @@ class Dashboard extends Component {
                         <li onClick={()=>this.handleclick_getapi("speaker")} className="list-group-item dashboard_Link">Speaker API</li>
                         <li onClick={()=>this.handleclick_getapi("works")} className="list-group-item dashboard_Link">Works API</li>
                         <li onClick={()=>this.handleclick_getapi("sponsor")} className="list-group-item dashboard_Link">Sponsors API</li>
+                        <li onclick={()=>this.handleclick_getapi("contact")} className="list-group-item dashboard_Link"> Get Email subs</li>
                     </ul>
                 </div>
                 <div className="col-md-10">

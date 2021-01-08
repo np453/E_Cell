@@ -15,7 +15,7 @@ export default class Footer extends Component {
         const payload={
             email:this.state.email
         }
-        const data = await axios.post('/contact',payload);
+        await axios.post('/contact',payload);
 
     }
     render() {

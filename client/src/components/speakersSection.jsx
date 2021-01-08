@@ -29,6 +29,7 @@ class SpeakersSection extends Component {
               <div class="hexIn">
                 <a class="hexLink" href="#">
                   <div class='img_speakers' style={{backgroundImage:`url(${ base + 'media/ispeaker/' + m.filename})`}}></div>
+                  <img src={ base + 'media/ispeaker/' + m.filename } alt=""/>
                   {console.log(m)}
                   <h1 id="demo1">This is a title</h1>
                   <p id="demo2">Some sample text about the article this hexagon leads to</p>

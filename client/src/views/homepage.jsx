@@ -127,7 +127,7 @@ const TestPage = props => {
             <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={4000}
+                duration={6000}
                 pin
             >
                 { progress => (
@@ -162,7 +162,7 @@ const TestPage = props => {
                         </div>
                         }
                     >
-                <Tween from={{ opacity: 0, y:100 }} to={{ y:-80, opacity: 1 }}/>
+                <Tween from={{ opacity: 0, y:100 }} to={{ y:-100, opacity: 1 }}/>
                 <Tween to={{ y: -50, opacity:0 }} />
                 
               </Timeline>
@@ -172,7 +172,7 @@ const TestPage = props => {
                   </div>
                 }
               >
-                <Tween from={{ opacity: 0, y:0 }} to={{ y:-80, opacity: 1 }} />
+                <Tween from={{ opacity: 0, y:0 }} to={{ y:-100, opacity: 1 }} />
                 <Tween to={{ y: -50, opacity:0 }} />
               </Timeline>
             </Timeline>
@@ -231,7 +231,7 @@ const TestPage = props => {
                 <div className="sticky what_we_do_section">
                     <Timeline totalProgress={progress} paused>
                     <Tween
-                        from={{ x: 50,y:-20, opacity:0 }}
+                        from={{ x: -50,y:-20, opacity:0 }}
                         to={{ x: 0,y:0, opacity:1 }}
                     >
                       <div className="container what_we_do_section d-flex justify-content-center">

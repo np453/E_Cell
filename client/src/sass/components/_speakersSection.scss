@@ -185,6 +185,9 @@ opacity: 1;
   }
 
 @media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
+  .speakers_section_main_page_heading {
+    font-size: 50px;
+  }
   #hexGrid{
       padding-bottom: 5.5%;
       font-size: 13px;
@@ -227,4 +230,25 @@ opacity: 1;
       font-size: 8px;
   }
 }
+}
+
+@media (max-width: 600px) and (min-width:496px) { /* <- 3-2  hexagons per row */
+  .speakers_section_main_page_heading {
+    font-size: 46px;
+  }
+}
+@media (max-width: 496px) and (min-width:438px) { /* <- 3-2  hexagons per row */
+  .speakers_section_main_page_heading {
+    font-size: 40px;
+  }
+}
+@media (max-width: 438px) and (min-width:344px) { /* <- 3-2  hexagons per row */
+  .speakers_section_main_page_heading {
+    font-size: 30px;
+  }
+}
+@media (max-width: 344px) and (min-width:250px) { /* <- 3-2  hexagons per row */
+  .speakers_section_main_page_heading {
+    font-size: 25px;
+  }
 }

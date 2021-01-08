@@ -5,6 +5,9 @@ import linkedin from '../assets/linkedin.svg'
 import tweet from '../assets/twitter.svg'
 import axios from 'axios'
 import gsap from "gsap";
+import i1 from '../assets/s1.png'
+import i2 from '../assets/s2.png'
+import i3 from '../assets/s3.png'
 import { Controls, PlayState, Tween } from 'react-gsap';
 import { motion } from 'framer-motion';
 import {base} from '../base';
@@ -57,6 +60,7 @@ class TopSection2 extends Component {
                 sidebarBackground="#333" 
                 sideBarItems={this.state.sideBarItems} 
                 navLinks={this.state.navLinks} 
+                brand="E-Cell MNNIT Allahabad"
                 navbarColor="#000" 
                 navbarBrandColor="#fff"
                 linkColor="#fff"
@@ -68,7 +72,7 @@ class TopSection2 extends Component {
                 </svg>
                 <div className=" main_page_heading_container container2">
                 <div className="background_networks_section m-0">
-                  <img style={{zIndex:0}} className="img img-fluid" src={network} alt=""/>
+                  {/* <img style={{zIndex:0}} className="img img-fluid" src={network} alt=""/> */}
                         {/* <h1 className="text-center landing_page_main_heading2">
                         ENTREPRENEURSHIP CELL
                         </h1>

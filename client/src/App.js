@@ -12,6 +12,7 @@ import Navbar from './components/naavbar';
 import TestPage from './components/testpage';
 import Test from './components/test';
 import Dashboard from './components/admin/admindashboard';
+import TopSection from './components/topSection';
 import Loading from './components/loading';
 import TopSection3 from './views/topSection3';
 function App() {
@@ -25,7 +26,7 @@ function App() {
           {/* <Route path="/admin_register" exact component={Register} /> */}
           <Route path="/admin_dashboard" exact component={Dashboard} />
           <Route path="/admin_show" exact component={Getapi} />
-          <Route path="/test" exact component={Test} />
+          <Route path="/test" exact component={TopSection} />
           <Route path="/test101" exact component={TestPage} />
           <Route path="/2" exact component={TopSection2} />
           <Route path="/3" exact component={TopSection3} />

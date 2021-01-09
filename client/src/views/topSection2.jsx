@@ -13,9 +13,11 @@ import { motion } from 'framer-motion';
 import {base} from '../base';
 import Navbar from '../components/naavbar';
 import network from '../assets/network.png';
+import homePage_banner_video from '../assets/homePage_banner_video.mp4';
 // import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 class TopSection2 extends Component {
     state = {
+        displayNav:false,
         rightSideImages : [],
         navLinks : [
             {
@@ -52,11 +54,13 @@ class TopSection2 extends Component {
         // console.log(rightSideImages)
         // this.setState({rightSideImages});
     }
-    
+    showNav = () => {
+      this.setState({ displayNav:true })
+    }
     render() {
         return (
             <div className="vh-100 container-fluid p-0 landing_page_top_section__container2">
-                <Navbar 
+                {this.state.displayNav && <Navbar 
                 sidebarBackground="#333" 
                 sideBarItems={this.state.sideBarItems} 
                 navLinks={this.state.navLinks} 
@@ -66,21 +70,11 @@ class TopSection2 extends Component {
                 linkColor="#fff"
                 linkOpacity="0.9"
                 // navBrandLogo={LandingPageLogo}
-                />
-                <svg className="page_curve" viewBox="0 0 1920 186" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="946" cy="317.5" rx="1376" ry="317.5" fill="black"/>
-                </svg>
+                />}
                 <div className=" main_page_heading_container container2">
                 <div className="background_networks_section m-0">
-                  {/* <img style={{zIndex:0}} className="img img-fluid" src={network} alt=""/> */}
-                        {/* <h1 className="text-center landing_page_main_heading2">
-                        ENTREPRENEURSHIP CELL
-                        </h1>
-                        <h1 className="text-center landing_page_main_heading2">
-                            MNNIT Allahabad
-                        </h1> */}
                         <div className="row d-flex justify-content-center m-0">
-                        <motion.div
+                        {/* <motion.div
                           initial={{ rotate: -180, scale: 0 }}
                           animate={{ rotate: 0, scale: 1 }}
                           transition={{
@@ -128,7 +122,11 @@ class TopSection2 extends Component {
                         </svg>
                           </div>
                         </div>
-                        </motion.div>                 
+                        </motion.div>                  */}
+                        <div className="embed-responsive homepage_banner_container embed-responsive-16by9">
+                          <video style={{pointerEvents:"none"}} autoPlay loop muted={true} src={ homePage_banner_video } className="homepage-video embed-responsive-item" onEnded={this.showNav}></video>
+                        </div>
+                        
                         </div>
     
 

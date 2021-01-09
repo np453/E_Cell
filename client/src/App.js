@@ -17,10 +17,13 @@ import TopSection3 from './views/topSection3';
 import SpeakerPageContainer from './containers/SpeakerPageContainer';
 import Donate_jon_btn from './components/join_donate_btn'
 import TopSection from './components/topSection';
+
+import ScrollToTop from './common/ScrollToTop';
 function App() {
   return (
     <div>
        <Router>
+        <ScrollToTop>
         <switch>
           <Route path="/lg" exact component={Loading} />
           <Route path="/" exact  component={HomePage} />
@@ -34,6 +37,7 @@ function App() {
           <Route path="/3"  exact component={TopSection3} />
           <Route path="/speaker"  exact component={SpeakerPageContainer} />
         </switch>
+        </ScrollToTop>
       </Router>
       <Footer />
     </div>

@@ -12,6 +12,7 @@ class Dashboard extends Component {
             team:"",
             name:"",
             speakerName:"",
+            speakerTitle:"",
             workTitle:"",
             workDescription:"",
             speakerDescription:"",
@@ -21,18 +22,23 @@ class Dashboard extends Component {
             linkedin:"",
             file: null,
             sponsorName:"",
+            sponsorlink:"",
             cite:"",
             carouseldescription:""
           },
           showApi:false,
           hideForms:false
     }
+
+    // handle radio for input change
     handleRadio = ({currentTarget:input}) => {
         const data = {...this.state.data};
         data[input.name] = input.value;
         if(input.name === 'file')data[input.name] = input.files[0]
         this.setState({ data });
     };
+
+    // speaker showcase onclick handler
     onClickHandler = () => {
         const data = new FormData() 
           data.append('file', this.state.data.file)
@@ -49,6 +55,8 @@ class Dashboard extends Component {
               console.log('upload fail')
           })
     }
+
+    // team onclick handler
     onClickHandlerTeam = () => {
         const data = new FormData() 
           data.append('team', this.state.data.team)
@@ -71,10 +79,13 @@ class Dashboard extends Component {
               console.log('upload fail')
           })
         }
+
+        // speaker onclick handler
     onClickHandlerSpeaker = () => {
             const data = new FormData() 
               
               data.append('name', this.state.data.speakerName)
+              data.append('title', this.state.data.speakerTitle)
               data.append('description', this.state.data.speakerDescription)
               data.append('file', this.state.data.file)
               const config = {
@@ -90,10 +101,13 @@ class Dashboard extends Component {
                   console.log('upload fail')
               })
         }
+
+        // sponsor onclick handler
     onClickHandlerSponsor = () => {
                 const data = new FormData() 
                   
                   data.append('name', this.state.data.sponsorName)
+                  data.append('sponsorlink', this.state.data.sponsorlink)
                   data.append('file', this.state.data.file)
                   const config = {
                       headers: {
@@ -108,6 +122,8 @@ class Dashboard extends Component {
                       console.log('upload fail')
                   })
         }
+
+        // works onclick handler
     onClickHandlerWorks = () => {
                     const data = new FormData() 
                       
@@ -127,6 +143,8 @@ class Dashboard extends Component {
                           console.log('upload fail')
                       })
         }
+
+        // carousel data onclick handler
     onClickHandlercarousel=()=>{
             const data = new FormData() 
                       
@@ -147,13 +165,14 @@ class Dashboard extends Component {
                           console.log('upload fail')
                       })
         }
+
+        // onclick handler for retriving apis and displaying them
     handleclick_getapi=async(route)=>{
         const data= await axios.get(`http://localhost:1212/${route}/`);
         this.setState({show:data.data, showApi:true, hideForms:true});
-        console.log(this.state.show);
-
-
         }
+
+        // onclick handler for deleting apis
      handledelete=async(id,route)=>{
         await axios.put(`http://localhost:1212/${route}/delete/${id}`);
         const data = axios.get(`/${route}`);
@@ -164,12 +183,14 @@ class Dashboard extends Component {
         }
 
     render() {
+        // redirect if not logged in as admin
         if(!Cookies.get('admintoken')) {
             this.setState({redirect:false})
             return <Redirect to="/admin_login"/>
         }
-        console.log(this.state.data.workTitle, this.state.data.workDescription)
+        // element for displaying either api list or the API forms
         const el = this.state.showApi === true ?  
+            // API list element starts
             <div className="container">
                 <div className="row">
                 <ul className="list-group m-3">
@@ -183,7 +204,9 @@ class Dashboard extends Component {
             </div>
             <button onClick={this.loadForms} className="btn m-3 btn-info">Back to forms</button>
             </div>
+            // API list element ends
         :
+        // form elements begins
         <div className="row">
         <div className="col m-2 border rounded p-3">
 
@@ -307,6 +330,10 @@ class Dashboard extends Component {
                             <input type="text" name="speakerName" onChange={this.handleRadio}/>
                             </div>
                             <div className="form-group">
+                            <label style={{width:"95px"}} className="p-2" for="speakerTitle">Speaker Title</label>
+                            <input type="text" name="speakerTitle" onChange={this.handleRadio}/>
+                            </div>
+                            <div className="form-group">
                             <label style={{width:"95px"}} className="p-2" for="speakerDescription">Description</label>
                             <input type="text" name="speakerDescription" onChange={this.handleRadio}/>
                             </div>
@@ -366,6 +393,11 @@ class Dashboard extends Component {
                         <div className="form-group files d-flex flex-column">
                             <label for="sponsorName">Name</label>
                             <input type="text" name="sponsorName" onChange={this.handleRadio} />
+
+                            <label for="sponsorlink">Sponsor URL</label>
+                            <input type="text" name="sponsorlink" onChange={this.handleRadio} />
+
+
                             <label className="mt-3 border rounded p-1" for="file">
                                 <svg className="file_upload_button" width="34" height="27" viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M27.9218 8.71697C26.373 2.54679 20.1156 -1.19951 13.9454 0.34935C9.12353 1.55979 5.62233 5.72723 5.26159 10.6855C1.83788 11.2501 -0.479912 14.4833 0.0846966 17.907C0.586607 20.9507 3.22398 23.1798 6.30874 23.1675H11.5445V21.0732H6.30874C3.99546 21.0732 2.12015 19.1979 2.12015 16.8846C2.12015 14.5714 3.99546 12.6961 6.30874 12.6961C6.88709 12.6961 7.35588 12.2273 7.35588 11.6489C7.35065 6.444 11.5659 2.22034 16.7708 2.21517C21.2764 2.21065 25.155 5.39594 26.0265 9.8164C26.1126 10.2578 26.4708 10.595 26.9166 10.6541C29.7793 11.0618 31.7695 13.713 31.3619 16.5757C30.9959 19.1463 28.8011 21.0603 26.2045 21.0732H22.0159V23.1675H26.2045C30.2528 23.1553 33.5246 19.8636 33.5123 15.8153C33.5021 12.4455 31.1955 9.51666 27.9218 8.71697Z" fill="#686868"/>
@@ -385,12 +417,16 @@ class Dashboard extends Component {
 
 
     </div>
+    // API form element ends
+
+
         return (
             <div className="admin_dashboard container-fluid p-0 bg-white">
             <div className="container">
             <div className="row">
                 <div className="col-md-2 mt-3 p-0 api_list">
                     <h3 className="text-center">API</h3>
+                    {/* List displaying Api Including delete feature */}
                     <ul className="admin_dashboard_api_list list-group">
                         <li onClick={()=>this.handleclick_getapi("ispeaker")} className="list-group-item dashboard_Link">Speaker Showcase</li>
                         {/* <li onClick={()=>this.handleclick_getapi("front")} className="list-group-item dashboard_Link">Front Section</li> */}
@@ -402,6 +438,7 @@ class Dashboard extends Component {
                         <li onclick={()=>this.handleclick_getapi("contact")} className="list-group-item dashboard_Link"> Get Email subs</li>
                     </ul>
                 </div>
+                {/* displaying element */}
                 <div className="col-md-10">
                     {el}
                 </div>

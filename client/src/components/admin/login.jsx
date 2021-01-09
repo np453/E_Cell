@@ -14,6 +14,8 @@ class Login extends Component {
         id:"",
         redirect:false
     }
+
+    // onclick handler for admin login
     handlesubmit=async(e)=>{
         e.preventDefault();
         const admindata={
@@ -25,15 +27,17 @@ class Login extends Component {
         this.setState({id:jwt_decode(data)._id})
         Cookies.set('admintoken',this.state.id, { expires: 1 });
         this.setState({redirect:true})
-        // return <Redirect to="/admin_dashboard"/>
 
     }
+
+    // on change handler for input fields
     handleInputChange = ({currentTarget:input}) => {
         const data = {...this.state.data};
         data[input.name] = input.value;
         this.setState({ data });
     };
     render() {
+        // redirecting to admin dashboard post login
         if(this.state.redirect) {
             
             return <Redirect to="/admin_dashboard"/>

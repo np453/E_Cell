@@ -7,7 +7,7 @@ const frontimgs = require('../model/front');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'media/front')
+    cb(null, 'client/public/media/front')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )

@@ -1,5 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+
+// customized navbar
+// Navbar props->
+// navBrandLogo
+// brand
+// navlinks -> Array of [link,navLinkName]
+// navbarColor
+// navbarBrandColor
+// sideBarItems
+// sidebarBackground
+
 const Navbar = props => {
     const [isOpen, setOpen] = useState(false);
     const [width, setWidth] = useState(0);

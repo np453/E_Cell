@@ -4,14 +4,12 @@ import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 import ScrollReveal from 'scrollreveal';
 import { VideoScroll } from 'react-video-scroll'
-// import video from '../assets/756501.webm';
 import img_1 from '../assets/img_about_us_1.png';
 import img_2 from '../assets/img_about_us_2.png'
 import ren_logo from '../assets/ren_logo.svg'
 import ren_logo_1 from '../assets/ren_logo_1.png'
 import Gallery from '../components/Gallery';
 import Socials from '../components/socials'
-// import Tp from '../components/testPage';
 import SpeakersSection from '../components/speakersSection'
 import ImgCarousel from '../components/imgCarousel';
 import TopSection from './topSection2'
@@ -20,6 +18,8 @@ import axios from 'axios';
 import LandingPageLogo from '../assets/logo.svg'
 import Navbar from '../components/naavbar';
 
+
+// homepage component
 const TestPage = props => {
     const { scrollYProgress } = useViewportScroll()
     const [content, setContent] = useState("get ready.")

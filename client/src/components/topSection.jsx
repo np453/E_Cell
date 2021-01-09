@@ -5,6 +5,8 @@ import linkedin from '../assets/linkedin.svg'
 import tweet from '../assets/twitter.svg'
 import axios from 'axios'
 import {base} from '../base';
+
+// topsection with white theme
 class TopSection extends Component {
     state = {
         rightSideImages : []

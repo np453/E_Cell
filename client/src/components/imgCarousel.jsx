@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {Carousel} from 'react-bootstrap'
 import s1 from '../assets/s1.png'
 import bq from '../assets/blockquote.svg';
+
+
+// Carousel section
 class ImgCarousel extends Component {
   render() {
     return (
@@ -12,7 +15,9 @@ class ImgCarousel extends Component {
           </div>
           <div className=" vh-100 carousel_container" >
         <Carousel interval={4000}>
+            {/* carousel items start */}
             <Carousel.Item>
+                {/* carousel template */}
                 <div className="carousel_item_wrapper">
                     <div className="container">
                         <div className="row m-0 img_wrapper">
@@ -26,7 +31,6 @@ class ImgCarousel extends Component {
                         </svg>
                     </div>
                         <div className="item_content">
-                            {/* <h1>Devang Singh</h1> */}
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Odio aliquid in ad quaerat! Excepturi aspernatur cupiditate officia veritatis, 
@@ -93,6 +97,7 @@ class ImgCarousel extends Component {
                     </div>
                 </div>
             </Carousel.Item>
+            {/* carousel items end */}
         </Carousel>
       </div>
       </div>

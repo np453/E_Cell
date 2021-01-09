@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Carousel} from 'react-bootstrap'
-import s1 from '../assets/s1.png'
-import bq from '../assets/blockquote.svg';
+
+//test component
 class Test extends Component {
   render() {
     return (

@@ -3,14 +3,17 @@ import axios from 'axios';
 import blob from '../assets/speakers_blob.png';
 import { Link } from 'react-router-dom';
 import { base } from '../base';
+
+// speaker Section 
 class SpeakersSection extends Component {
     state = {
         speakers : []
     }
+
     componentDidMount = async()=> {
+      // getting images for the hex grid
       const { data:speaker } = await axios.get('/ispeaker');
       this.setState({speakers:speaker})
-      console.log(this.state.speakers);
     }
     
     render() {
@@ -24,6 +27,7 @@ class SpeakersSection extends Component {
             <div className="col-md-10 speakers_container">
             <div class="grid">
           <ul id="hexGrid">
+            {/* maaping each speaker */}
             {speakers.map( m =>
               <li class="hex">
               <div class="hexIn">

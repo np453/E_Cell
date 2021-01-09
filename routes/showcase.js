@@ -7,7 +7,7 @@ const showcase = require('../model/showcase');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'media/showcase')
+    cb(null, 'client/public/media/showcase')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )

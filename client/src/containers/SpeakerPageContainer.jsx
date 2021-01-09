@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Speaker from '../common/speakerPageCard';
 import s1 from '../assets/s1.png'
 import Navbar from '../components/naavbar'
+
+// speaker container page
 class SpeakerPageContainer extends Component {
     navLinks = [
         {

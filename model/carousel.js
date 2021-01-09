@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-
+//model for carousel data
 const set = new mongoose.Schema({
     cite:String,
     description:String,

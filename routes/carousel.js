@@ -8,7 +8,7 @@ const sets = require('../model/carousel');
 // Multer for storing image 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'media/carousel')
+    cb(null, 'client/public/media/carousel')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )

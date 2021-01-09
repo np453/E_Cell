@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-
+// model for the ecell works for whatwedo section
 const works = new mongoose.Schema({
     title:String,
     description:String,

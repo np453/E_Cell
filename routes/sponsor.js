@@ -6,7 +6,7 @@ const bp = require('body-parser');
 const sponsor = require('../model/sponsor');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'media/sponsor')
+    cb(null, 'client/public/media/sponsor')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )
@@ -20,6 +20,7 @@ router.post('/', upload , async(req, res) => {
         let company = new sponsor({
             
             name:req.body.name,
+            sponsorlink:req.body.sponsorlink,
             file : {
               filename:req.file.filename
             }
@@ -40,7 +41,7 @@ router.get('/', async(req, res) => {
   const allcompanies = await sponsor.find({ })
   const companies = [];
   for(let i=0;i<allcompanies.length;i++) {
-    companies.push( {_id:allcompanies[i]._id,route:"sponsor",name:allcompanies[i].name,filename:allcompanies[i].file.filename} )
+    companies.push( {_id:allcompanies[i]._id,route:"sponsor",name:allcompanies[i].name,sponsorlink:allcompanies[i].sponsorlink,filename:allcompanies[i].file.filename} )
   }
   res.send(companies)
     

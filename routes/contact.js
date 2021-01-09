@@ -3,12 +3,12 @@ const mail = require('../model/email');
 const { route } = require('./auth');
 
 //post route for email subscription
-
+// Pre initialized mongo document required
 
 router.post('/' , async(req,res)=>{
     const data=await mail.find({});
     console.log(req.body)
-    mail.findByIdAndUpdate({_id:data[0]._id}, 
+    mail.findByIdAndUpdate({_id:data[0]._id},  //Pushing each email element in the array
         { $push: {
                 emails:{
                     "email":req.body.email,

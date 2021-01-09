@@ -6,7 +6,7 @@ const bp = require('body-parser');
 const Works = require('../model/whatwedo');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'media/works')
+    cb(null, 'client/public/media/works')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )

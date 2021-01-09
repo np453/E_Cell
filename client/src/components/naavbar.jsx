@@ -1,6 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 
+// customized navbar
+// Navbar props->
+// navBrandLogo
+// brand
+// navlinks -> Array of [link,navLinkName]
+// navbarColor
+// navbarBrandColor
+// sideBarItems
+// sidebarBackground
 //https://stackoverflow.com/questions/54715462/react-scroll-how-to-scroll-to-a-specific-targeted-component-when-clicking-on-n
 import Scroll from 'react-scroll'
 const ScrollLink = Scroll.ScrollLink

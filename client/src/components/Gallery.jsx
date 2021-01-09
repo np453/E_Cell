@@ -7,7 +7,10 @@ class Testpage extends Component {
   state = {
     galleryImg : []
 }
+
+// horizontal gallery section 
  componentDidMount = async() => {
+  //  retriving images on component did mount
   const {data:Img} = await axios.get("http://localhost:4444/upload/img")
   this.setState({galleryImg:Img})
     gsap.registerPlugin(ScrollTrigger);

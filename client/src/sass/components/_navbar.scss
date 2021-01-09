@@ -1,6 +1,6 @@
 .navbar__container {
     z-index: 0;
-    // font-family: $font-1;
+    font-family: $font-6;
     background: rgba(black, 1);
     color: rgba(white, 0.9);
     .sideBar {
@@ -15,6 +15,12 @@
         transition: all 0.3s;
         .sideBar-item {
             padding: 2rem;
+        }
+    }
+    .navbar-nav {
+        .nav-links {
+            font-family: $font-6;
+            font-weight: 600;
         }
     }
 }

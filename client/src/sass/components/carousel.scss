@@ -157,10 +157,11 @@
         transform: scale(0.3);
       }
     }
+    
   }
   @media (min-width:300px) and (max-width:425px) {
     .carousel {
-      width: 88%;
+      width: 87%;
       height: 65vh;
     }
     .carousel-inner {
@@ -213,6 +214,14 @@
       left: -22%;
       svg {
         transform: scale(0.4);
+      }
+    }
+    .img_carousel_main_heading_wrapper {
+      margin: 4rem 0;
+      .img_carousel_main_heading {
+        font-size: 25px;
+        font-family: $font-1;
+        font-weight: 700;
       }
     }
   }

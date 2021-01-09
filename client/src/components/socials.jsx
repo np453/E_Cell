@@ -19,10 +19,10 @@ class Socials extends Component {
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M206.062 25.2563C207.367 26.1494 209.968 26.1184 211.171 25.0108C212.394 23.8838 210.761 23.7106 209.764 23.745C208.997 23.7717 207.562 24.1517 207.999 22.8276C208.387 21.6527 210.518 22.2507 210.696 20.961C209.092 20.6734 207.325 20.777 206.139 22.0377C205.281 22.949 204.84 24.42 206.062 25.2563Z" fill="#9C3D30"/>
                 </svg>
                 </div>
-                <div className="row d-flex justify-content-center">
+                <div className="row m-0 d-flex justify-content-center">
                 <h2>We’re 10k strong</h2>
                 </div>
-                <div className="row">
+                <div className="row m-0">
                     <div className="col-md-4">
                         <h4>facebook followers</h4>
                         <h5>10500+</h5>

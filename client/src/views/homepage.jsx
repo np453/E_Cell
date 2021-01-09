@@ -19,7 +19,7 @@ import back_collage from '../assets/background_collage.png';
 import axios from 'axios';
 import LandingPageLogo from '../assets/logo.svg'
 import Navbar from '../components/naavbar';
-import Hexagon from '../components/speaker_hex';
+
 const TestPage = props => {
     const { scrollYProgress } = useViewportScroll()
     const [content, setContent] = useState("get ready.")

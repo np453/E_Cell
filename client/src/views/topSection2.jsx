@@ -19,6 +19,7 @@ class TopSection2 extends Component {
     state = {
         displayNav:false,
         rightSideImages : [],
+        showScroll : false,
         navLinks : [
             {
               navLinkName:"About us",
@@ -54,13 +55,14 @@ class TopSection2 extends Component {
         // console.log(rightSideImages)
         // this.setState({rightSideImages});
     }
-    showNav = () => {
-      this.setState({ displayNav:true })
+    showScroll = () => {
+      this.setState({ showScroll:true })
     }
     render() {
+      // document.body.style.overflow = this.state.showScroll === false ? "hidden" : "visible"
         return (
             <div className="vh-100 container-fluid p-0 landing_page_top_section__container2">
-                {this.state.displayNav && <Navbar 
+                {<Navbar 
                 sidebarBackground="#333" 
                 sideBarItems={this.state.sideBarItems} 
                 navLinks={this.state.navLinks} 
@@ -124,7 +126,7 @@ class TopSection2 extends Component {
                         </div>
                         </motion.div>                  */}
                         <div className="embed-responsive homepage_banner_container embed-responsive-16by9">
-                          <video style={{pointerEvents:"none"}} autoPlay loop muted={true} src={ homePage_banner_video } className="homepage-video embed-responsive-item" onEnded={this.showNav}></video>
+                          <video style={{pointerEvents:"none"}} autoPlay muted={true} src={ homePage_banner_video } className="homepage-video embed-responsive-item" onEnded={() => this.setState({ showScroll:true })}></video>
                         </div>
                         
                         </div>

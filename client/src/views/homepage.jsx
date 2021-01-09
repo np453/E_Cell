@@ -22,7 +22,7 @@ import Navbar from '../components/naavbar';
 // homepage component
 const TestPage = props => {
     const { scrollYProgress } = useViewportScroll()
-    const [content, setContent] = useState("get ready.")
+    const [content, setContent] = useState("Involve.")
     const [contentClass, setContentClass] = useState("first_content_word")
     const [showArrow, setArrowVisibility] = useState(false)
     const scaleAnim = useTransform(scrollYProgress, [0, 0.33], [1, 1.5])
@@ -59,10 +59,6 @@ const TestPage = props => {
       ]
     const contents = [
         {
-            contentClass:"first_content_word",
-            content:"get ready."
-        },
-        {
             contentClass:"content-2",
             content:"Involve."
         },
@@ -93,6 +89,7 @@ const TestPage = props => {
         // setGallery(data)
         // ScrollReveal().reveal(".landingPage_content_heading", { duration:700, viewFactor:0.85, afterReveal:changeContent })
         ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
+        ScrollReveal().reveal('.ren_logo_1', { viewFactor:1, scale:1.2 })
         ScrollReveal().reveal(".change_content_section", { duration:700, viewFactor:0.85, afterReveal:changeContent })
     }, []);
     const changeContent = () => {
@@ -100,7 +97,7 @@ const TestPage = props => {
             setTimeout(() => {
                 setContent(contents[i].content)
                 setContentClass(contents[i].contentClass)
-            }, 200*i)
+            }, 300*i)
             ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
         }
     }
@@ -208,8 +205,8 @@ const TestPage = props => {
                         }
                     >
                         
-                <Tween from={{  y:0, opacity:0 }} to={{ opacity:1 }}/>
-                <Tween to={{ y: -100, opacity:1 }} />
+                <Tween from={{  y:0, opacity:0, transform: 'rotate(10deg)' }} to={{ opacity:1 }}/>
+                <Tween to={{ y: -100, opacity:1, transform: 'rotate(0deg)' }} />
                 <Tween to={{ y: -180, opacity:0 }} />
                 
               </Timeline>

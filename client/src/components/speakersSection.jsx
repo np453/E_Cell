@@ -7,19 +7,21 @@ import { base } from '../base';
 // speaker Section 
 class SpeakersSection extends Component {
     state = {
-        speakers : []
+        speakers : [],
+        loadingSpeakers : true
     }
 
     componentDidMount = async()=> {
       // getting images for the hex grid
       const { data:speaker } = await axios.get('/ispeaker');
-      this.setState({speakers:speaker})
+      this.setState({speakers:speaker, loadingSpeakers : false })
     }
     
     render() {
       const speakers = this.state.speakers === undefined ? null : this.state.speakers
-        return (
-            <div className="speakers_section_container container d-flex justify-content-center flex-column">
+      const el = this.state.loadingSpeakers === true ? <div style={{ height:"60vh", color:"white" }} className="container d-flex justify-content-center align-items-center"><h2>Loading...</h2></div>
+      :
+      <div className="speakers_section_container container d-flex justify-content-center flex-column">
                 <div className="col-md-12 d-flex justify-content-center">
                     <h1 className="speakers_section_main_page_heading">Prominant Speakers</h1>
                 </div> 
@@ -34,9 +36,6 @@ class SpeakersSection extends Component {
                 <a class="hexLink" href="#">
                   <div class='img_speakers' style={{backgroundImage:`url(${ base + 'media/ispeaker/' + m.filename})`}}></div>
                   <img src={ base + 'media/ispeaker/' + m.filename } alt=""/>
-                  {console.log(m)}
-                  <h1 id="demo1">This is a title</h1>
-                  <p id="demo2">Some sample text about the article this hexagon leads to</p>
                 </a>
               </div>
             </li>
@@ -52,6 +51,9 @@ class SpeakersSection extends Component {
               </div>
               </div>
             </div>
+      
+        return (
+            el
         );
     }
 }

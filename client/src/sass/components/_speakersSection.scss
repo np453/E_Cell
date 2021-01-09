@@ -216,6 +216,7 @@ opacity: 1;
 
 @media (max-width: 600px) { /* <- 2-1  hexagons per row */
 #hexGrid{
+  display: block;
   padding-bottom: 11.2%;
   font-size: 12px;
 }

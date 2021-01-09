@@ -81,11 +81,11 @@ export default class Footer extends Component {
                         </div>
                     </div>
                     {/* website credits */}
-                    <div className="row m-0 mt-5">
+                    {false && <div className="row m-0 mt-5">
                         <div className="col-md-12 developer__section d-flex justify-content-center">
                             <h6>Developed by&nbsp;&nbsp;<span>Devang</span>&nbsp;&nbsp;and&nbsp;&nbsp; <span>Naman</span></h6>
                         </div>
-                    </div>
+                    </div>}
                 </footer>
             </div>
         )

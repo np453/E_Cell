@@ -140,12 +140,12 @@ const TestPage = props => {
                         <div className="about__us__section container d-flex justify-content-center mt-5">
                         <div className="animation">
                         <h1 className="text-center">About us</h1>
-                        <p className="text-center">E-Cell MNNIT was launched in October 2014 with a vision to channelize
+                        <p className="">E-Cell MNNIT was launched in October 2014 with a vision to channelize
                              and nurture college students by guiding their aspirations, efforts and 
                              passion towards entrepreneurship. It aims to deliver technical know-how of 
                              launching, running and thriving any venture, thus encouraging the students 
                              to think out of the box and evolve an effective B-Plan. 
-                            <div className="col-md-12 text-center">
+                            <div className="col-md-12 p-0">
                             We believe that entrepreneurship is the key that can unlock India's latent 
                             inventive potential. It will not only push India to the forefront of the world
                              but also help raise the quality of life in
@@ -156,7 +156,7 @@ const TestPage = props => {
                         </div>
                         </div>
                     </Tween>
-                    <Timeline target={
+                    {/* <Timeline target={
                         <div className="container d-flex justify-content-center">
                             <img src={img_1} className="img img-fluid img_1" alt=""/>
                         </div>
@@ -165,8 +165,8 @@ const TestPage = props => {
                 <Tween from={{ opacity: 0, y:100 }} to={{ y:-100, opacity: 1 }}/>
                 <Tween to={{ y: -50, opacity:0 }} />
                 
-              </Timeline>
-              <Timeline target={
+              </Timeline> */}
+              {/* <Timeline target={
                   <div className="container d-flex justify-content-center">
                     <img src={img_2} className="img img-fluid img_1" alt=""/>
                   </div>
@@ -174,7 +174,7 @@ const TestPage = props => {
               >
                 <Tween from={{ opacity: 0, y:0 }} to={{ y:-100, opacity: 1 }} />
                 <Tween to={{ y: -50, opacity:0 }} />
-              </Timeline>
+              </Timeline> */}
             </Timeline>
           </div>
         )}
@@ -255,8 +255,8 @@ const TestPage = props => {
                 <div className="">
                     <Timeline totalProgress={progress} paused>
                         <Tween
-                            from={{ x: -50,y:20, opacity:0 }}
-                            to={{ x: 0,y:0, opacity:1 }}
+                            from={{ x: -50,y:30, opacity:0 }}
+                            to={{ x: 0,y:10, opacity:1 }}
                         >
                         <div>
                         <SpeakersSection />

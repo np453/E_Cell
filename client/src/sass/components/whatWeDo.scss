@@ -78,3 +78,20 @@
         }
     } 
 }
+
+@media (max-width:320px) {
+    .what_we_do_section {
+        height: 30vh;
+        h4 {
+            font-size: 18px;
+            margin-bottom: 2.5rem;
+        }
+        h1 {
+            font-size: 33px;
+            margin-top: 3rem;
+        }
+        p {
+            font-size: 16px;
+        }
+    } 
+}

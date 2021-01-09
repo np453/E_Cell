@@ -39,8 +39,7 @@ export default class Footer extends Component {
                                 <img src={iice_logo} className="img img-fluid" alt=""/>
                             </div>
                         </div>
-                        {/* Website links  */}
-                        <div className="col-md-2">
+                        <div className="footer_links col-md-2">
                             <h5>Important Links</h5>
                             <h6>Our Team</h6>
                             <h6>Our Sponsers</h6>
@@ -48,7 +47,8 @@ export default class Footer extends Component {
                             <h6>Past Speakers</h6>
                         </div>
                         {/* social Media links */}
-                        <div className="col-md-2">
+                        
+                        <div className="social_media_links_footer col-md-2">
                             <h5>Social Media</h5>
                             <h6>Facebook</h6>
                             <h6>Instagram</h6>
@@ -75,7 +75,7 @@ export default class Footer extends Component {
                             <form action="" className="form-group form_group_footer">
                                 <label htmlFor="footer_email">email</label>
                                 <input className="form-control" value={this.state.email} onChange={this.handlechange} name="footer_email"type="text"/>
-                                <i class="fa fa-send-o" style={{cursor:'pointer',zIndex:"1"}} onClick={this.handleSubmit}></i>
+                                <i className="fa fa-send-o" style={{cursor:'pointer',zIndex:"1"}} onClick={this.handleSubmit}></i>
                             </form>
                             </div>
                         </div>
@@ -83,8 +83,7 @@ export default class Footer extends Component {
                     {/* website credits */}
                     <div className="row m-0 mt-5">
                         <div className="col-md-12 developer__section d-flex justify-content-center">
-
-                            Developed by&nbsp;&nbsp;<span>Devang</span>&nbsp;&nbsp;and&nbsp;&nbsp; <span>Naman</span>
+                            <h6>Developed by&nbsp;&nbsp;<span>Devang</span>&nbsp;&nbsp;and&nbsp;&nbsp; <span>Naman</span></h6>
                         </div>
                     </div>
                 </footer>

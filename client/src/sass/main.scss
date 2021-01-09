@@ -16,7 +16,11 @@
 @import "./components/carousel";
 
 @import "./components/scroll";
+@import "./components/modal";
 
-// body {
-//     background-color: black !important;
-// }
+body {
+    // background-color: black !important;
+}
+html {
+    scroll-behavior: smooth;
+}

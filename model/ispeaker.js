@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-
+//model for speaker display imgs for hex grid
 const ispeaker = new mongoose.Schema({
     
     file: {

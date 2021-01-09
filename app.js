@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+// const helmet = require('helmet')
 const multer = require('multer')
 const cors = require('cors');
 const AWS = require('aws-sdk');
@@ -7,6 +8,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const path = require('path');
+
+// Routes
 const auth = require('./routes/auth');
 const team = require('./routes/team');
 const gallery = require('./routes/gallery');
@@ -18,8 +21,6 @@ const ispeaker = require('./routes/ispeaker');
 const contact = require('./routes/contact');
 const showcase = require('./routes/showcase');
 const carousel = require('./routes/carousel');
-
-//Models
  
 //Port
 const PORT = 1212;
@@ -33,6 +34,8 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json());
+
+// Routes initialization
 app.use('/gallery', gallery);
 app.use('/admin', auth);
 app.use('/team', team);
@@ -52,31 +55,38 @@ app.get('*', (req,res) =>{
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
+
 // Media APIs
+
 app.get('/media/front/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/front/"+req.params.file_name));
 })
+
 app.get('/media/sponsor/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/sponsor/"+req.params.file_name));
 })
+
 app.get('/media/speaker/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/speaker/"+req.params.file_name));
 })
+
 app.get('/media/team/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/team/"+req.params.file_name));
 })
+
 app.get('/media/ispeaker/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/ispeaker/"+req.params.file_name));
 })
+
 app.get('/media/works/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/works/"+req.params.file_name));
 })
+
 app.get('/media/showcase/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/showcase/"+req.params.file_name));
 })
 
 
-// app.use(express.json());
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

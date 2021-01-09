@@ -1,3 +1,5 @@
+// top section scss with hite theme
+
 .landing_page_top_section__container {
     background-color: rgba(white, 1);
     height: 90vh;
@@ -10,6 +12,7 @@
         font-family: $font-1;
         color: #3E3E3E;
         line-height: 1.5;
+        
     }
     .page_curve {
         position: absolute;
@@ -57,6 +60,36 @@
     }
 }
 .landing_page_top_section__container2 {
+    .background_networks_section {
+        img {
+            position: absolute;
+            bottom: 14%;
+            left: 16%;
+            animation: network 1.4s forwards;
+            animation-delay: 0.35s;
+            clip-path: circle(0%);
+        }
+        @keyframes network {
+            0% { clip-path: circle(0%); }
+            100% { clip-path: circle(75%); }
+          }
+    }
+    .logo {
+        background-color: rgba(rgb(10, 94, 80), 1);
+        border-radius: 50%;
+        z-index: 1;
+        padding: 1rem;
+    }
+    // .logo_border_1 {
+    //     padding: 1.6rem;
+    //     border: 3px solid rgba(white, 0.2);
+    //     border-radius: 50%;
+    // }
+    // .logo_border_2 {
+    //     padding: 3rem;
+    //     border: 3px solid rgba(white, 0.2);
+    //     border-radius: 50%;
+    // }
     background-color: black;
     .landing_page_main_heading2 {
         color: rgba(white, 1);
@@ -64,6 +97,7 @@
         font-size: 70px;
     }
 }
+
 .top_section_right_side_image_collage {
     position: absolute;
     right: 0;
@@ -87,3 +121,4 @@
         height: 100%; 
     }
 }
+

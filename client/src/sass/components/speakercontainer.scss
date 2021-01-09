@@ -1,0 +1,100 @@
+// speaker page /card scss
+
+
+.speaker_page_main_background {
+    
+    background-image: url('../../assets/speaker_back.png');
+    background-repeat: no-repeat;
+    // background-position: 10% 70%;
+    padding-bottom: 10rem;
+    background-size: cover;
+    background-color: black;
+    background-attachment: fixed;
+
+    .speaker_page_main_heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 34vh;
+        h1 {
+            font-size: 66px;
+            font-family: $font-1;
+            background: linear-gradient(150deg, rgb(17, 130, 91) -105.01%, rgb(105, 205, 116) -5.01%, rgb(17, 130, 91) 94.99%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    .end_section_speaker_page {
+        margin-top: 3rem;
+        font-family: $font-6;
+        color: rgba(white, 0.8);
+        a {
+            color: rgba(white, 0.8);
+            text-decoration: none;
+            font-size: 1.18rem;
+            font-weight: 500;
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(rgb(31, 104, 146), 0.3);
+            }
+        }
+        h5 {
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(rgb(31, 104, 146), 0.3);
+            }
+        }
+    }
+}
+.all_speakers {
+    margin-bottom: 16rem;
+}
+.speaker_wrapper{
+    border-radius: 1%;
+    background-color: rgba(rgb(24, 24, 24), 1);
+    transform: translateY(10px);
+    .speaker_heading{
+        color:rgba(#fff, 0.7);
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+        font-family: $font-6;
+    }
+    .speaker_designation{
+        color:rgba(#fff, 0.7);
+        font-size: 0.9rem;
+    }
+    img {
+        border-top-right-radius: 1%;
+        border-top-left-radius: 1%;
+        opacity: 0.9;
+    }
+    .learn_more {
+        margin: 1.3rem auto;
+        text-align: center;
+        transition: all 0.3s ease;
+        color: rgba(white, 0.6);
+        span {
+            padding: 0.2rem;
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(rgb(31, 104, 146), 0.2);
+            }
+        }
+    }
+
+    transition: all 0.3s;
+    //on card hover
+    &:hover {
+        cursor: pointer;
+        transform: translateY(0);
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+    }
+}
+.speaker_card_content_{
+    color: rgba(#fff, 0.8);
+    text-align: center;
+    padding: 0.2rem;
+    font-size: 13px;
+    max-width: 15rem;
+    margin: 0 auto;
+}

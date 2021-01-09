@@ -8,7 +8,7 @@ const speaker = require('../model/speaker');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'media/speaker')
+    cb(null, 'client/public/media/speaker')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )
@@ -22,6 +22,7 @@ router.post('/', upload , async(req, res) => {
         let person = new speaker({
             
             name:req.body.name,
+            title:req.body.title,
             description:req.body.description,
             file : {
                 filename:req.file.filename
@@ -43,9 +44,9 @@ router.get('/', async(req, res) => {
   const allspeakers = await speaker.find({ })
   const people = [];
   for(let i=0;i<allspeakers.length;i++) {
-    people.push( {_id:allspeakers[i]._id,name:allspeakers[i].name,description:allspeakers[i].description,filename:allspeakers[i].file.filename} )
+    people.push( {_id:allspeakers[i]._id,route:"speaker",name:allspeakers[i].name,title:allspeakers[i].title,description:allspeakers[i].description,filename:allspeakers[i].file.filename} )
   }
-  res.send(peoples)
+  res.send(people)
     
  });
  router.put('/delete/:id',async(req,res)=>{

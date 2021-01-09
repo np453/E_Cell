@@ -4,14 +4,12 @@ import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 import ScrollReveal from 'scrollreveal';
 import { VideoScroll } from 'react-video-scroll'
-// import video from '../assets/756501.webm';
 import img_1 from '../assets/img_about_us_1.png';
 import img_2 from '../assets/img_about_us_2.png'
 import ren_logo from '../assets/ren_logo.svg'
 import ren_logo_1 from '../assets/ren_logo_1.png'
 import Gallery from '../components/Gallery';
 import Socials from '../components/socials'
-// import Tp from '../components/testPage';
 import SpeakersSection from '../components/speakersSection'
 import ImgCarousel from '../components/imgCarousel';
 import TopSection from './topSection2'
@@ -19,10 +17,12 @@ import back_collage from '../assets/background_collage.png';
 import axios from 'axios';
 import LandingPageLogo from '../assets/logo.svg'
 import Navbar from '../components/naavbar';
-import Hexagon from '../components/speaker_hex';
+
+
+// homepage component
 const TestPage = props => {
     const { scrollYProgress } = useViewportScroll()
-    const [content, setContent] = useState("get ready.")
+    const [content, setContent] = useState("Involve.")
     const [contentClass, setContentClass] = useState("first_content_word")
     const [showArrow, setArrowVisibility] = useState(false)
     const scaleAnim = useTransform(scrollYProgress, [0, 0.33], [1, 1.5])
@@ -59,10 +59,6 @@ const TestPage = props => {
       ]
     const contents = [
         {
-            contentClass:"first_content_word",
-            content:"get ready."
-        },
-        {
             contentClass:"content-2",
             content:"Involve."
         },
@@ -93,6 +89,7 @@ const TestPage = props => {
         // setGallery(data)
         // ScrollReveal().reveal(".landingPage_content_heading", { duration:700, viewFactor:0.85, afterReveal:changeContent })
         ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
+        ScrollReveal().reveal('.ren_logo_1', { viewFactor:1, scale:1.2 })
         ScrollReveal().reveal(".change_content_section", { duration:700, viewFactor:0.85, afterReveal:changeContent })
     }, []);
     const changeContent = () => {
@@ -100,7 +97,7 @@ const TestPage = props => {
             setTimeout(() => {
                 setContent(contents[i].content)
                 setContentClass(contents[i].contentClass)
-            }, 200*i)
+            }, 300*i)
             ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
         }
     }
@@ -127,7 +124,7 @@ const TestPage = props => {
             <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={4000}
+                duration={6000}
                 pin
             >
                 { progress => (
@@ -140,12 +137,12 @@ const TestPage = props => {
                         <div className="about__us__section container d-flex justify-content-center mt-5">
                         <div className="animation">
                         <h1 className="text-center">About us</h1>
-                        <p className="text-center">E-Cell MNNIT was launched in October 2014 with a vision to channelize
+                        <p className="">E-Cell MNNIT was launched in October 2014 with a vision to channelize
                              and nurture college students by guiding their aspirations, efforts and 
                              passion towards entrepreneurship. It aims to deliver technical know-how of 
                              launching, running and thriving any venture, thus encouraging the students 
                              to think out of the box and evolve an effective B-Plan. 
-                            <div className="col-md-12 text-center">
+                            <div className="col-md-12 p-0">
                             We believe that entrepreneurship is the key that can unlock India's latent 
                             inventive potential. It will not only push India to the forefront of the world
                              but also help raise the quality of life in
@@ -162,7 +159,7 @@ const TestPage = props => {
                         </div>
                         }
                     >
-                <Tween from={{ opacity: 0, y:100 }} to={{ y:-80, opacity: 1 }}/>
+                <Tween from={{ opacity: 0, y:100 }} to={{ y:-100, opacity: 1 }}/>
                 <Tween to={{ y: -50, opacity:0 }} />
                 
               </Timeline>
@@ -172,7 +169,7 @@ const TestPage = props => {
                   </div>
                 }
               >
-                <Tween from={{ opacity: 0, y:0 }} to={{ y:-80, opacity: 1 }} />
+                <Tween from={{ opacity: 0, y:0 }} to={{ y:-100, opacity: 1 }} />
                 <Tween to={{ y: -50, opacity:0 }} />
               </Timeline>
             </Timeline>
@@ -208,8 +205,8 @@ const TestPage = props => {
                         }
                     >
                         
-                <Tween from={{  y:0, opacity:0 }} to={{ opacity:1 }}/>
-                <Tween to={{ y: -100, opacity:1 }} />
+                <Tween from={{  y:0, opacity:0, transform: 'rotate(10deg)' }} to={{ opacity:1 }}/>
+                <Tween to={{ y: -100, opacity:1, transform: 'rotate(0deg)' }} />
                 <Tween to={{ y: -180, opacity:0 }} />
                 
               </Timeline>
@@ -231,7 +228,7 @@ const TestPage = props => {
                 <div className="sticky what_we_do_section">
                     <Timeline totalProgress={progress} paused>
                     <Tween
-                        from={{ x: 50,y:-20, opacity:0 }}
+                        from={{ x: -50,y:-20, opacity:0 }}
                         to={{ x: 0,y:0, opacity:1 }}
                     >
                       <div className="container what_we_do_section d-flex justify-content-center">
@@ -255,8 +252,8 @@ const TestPage = props => {
                 <div className="">
                     <Timeline totalProgress={progress} paused>
                         <Tween
-                            from={{ x: -50,y:20, opacity:0 }}
-                            to={{ x: 0,y:0, opacity:1 }}
+                            from={{ x: -50,y:30, opacity:0 }}
+                            to={{ x: 0,y:10, opacity:1 }}
                         >
                         <div>
                         <SpeakersSection />

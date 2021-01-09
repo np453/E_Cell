@@ -10,11 +10,17 @@
 @import "./components/socials";
 @import "./components/topSection";
 @import "./components/test";
-@import "./components/test2";
+@import "./components/speakercontainer";
 @import "./components/btn";
 @import "./components/loading";
 @import "./components/carousel";
 
+@import "./components/scroll";
+@import "./components/modal";
+
 body {
-    background-color: black !important;
+    // background-color: black !important;
+}
+html {
+    scroll-behavior: smooth;
 }

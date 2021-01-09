@@ -1,8 +1,10 @@
+// footer component scss
+
 footer {
     position:relative;
     padding:6rem;
     background-color:#111;
-    color: rgba(#464646, 1);
+    color: rgba(#535252, 1);
     font-family:$font-3;
     font-weight:900;
     h5, h6 {
@@ -15,6 +17,9 @@ footer {
             cursor:pointer;
             color:rgba(#555, 1);
         }
+    }
+    h5 {
+        color: rgba(white, 0.5);
     }
     .footer__heading_1 {
         color:rgba(white, 0.7);
@@ -48,6 +53,12 @@ footer {
             margin-top:1.2rem;
         }
         input {
+            font-size: 12px;
+            &:focus {
+                outline: none !important;
+                box-shadow: none !important;
+            }
+            
             background-color:rgba(#E7E3E3, 1) !important;
         }
         .fa-send-o {
@@ -55,6 +66,10 @@ footer {
             right:10px;
             bottom:11px;
             
+        }
+        .fa-send-o {
+            bottom: 9%;
+            background-color:rgba(#E7E3E3, 1);
         }
     }
     .ecell_newsletter_section_footer {
@@ -88,3 +103,74 @@ footer {
         }
     }
 }
+
+@media (max-width:500px) {
+    footer {
+        padding: 1.1rem;
+
+        .footer_links {
+            margin: 2.5rem auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } 
+
+        .social_media_links_footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ecell_newsletter_section_footer {
+            width: 82%;
+            margin: 1.2rem auto;
+            border-radius: 0.4rem;
+            &::after {
+                display: none;
+            }
+        }
+        .form_group_footer {
+            input {
+                font-size: 12px;
+            }
+        }
+        .developer__section {
+            h6 {
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width:320px) {
+    footer {
+        padding: 1.1rem;
+
+        .footer_links {
+            margin: 2.5rem auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } 
+
+        .social_media_links_footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ecell_newsletter_section_footer {
+            margin-top: 1.2rem;
+            border-radius: 0.4rem;
+            &::after {
+                display: none;
+            }
+        }
+        .developer__section {
+            h6 {
+                font-size: 10px;
+            }
+        }
+    }
+}
+

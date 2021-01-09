@@ -1,3 +1,5 @@
+// About us section scss
+
 .about_us_section {
     margin-top: 1.3rem;
     position: relative;
@@ -15,8 +17,57 @@
     }
     p {
         font-size: 20px;
+        text-align: center;
         color: rgba(white, 0.8);
         font-family: $font-1;
         line-height: 1.8;
+    }
+}
+
+
+@media (max-width:1202px) {
+
+}
+
+@media (max-width:991.98px) {
+    .about__us__section {
+        h1 {
+            font-size: 55px;
+            margin-top: 3rem;
+        }
+        p {
+            font-size: 19px;
+            line-height: 1.8;
+            max-width: 50rem;
+        }
+    }
+}
+@media (max-width:767.98px) {
+    .about__us__section {
+        h1 {
+            font-size: 46px;
+            margin-top: 3rem;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 40rem;
+        }
+    }
+}
+@media (max-width:320px) {
+    .about__us__section {
+        h1 {
+            font-size: 46px;
+            font-family: $font-5;
+            margin-top: 3rem;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.4;
+            text-align: center;
+            font-family: $font-5;
+            max-width: 44rem;
+        }
     }
 }

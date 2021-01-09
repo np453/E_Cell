@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+
+// Loading component 
 export default class Loading extends Component{
     state = {
         user: [],
@@ -9,7 +11,7 @@ export default class Loading extends Component{
         loading: true
     }
 
-     
+    //  get request that is the largest
     componentDidMount = async() => {
         const { data:user } = await axios.get('/api/user/login');
             this.setState({ user, loading:false })

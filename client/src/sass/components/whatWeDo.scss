@@ -1,3 +1,5 @@
+// what we do section including events and renaissance section
+
 .what_we_do_section {
     height: 30vh;
     h4 {
@@ -25,4 +27,71 @@
         color: rgba(white, 0.8);
         font-family: $font-1;
     }
+}
+
+@media (max-width:991.98px) {
+    .what_we_do_section {
+        height: 30vh;
+        h4 {
+            margin-bottom: 2.5rem;
+        }
+    
+        .ren_logo {
+            margin-top: 4rem;
+            // height: 140vh;
+        }
+        .ren_logo_1 {
+            width:15rem;
+            height: auto;
+        }
+        h1 {
+            font-size: 54px;
+            margin-top: 3rem;
+        }
+        p {
+            font-size: 18px;
+        }
+    } 
+}
+
+@media (max-width:767.98px) {
+    .what_we_do_section {
+        height: 30vh;
+        h4 {
+            margin-bottom: 2.5rem;
+        }
+    
+        .ren_logo {
+            margin-top: 4rem;
+            // height: 140vh;
+        }
+        .ren_logo_1 {
+            width:15rem;
+            height: auto;
+        }
+        h1 {
+            font-size: 46px;
+            margin-top: 3rem;
+        }
+        p {
+            font-size: 16px;
+        }
+    } 
+}
+
+@media (max-width:320px) {
+    .what_we_do_section {
+        height: 30vh;
+        h4 {
+            font-size: 18px;
+            margin-bottom: 2.5rem;
+        }
+        h1 {
+            font-size: 33px;
+            margin-top: 3rem;
+        }
+        p {
+            font-size: 16px;
+        }
+    } 
 }

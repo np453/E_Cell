@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
-const email = require('./email');
 
-
+// model for team member
 const team = new mongoose.Schema({
     team:String,
     name:String,

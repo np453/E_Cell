@@ -1,5 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+
+// customized navbar
+// Navbar props->
+// navBrandLogo
+// brand
+// navlinks -> Array of [link,navLinkName]
+// navbarColor
+// navbarBrandColor
+// sideBarItems
+// sidebarBackground
+//https://stackoverflow.com/questions/54715462/react-scroll-how-to-scroll-to-a-specific-targeted-component-when-clicking-on-n
+import Scroll from 'react-scroll'
+const ScrollLink = Scroll.ScrollLink
+
 const Navbar = props => {
     const [isOpen, setOpen] = useState(false);
     const [width, setWidth] = useState(0);
@@ -26,8 +40,8 @@ const Navbar = props => {
                         <li className="sideBar-item">{m.item}</li>    
                     )}
                 </ul>
-                <div className="container">
-                <nav className="navbar  navbar-expand-lg">
+                <div className={"container " + "navbar-"+props.position}>
+                <nav className={"navbar navbar-expand-lg " + "navbar-"+props.position}>
                     <div className="navbar-brand" style={{color:props.navbarBrandColor}}>
                     <img src={props.navBrandLogo} alt=""/>
                         {props.brand}

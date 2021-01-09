@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import fg from '../assets/facebook.svg'
 
+//test component
 class TestPage extends Component {
     render() {
       const path="../assets/";

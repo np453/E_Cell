@@ -7,7 +7,7 @@ const frontimgs = require('../model/front');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'media/front')
+    cb(null, 'client/public/media/front')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )
@@ -38,7 +38,7 @@ router.get('/', async(req, res) => {
   const allimgs = await frontimgs.find({ })
   const imgs = [];
   for(let i=0;i<allimgs.length;i++) {
-    imgs.push( {_id:allimgs[i]._id,filename:allimgs[i].file.filename} )
+    imgs.push( {_id:allimgs[i]._id,route:"front",filename:allimgs[i].file.filename} )
   }
   res.send(imgs)
     

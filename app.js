@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const helmet = require('helmet')
+// const helmet = require('helmet')
 const multer = require('multer')
 const cors = require('cors');
 const AWS = require('aws-sdk');
@@ -34,7 +34,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json());
-app.use(helmet());
 
 // Routes initialization
 app.use('/gallery', gallery);

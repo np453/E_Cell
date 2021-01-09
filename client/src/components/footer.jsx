@@ -39,6 +39,7 @@ export default class Footer extends Component {
                                 <img src={iice_logo} className="img img-fluid" alt=""/>
                             </div>
                         </div>
+                        {/* website links */}
                         <div className="footer_links col-md-2">
                             <h5>Important Links</h5>
                             <h6>Our Team</h6>

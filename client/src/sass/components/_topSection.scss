@@ -2,7 +2,7 @@
 
 .landing_page_top_section__container {
     background-color: rgba(white, 1);
-    height: 90vh;
+    // height: 90vh;
     position: relative;
     .main_page_heading_container {
         padding-top: 3rem;
@@ -72,7 +72,27 @@
         @keyframes network {
             0% { clip-path: circle(0%); }
             100% { clip-path: circle(75%); }
-          }
+        }
+
+        .fa-arrow-down {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            animation: arrowDown 2s infinite alternate forwards;
+            opacity: 1;
+            // animation-iteration-count: 10;
+        }
+        @keyframes arrowDown {
+            0% {
+                 bottom:4rem;  
+            }
+            100% {
+                 bottom: 2rem; 
+                }
+        }
     }
     .logo {
         background-color: rgba(rgb(10, 94, 80), 1);

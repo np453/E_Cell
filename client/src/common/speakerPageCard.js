@@ -26,7 +26,7 @@ const Speaker = props => {
     return (
         <div className="col-md-3 p-0 speaker_wrapper m-3">
             <div className="row m-0 justify-content-center">
-                <img className="img img-fluid " src={s1}></img>
+                <img className="img img-fluid " src={props.image}></img>
             </div>
             <div className="col-md-12">
                 <h1 className="text-center speaker_heading">{props.name}</h1>
@@ -35,7 +35,7 @@ const Speaker = props => {
                 <h6 className="text-center speaker_designation">{props.designation}</h6>
             </div>
             <p className="speaker_card_content_">
-                {props.body}
+                {props.intro}
             </p>
             <h6 onClick={openModal} className="learn_more"><span>Read more ›</span></h6>
             <Modal
@@ -53,18 +53,12 @@ const Speaker = props => {
       <Modal.Body ref={modalRef}>
         <div  className="row">
             <div className="col-md-4 d-flex justify-content-center align-items-center flex-column">
-                <img className="img img-fluid rounded-circle" src={s1}></img>
+                <img className="img img-fluid rounded-circle" src={props.image}></img>
                 <h5 className="text-center mt-4">{props.name}</h5>
                 <h6 className="text-center">{props.designation}</h6>
             </div>
             <div className="col-md-7 d-flex justify-content-center align-items-center flex-column">
-                <p>{props.body}
-                iPad is perfect for taking notes and organising your thoughts. 
-                Sketch ideas in the Notes app as naturally as you do on paper, 
-                then catalogue them, share them or add them to a presentation.
-                You can even search your handwritten notes. 
-                The App Store is also full of great apps that let you organise, 
-                annotate and take your notes to the next level.     
+                <p>{props.description}    
                 </p>
             </div>
         </div>

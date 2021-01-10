@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 import Speaker from '../common/speakerPageCard';
 import s1 from '../assets/s1.png'
 import Navbar from '../components/naavbar'
-
+import axios from 'axios'
+import { base } from '../base'
 // speaker container page
 class SpeakerPageContainer extends Component {
+    state = {
+        speaker : []
+    }
     navLinks = [
         {
           navLinkName:"Home",
@@ -22,8 +26,13 @@ class SpeakerPageContainer extends Component {
       ]
       backToTop = React.createRef();
       executeBackToTopScroll = () => this.backToTop.current.scrollIntoView()
+      componentDidMount = async() => {
+          const { data : speaker } = await axios.get('/speaker')
+          this.setState({ speaker })
+      }
+      
     render() {
-
+        const speaker = this.state.speaker === undefined ? null : this.state.speaker
         return (
             <div className="speaker_page_main_background">
                 <Navbar 
@@ -43,102 +52,13 @@ class SpeakerPageContainer extends Component {
                 </div>
                 <div className="container">
                     <div className=" row m-0 d-flex justify-content-center">
-                    <Speaker borderColor="#1D2B5C" cardColor="#010220" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                        body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
+                    {speaker.map(m => 
+                        <Speaker borderColor="#1D2B5C" cardColor="#010220" name={m.name} image={base + 'media/' + m.route +'/' + m.filename } designation={m.title} 
+                        intro="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
                         The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#64120D" cardColor="#1D0801" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D595C" cardColor="#001C1A" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D2B5C" cardColor="#010220" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#64120D" cardColor="#1D0801" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D595C" cardColor="#001C1A" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D2B5C" cardColor="#010220" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#64120D" cardColor="#1D0801" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D595C" cardColor="#001C1A" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                <Speaker borderColor="#1D2B5C" cardColor="#010220" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                    body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#64120D" cardColor="#1D0801" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D595C" cardColor="#001C1A" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D2B5C" cardColor="#010220" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#64120D" cardColor="#1D0801" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D595C" cardColor="#001C1A" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                <Speaker borderColor="#1D2B5C" cardColor="#010220" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                    body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#64120D" cardColor="#1D0801" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D595C" cardColor="#001C1A" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D2B5C" cardColor="#010220" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#64120D" cardColor="#1D0801" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D595C" cardColor="#001C1A" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D2B5C" cardColor="#010220" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#64120D" cardColor="#1D0801" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
-                        <Speaker borderColor="#1D595C" cardColor="#001C1A" name="Lokesh Kumar" image="" designation="co-founder LOCO" 
-                            body="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "/>
+                        "
+                        description={m.description}/>
+                    )}
                     </div>
                 </div>
                 <div className="end_section_speaker_page d-flex flex-column justify-content-center align-items-center">

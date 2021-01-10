@@ -56,10 +56,13 @@ app.get('*', (req,res) =>{
 });
 
 
+
 // Media APIs
 
 app.get('/media/front/:file_name',(req,res)=>{
+  
   res.sendFile(path.join(__dirname+"/media/front/"+req.params.file_name));
+  
 })
 
 app.get('/media/sponsor/:file_name',(req,res)=>{
@@ -87,11 +90,11 @@ app.get('/media/showcase/:file_name',(req,res)=>{
 })
 
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+//   });
 
 app.listen(PORT, function() {
     console.log('App running on port 1212');

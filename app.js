@@ -21,6 +21,7 @@ const ispeaker = require('./routes/ispeaker');
 const contact = require('./routes/contact');
 const showcase = require('./routes/showcase');
 const carousel = require('./routes/carousel');
+const notifications = require('./routes/notifications');
  
 //Port
 const PORT = 1212;
@@ -47,6 +48,7 @@ app.use('/front', front);
 app.use('/contact', contact);
 app.use('/showcase', showcase);
 app.use('/carousel', carousel);
+app.use('/notifications', notifications);
 
 //connect to DB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));

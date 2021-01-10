@@ -38,3 +38,43 @@
         }
     }
 }
+
+@media (max-width:600px) {
+    .modal-content {
+        .modal-body {
+            text-align: justify;
+            font-size: 15px;
+            max-width: 86%;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width:426px) {
+    .modal-content {
+        .modal-body {
+            text-align: justify;
+            font-size: 15px;
+            max-width: 86%;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width:376px) {
+    .modal-content {
+        .modal-body {
+            text-align: justify;
+            font-size: 15px;
+        }
+    }
+}
+
+@media (max-width:320px) {
+    .modal-content {
+        .modal-body {
+            text-align: justify;
+            font-size: 13px;
+        }
+    }
+}

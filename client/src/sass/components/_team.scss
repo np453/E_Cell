@@ -1,0 +1,84 @@
+.team_page_container {
+    background-color: black;
+    padding-bottom: 6rem;
+    .fa-arrow-up {
+        right: 25px;
+        bottom: 25px;
+        color: rgba(white, 0.7);
+        border: 2px solid rgba(white, 0.7);
+        padding: 0.2rem;
+        border-radius: 50%;
+        z-index: 200;
+        transition: all 0.3s ease;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+.team_page_banner {
+    margin: 2.5rem auto;
+    height: 33vh;
+    h1 {
+        text-align: center;
+        color: rgba(white, 0.6);
+        background: linear-gradient(90deg, #D18282 0%, #D65151 100%);
+        font-size: 66px;
+        font-family: $font-1;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    h3 {
+        text-align: center;
+        color: #626668;
+    }
+}
+.team_page_card {
+    background-color: rgba( #222, 1);
+    border-radius: 0.4rem;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(.77,.66,.24,1.37) ;
+    &:hover {
+        transform: translateY(0);
+    }
+    img {
+        border-top-right-radius: 0.4rem;
+        border-top-left-radius: 0.4rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    h3 {
+        color: rgba(white, 0.7);
+        font-family: $font-6;
+        font-size: 19px;
+        margin: 0.7rem auto;
+    }
+    span {
+        color: rgba(white, 0.7);
+        font-family: $font-6;
+        font-size: 15px;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    h4 {
+        a {
+            color: rgba(white, 0.7);
+            font-family: "spartan";
+            text-decoration: none;
+            font-size: 14px;
+        }
+    }
+    .fa {
+        // color: rgba(white, 0.8);
+        margin-bottom: 1rem;
+        &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+    }
+    .fa-facebook-square {
+        color: #4267B2;
+    }
+    .fa-linkedin {
+        color: #0072b1;
+    }
+}

@@ -1,4 +1,5 @@
 import { AlexaForBusiness } from 'aws-sdk';
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react'
 import axios from 'axios';
 import iice_logo from '../assets/iice_logo.png'
@@ -42,10 +43,10 @@ export default class Footer extends Component {
                         {/* website links */}
                         <div className="footer_links col-md-2">
                             <h5>Important Links</h5>
-                            <h6>Our Team</h6>
-                            <h6>Our Sponsers</h6>
+                            <Link to="/team"><h6>Our Team</h6></Link>
+                            <Link to="/sponser"><h6>Our Sponsers</h6></Link>
                             <h6>Rennisance</h6>
-                            <h6>Past Speakers</h6>
+                            <Link to="/speaker"><h6>Past Speakers</h6></Link>
                         </div>
                         {/* social Media links */}
                         
@@ -71,7 +72,7 @@ export default class Footer extends Component {
                                 <circle cx="10" cy="10" r="10" fill="#111111"/>
                             </svg>
 
-                            <h5>Know about our activities</h5>
+                            <h5 className="email_newsletter_heading">Know about our activities</h5>
                             {/* email subscription form */}
                             <form action="" className="form-group form_group_footer">
                                 <label htmlFor="footer_email">email</label>

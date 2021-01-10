@@ -47,9 +47,9 @@ class SpeakersSection extends Component {
           </div>
           </div>
               <div className="row d-flex justify-content-center">
-              <div className="button_wrapper">
-                <Link to="/speaker"><button>view all speakers</button></Link>
-              </div>
+                <div className="button_wrapper">
+                  <Link to="/speaker"><button>view all speakers</button></Link>
+                </div>
               </div>
             </div>
       

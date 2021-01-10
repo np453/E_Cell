@@ -8,16 +8,16 @@ import Navbar from '../components/naavbar'
 class SpeakerPageContainer extends Component {
     navLinks = [
         {
-          navLinkName:"About us",
-          link:""
+          navLinkName:"Home",
+          link:"/"
         },
         {
           navLinkName:"past sponsors",
-          link:"/sponsors"
+          link:"/sponsor"
         },
         {
-          navLinkName:"follow us",
-          link:""
+          navLinkName:"Team",
+          link:"/team"
         },
       ]
       backToTop = React.createRef();
@@ -33,7 +33,7 @@ class SpeakerPageContainer extends Component {
                 brand="Our Speakers"
                 navbarColor="transparent" 
                 navbarBrandColor="#fff"
-                linkColor="#1F8795"
+                linkColor="#fff"
                 linkOpacity="1"
                 position="fixed"
                 // navBrandLogo={LandingPageLogo}

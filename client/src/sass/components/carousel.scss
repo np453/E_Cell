@@ -204,7 +204,7 @@
         text-align: center;
         padding: 1.5rem;
         margin-top: 0;
-        font-size: 0.9rem;
+        font-size: 0.7rem;
       }
      .citation {
        cite {
@@ -230,6 +230,12 @@
   }
   
   @media (min-width:425px) and (max-width:630px) {
+    .img_carousel_main_heading_wrapper {
+      margin: 4rem 0;
+      .img_carousel_main_heading {
+        font-size: 28px;
+      }
+    }
     .carousel {
       width: 88%;
       height: 56vh;
@@ -261,12 +267,12 @@
       // margin-top: 8rem;
       margin-top: 4.5rem;
       p {
-        text-align: justify;
+        text-align: center;
         // margin-top: 2rem;
         // padding: 0 4rem;
         padding: 1.5rem;
         margin-top: 0;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
      .citation {
        cite {
@@ -282,6 +288,7 @@
       }
     }
   }
+  
   
   @media (min-width:630px) and (max-width:667px) {
     .carousel {
@@ -390,6 +397,14 @@
     }
   }
   @media (min-width:768px) and (max-width:991.98px) {
+    .img_carousel_main_heading_wrapper {
+      margin: 4rem 0;
+      .img_carousel_main_heading {
+        font-size: 45px;
+        font-family: $font-1;
+        font-weight: 700;
+      }
+    }
     .carousel {
       width: 88%;
       height: 67vh;
@@ -421,16 +436,17 @@
       // margin-top: 8rem;
       margin-top: 6rem;
       p {
-        text-align: justify;
+        text-align: center;
         // margin-top: 2rem;
         // padding: 0 4rem;
         padding: 1.5rem;
-        margin-top: 0;
         font-size: 0.9rem;
+        max-width: 86%;
+        margin: 1rem auto;
       }
      .citation {
        cite {
-         font-size: 0.8rem;
+         font-size: 0.75rem;
        }
      }
     }

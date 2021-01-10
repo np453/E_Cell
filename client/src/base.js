@@ -1,1 +1,1 @@
-export let base = 'http://localhost:1212/'
+export let base = 'http://calces.org.in/'

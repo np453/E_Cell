@@ -15,8 +15,9 @@ import Loading from './components/loading';
 import TopSection3 from './views/topSection3';
 import SpeakerPageContainer from './containers/SpeakerPageContainer';
 import TopSection from './components/topSection';
-
+import Team from './components/team';
 import ScrollToTop from './common/ScrollToTop';
+import Sponsors from './components/Sponsors';
 function App() {
   return (
     <div>
@@ -32,11 +33,13 @@ function App() {
           <Route path="/test101"  exact component={TestPage} />
           <Route path="/2"  exact component={TopSection2} />
           <Route path="/3"  exact component={TopSection3} />
+          <Route path="/team"  exact component={Team} />
           <Route path="/speaker"  exact component={SpeakerPageContainer} />
+          <Route path="/sponsor"  exact component={Sponsors} />
         </switch>
         </ScrollToTop>
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 }

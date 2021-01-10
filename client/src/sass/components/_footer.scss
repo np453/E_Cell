@@ -102,6 +102,20 @@ footer {
             top: 4px;
         }
     }
+    .email_newsletter_heading {
+        color: black;
+    }
+    form {
+        label {
+            color: black;
+        }
+    }
+    .footer_links {
+        a {
+            text-decoration: none;
+            color: #535252;
+        }
+    }
 }
 
 @media (max-width:500px) {

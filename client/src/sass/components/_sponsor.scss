@@ -1,0 +1,100 @@
+.sponsor_page_container {
+    background-color: rgba(black, 1);
+
+    .sponsor_page_wrapper {
+        width: 60%;
+        margin: 0 auto;
+        padding-bottom: 6rem;
+        font-family: $font-1;
+        pointer-events: none;
+        .sponsor_page_heading {
+            margin: 4rem auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 70px;
+            color: rgba(white, 0.8);
+        }
+        h2 {
+            text-align: center;
+            font-size: 70px;
+            background: linear-gradient(90.07deg, #0DA994 0.1%, #2CC466 99.97%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        }
+        h3 {
+            text-align: center;
+            font-size: 27px;
+            background: linear-gradient(89.95deg, #E9CE6E 0.04%, #D6B1D7 99.95%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .sponsor_page_container {
+        .sponsor_page_wrapper {
+            width: 80%;
+            .sponsor_page_heading {
+                margin: 4rem auto;
+                h1 {
+                    font-size: 50px;
+                }
+                h2 {
+                    font-size: 50px;
+        
+                }
+                h3 {
+                    font-size: 24px;
+ 
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:500px) {
+    .sponsor_page_container {
+        .sponsor_page_wrapper {
+            width: 100%;
+            .sponsor_page_heading {
+                margin: 4rem auto;
+                h1 {
+                    font-size: 40px;
+                }
+                h2 {
+                    font-size: 40px;
+        
+                }
+                h3 {
+                    font-size: 24px;
+ 
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:320px) {
+    .sponsor_page_container {
+        .sponsor_page_wrapper {
+            width: 100%;
+            .sponsor_page_heading {
+                margin: 4rem auto;
+                h1 {
+                    font-size: 32px;
+                }
+                h2 {
+                    font-size: 32px;
+        
+                }
+                h3 {
+                    font-size: 20px;
+ 
+                }
+            }
+        }
+    }
+}

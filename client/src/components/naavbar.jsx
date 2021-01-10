@@ -53,13 +53,13 @@ const Navbar = props => {
                         )}
                     </div>
                     </div>
-                    <button onClick={toggleSideBar} className="ml-auto navbar-toggler" type="button" 
+                    <button onClick={toggleSideBar} className="ml-auto pr-0 navbar-toggler" type="button" 
                             data-toggle="collapse" 
                              aria-controls="nav__links" aria-expanded="false" 
                              aria-label="Toggle navigation">
-                                <span className="icon-bar top-bar" style={{height:"0.4rem"}}></span>
-                                <span className="icon-bar middle-bar" style={{height:"0.4rem"}}></span>
-                                <span className="icon-bar bottom-bar" style={{height:"0.4rem"}}></span>
+                                <span className="icon-bar top-bar" ></span>
+                                <span className="icon-bar middle-bar" ></span>
+                                <span className="icon-bar bottom-bar" ></span>
                     </button>
                 </nav>
             </div>

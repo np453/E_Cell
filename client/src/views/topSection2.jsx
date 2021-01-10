@@ -22,16 +22,16 @@ class TopSection2 extends Component {
         showScroll : false,
         navLinks : [
             {
-              navLinkName:"About us",
-              link:""
+              navLinkName:"Speakers",
+              link:"/speaker"
             },
             {
               navLinkName:"past sponsors",
-              link:"/sponsors"
+              link:"/sponsor"
             },
             {
-              navLinkName:"follow us",
-              link:""
+              navLinkName:"Meet the team",
+              link:"/team"
             },
           ],
           sideBarItems : [
@@ -125,8 +125,10 @@ class TopSection2 extends Component {
                           </div>
                         </div>
                         </motion.div>                  */}
-                        <div className="embed-responsive homepage_banner_container embed-responsive-16by9">
-                          <video style={{pointerEvents:"none"}} autoPlay muted={true} src={ homePage_banner_video } className="homepage-video embed-responsive-item" onEnded={() => this.setState({ showScroll:true })}></video>
+                        <div className="container">
+                          <div className="embed-responsive homepage_banner_container embed-responsive-21by9">
+                            <video style={{pointerEvents:"none"}} autoPlay muted={true} src={ homePage_banner_video } className="homepage-video embed-responsive-item" onEnded={() => this.setState({ showScroll:true })}></video>
+                          </div>
                         </div>
                         
                         </div>

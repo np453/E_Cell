@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import { Controller, Scene } from 'react-scrollmagic';
@@ -33,6 +33,8 @@ const TestPage = props => {
     const opacity = useTransform(scrollYProgress, [0, 0.33, 0.331], [0.8, 1, 0])
     const opacity2 = useTransform(scrollYProgress, [0.33, 0.67, 0.671], [0, 1, 0])
     const opacity3 = useTransform(scrollYProgress, [0.671, 1, 1], [0,1, 0])
+    const aboutUsRef = useRef(null);
+    const executeTopScroll = () => console.log(1)
     const sideBarItems = [
         {
           item:"sadsad"
@@ -116,7 +118,7 @@ const TestPage = props => {
        linkOpacity="0.7"
        navBrandLogo={LandingPageLogo}
        /> */}
-            <TopSection />
+            <TopSection aboutUsRef={aboutUsRef} executeTopScroll={executeTopScroll}/>
             <div className="row m-0">
                 <div className="col-md-12 d-flex justify-content-center">
                     { showArrow && <i className=" fa fa-2x fa-arrow-down"></i> } 
@@ -137,7 +139,7 @@ const TestPage = props => {
                     >
                         <div className="about__us__section container d-flex justify-content-center mt-5">
                         <div className="animation">
-                        <h1 className="text-center">About us</h1>
+                        <h1 ref={aboutUsRef} className="text-center">About us</h1>
                         <p style={{ fontFamily:"Ubuntu" }} className="">E-Cell MNNIT was launched in October 2014 with a vision to channelize
                              and nurture college students by guiding their aspirations, efforts and 
                              passion towards entrepreneurship. It aims to deliver technical know-how of 

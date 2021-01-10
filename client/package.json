@@ -24,6 +24,7 @@
     "react-dom": "^17.0.1",
     "react-gsap": "^2.2.1",
     "react-material-ui-carousel": "^2.1.1",
+    "react-media-hook": "^0.4.9",
     "react-responsive-carousel": "^3.2.11",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",

@@ -28,15 +28,16 @@ const TeamCard = props => {
     };
     return (
         <div className="team_page_card m-3">
-            <img src={s1} className="img img-fluid d-flex align-items-center text-center mx-auto"/>
-            <h3 className="text-center">Sushil Kumar</h3>
+            <img src={props.image} className="img img-fluid d-flex align-items-center text-center mx-auto"/>
+            <h3 className="text-center">{props.name}</h3>
             <div className="row d-flex justify-content-center">
-                <span className="">Student Relations and Outreach</span>
+                <span className="">{props.team}</span>
             </div>
-            <h4 className="text-center"><a href={"mailto"}>shushilkumar@gmail.com</a></h4>
+            <h4 className="text-center">{props.designation}</h4>
             <div className="text-center">
-                <span><i className="fa p-2 fa-facebook-square"></i></span>
-                <span><i className="fa p-2 fa-linkedin"></i></span>
+                <span><a href={"mailto:"+props.email}><i class="fa p-2 fa-envelope" aria-hidden="true"></i></a></span>
+                <span><a href={props.facebook} target="_blank"><i className="fa p-2 fa-facebook-square"></i></a></span>
+                <span><a href={props.linkedin} target="_blank"><i className="fa p-2 fa-linkedin"></i></a></span>
             </div>
             <Modal
     //   {...props}

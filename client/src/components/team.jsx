@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../components/naavbar';
 import TeamCard from '../common/teamPageCard';
-
+import { base } from '../base'
 class Team extends Component {
     
     state = {
         team : [],
         displayScrollToTopArrow:false,
+        loadingTeam:true
     }
     navLinks = [
         {
@@ -51,6 +52,7 @@ class Team extends Component {
     componentDidMount = async() => {
         const { data: team } = await axios.get('/team/')
         this.setState({ team })
+        console.log(team)
         window.addEventListener('scroll', this.handleScroll);
     }
     componentWillUnmount(){
@@ -87,7 +89,7 @@ class Team extends Component {
                 <div className="row d-flex justify-content-center">
                     {team.map(m =>
                         <div className="col-xm-3 p-0">
-                            <TeamCard />
+                            <TeamCard name={m.name} email={m.email} team={m.team} designation={m.designation} facebook={m.facebook} linkedin={m.linkedin} image={ base + 'media/' + m.route + '/' + m.filename }/>
                         </div>    
                     )}
                 </div>

@@ -43,8 +43,11 @@
     img {
         border-top-right-radius: 0.4rem;
         border-top-left-radius: 0.4rem;
-        width: 100%;
+        // width: 100%;
         object-fit: cover;
+        width: 300px;
+        height: 350px;
+        pointer-events: none;
     }
     h3 {
         color: rgba(white, 0.7);
@@ -60,25 +63,31 @@
         margin: 0 auto;
     }
     h4 {
-        a {
             color: rgba(white, 0.7);
             font-family: "spartan";
+            margin-top: 0.5rem;
             text-decoration: none;
-            font-size: 14px;
-        }
+            font-size: 13px;
     }
+
     .fa {
         // color: rgba(white, 0.8);
+        color: rgba(white, 0.7);
+        font-size: 20px;
         margin-bottom: 1rem;
         &:hover {
             opacity: 0.8;
             cursor: pointer;
         }
+        
+    }
+    .fa-envelope {
+        color: rgba(white, 0.7);
     }
     .fa-facebook-square {
-        color: #4267B2;
+        // color: #4267B2;
     }
     .fa-linkedin {
-        color: #0072b1;
+        // color: #0072b1;
     }
 }

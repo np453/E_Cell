@@ -22,6 +22,9 @@ const contact = require('./routes/contact');
 const showcase = require('./routes/showcase');
 const carousel = require('./routes/carousel');
 const notifications = require('./routes/notifications');
+const recent = require('./routes/recent');
+const workshop = require('./routes/workshop');
+const seminar = require('./routes/seminar');
  
 //Port
 const PORT = 1212;
@@ -36,8 +39,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.static('client/build'));
 app.use(express.json());
+app.use(express.static('client/build'));
+
+// app.get('*', (req,res) =>{
+//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
+// });
 
 
 
@@ -59,9 +66,10 @@ app.use('/contact', contact);
 app.use('/showcase', showcase);
 app.use('/carousel', carousel);
 app.use('/notifications', notifications);
-app.get('*', (req,res) =>{
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
+app.use('/recent', recent);
+app.use('/workshop', workshop);
+app.use('/seminar', seminar);
+
 
 //connect to DB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));

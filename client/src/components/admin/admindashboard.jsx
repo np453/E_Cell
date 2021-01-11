@@ -416,7 +416,6 @@ class Dashboard extends Component {
         </div>
         {/* sponsor section ends */}
 
-
     </div>
     // API form element ends
 
@@ -430,13 +429,14 @@ class Dashboard extends Component {
                     {/* List displaying Api Including delete feature */}
                     <ul className="admin_dashboard_api_list list-group">
                         <li onClick={()=>this.handleclick_getapi("ispeaker")} className="list-group-item dashboard_Link">Speaker Showcase</li>
-                        {/* <li onClick={()=>this.handleclick_getapi("front")} className="list-group-item dashboard_Link">Front Section</li> */}
+                        <li onClick={()=>this.handleclick_getapi("notifications")} className="list-group-item dashboard_Link">All Notifications API</li>
                         <li onClick={()=>this.handleclick_getapi("carousel")} className="list-group-item dashboard_Link">Carousel</li>
                         <li onClick={()=>this.handleclick_getapi("team")} className="list-group-item dashboard_Link">Team API</li>
                         <li onClick={()=>this.handleclick_getapi("speaker")} className="list-group-item dashboard_Link">Speaker API</li>
-                        <li onClick={()=>this.handleclick_getapi("works")} className="list-group-item dashboard_Link">Works API</li>
-                        {/* <li onClick={()=>this.handleclick_getapi("sponsor")} className="list-group-item dashboard_Link">Sponsors API</li> */}
+                        <li onClick={()=>this.handleclick_getapi("recent")} className="list-group-item dashboard_Link">Recent Notifications API</li>
                         <li onClick={()=>this.handleclick_getapi("contact")} className="list-group-item dashboard_Link"> Get Email subs</li>
+                        <li onClick={()=>this.handleclick_getapi("workshop")} className="list-group-item dashboard_Link">Workshop API</li>
+                        <li onClick={()=>this.handleclick_getapi("seminar")} className="list-group-item dashboard_Link">Seminar API</li>
                     </ul>
                 </div>
                 {/* displaying element */}

@@ -1,8 +1,5 @@
 const router = require('express').Router();
-const mongoose = require('mongoose')
 const multer = require('multer')
-const fs = require('fs');
-const bp = require('body-parser');
 const speaker = require('../model/speaker');
 
 

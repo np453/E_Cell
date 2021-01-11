@@ -32,10 +32,20 @@ dotenv.config();
 
 //Middlewaress
 app.use(cors());
+
 app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.static('client/build'));
 app.use(express.json());
 
+
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 // Routes initialization
 app.use('/gallery', gallery);
 app.use('/admin', auth);
@@ -49,13 +59,16 @@ app.use('/contact', contact);
 app.use('/showcase', showcase);
 app.use('/carousel', carousel);
 app.use('/notifications', notifications);
-
-//connect to DB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));
-app.use(express.static("client/build"));
 app.get('*', (req,res) =>{
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
+
+//connect to DB
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));
+// app.use(express.static("client/build"));
+// app.get('*', (req,res) =>{
+//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
+// });
 
 
 
@@ -92,11 +105,6 @@ app.get('/media/showcase/:file_name',(req,res)=>{
 })
 
 
-// app.use(function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-//   });
 
 app.listen(PORT, function() {
     console.log('App running on port 1212');

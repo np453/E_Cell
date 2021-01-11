@@ -30,7 +30,7 @@ const PORT = 1212;
 dotenv.config();
 
 
-//Middlewares
+//Middlewaress
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -42,7 +42,7 @@ app.use('/admin', auth);
 app.use('/team', team);
 app.use('/speaker', speaker);
 app.use('/works', whatwedo);
-app.use('/sponsor', sponsor);
+// app.use('/sponsor', sponsor);
 app.use('/ispeaker', ispeaker);
 app.use('/front', front);
 app.use('/contact', contact);

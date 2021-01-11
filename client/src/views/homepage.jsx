@@ -1,23 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+
+//animation libraries 
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
-import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 import ScrollReveal from 'scrollreveal';
 import { VideoScroll } from 'react-video-scroll'
+import { Controller, Scene } from 'react-scrollmagic';
+
+//HomePage assets
 import img_1 from '../assets/img_about_us_1.png';
 import img_2 from '../assets/img_about_us_2.png'
 import ren_logo from '../assets/ren_logo.png'
-import ren_logo_1 from '../assets/ren_logo_1.png'
-import Gallery from '../components/Gallery';
-import Socials from '../components/socials'
+
+//HomePage Components
+import TopSection from './topSection'
+
 import SpeakersSection from '../components/speakersSection'
 import ImgCarousel from '../components/imgCarousel';
-import TopSection from './topSection2'
+import Socials from '../components/socials'
+
 import back_collage from '../assets/background_collage.png';
-import axios from 'axios';
-import LandingPageLogo from '../assets/logo.svg'
-import Navbar from '../components/naavbar';
 
 
 // homepage component
@@ -107,17 +110,8 @@ const TestPage = props => {
     return (
         <React.Fragment>
             <div className="container-fluid landingPage p-0"> 
-            {/* <Navbar 
-       sidebarBackground="#c4c4c4" 
-       sideBarItems={sideBarItems} 
-    //    brand="E-cell MNNIT" 
-       navLinks={navLinks} 
-       navbarColor="#fff" 
-       navbarBrandColor="#000"
-       linkColor="#222"
-       linkOpacity="0.7"
-       navBrandLogo={LandingPageLogo}
-       /> */}
+
+            {/*TopSection of LandingPage*/}
             <TopSection aboutUsRef={aboutUsRef} executeTopScroll={executeTopScroll}/>
             <div className="row m-0">
                 <div className="col-md-12 d-flex justify-content-center">

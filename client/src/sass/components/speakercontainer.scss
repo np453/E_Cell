@@ -82,7 +82,7 @@
         }
     }
 
-    transition: all 0.3s;
+    transition: all 0.3s cubic-bezier(.77,.66,.24,1.37);
     //on card hover
     &:hover {
         cursor: pointer;

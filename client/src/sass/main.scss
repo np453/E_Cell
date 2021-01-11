@@ -1,28 +1,44 @@
+//scss variables
 @import "./abstracts/variable.scss";
-@import "./components/landingPageHeading";
+
+//navbar and footer
 @import "./components/navbar";
 @import "./components/footer";
-@import "./components/about_us";
-@import "./components/imgCarousel";
-@import "./components/speakersSection";
-@import "./components/admindashboard";
-@import "./components/whatWeDo";
-@import "./components/socials";
+
+//homepage components
 @import "./components/topSection";
-@import "./components/test";
-@import "./components/speakercontainer";
+@import "./components/about_us";
+@import "./components/whatWeDo";
+@import "./components/speakersSection";
+@import "./components/carousel";
+@import "./components/socials";
+@import "./components/landingPageHeading";
+
+
+
+@import "./components/gallery";
+
+//admin dashboard
+
+@import "./components/admindashboard";
+
+//common components
 @import "./components/btn";
 @import "./components/loading";
-@import "./components/carousel";
-
 @import "./components/scroll";
 @import "./components/modal";
+
+//route components
+@import "./components/speakercontainer";
 @import "./components/sponsor";
 @import "./components/team";
 
-body {
-    // background-color: black !important;
-}
+
+//text selection color
+@import "./components/selection";
+
+
+//general changes in page
 html {
     scroll-behavior: smooth;
 }

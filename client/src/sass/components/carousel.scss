@@ -165,10 +165,10 @@
   @media (min-width:300px) and (max-width:425px) {
     .carousel {
       width: 87%;
-      height: 65vh;
+      height: 52vh;
     }
     .carousel-inner {
-      height: 70vh;
+      height: 45vh;
     }
     .carousel_item_wrapper {
       .carousel_each_item_container {
@@ -208,6 +208,7 @@
       }
      .citation {
        cite {
+        text-align: center;
          font-size: 0.8rem;
        }
      }
@@ -276,7 +277,10 @@
       }
      .citation {
        cite {
+         text-align: center;
          font-size: 0.8rem;
+         max-width: 86%;
+         margin: 0 auto;
        }
      }
     }
@@ -550,11 +554,11 @@
         // padding: 0 4rem;
         padding: 1.5rem 6rem 0 6rem;
         margin-top: 0;
-        font-size: 0.9rem;
+        font-size: 1.2rem;
       }
      .citation {
        cite {
-         font-size: 0.8rem;
+         font-size: 1.1rem;
        }
      }
     }

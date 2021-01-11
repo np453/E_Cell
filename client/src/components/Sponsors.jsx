@@ -6,7 +6,7 @@ class Sponsors extends Component {
     navLinks = [
         {
           navLinkName:"Home",
-          link:""
+          link:"/"
         },
         {
           navLinkName:"Speakers",
@@ -14,7 +14,7 @@ class Sponsors extends Component {
         },
         {
           navLinkName:"Team",
-          link:""
+          link:"/team"
         },
       ]
     render() {

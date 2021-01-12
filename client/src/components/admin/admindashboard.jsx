@@ -13,6 +13,7 @@ class Dashboard extends Component {
             name:"",
             speakerName:"",
             speakerTitle:"",
+            speakerintro:"",
             workTitle:"",
             workDescription:"",
             speakerDescription:"",
@@ -86,6 +87,7 @@ class Dashboard extends Component {
               
               data.append('name', this.state.data.speakerName)
               data.append('title', this.state.data.speakerTitle)
+              data.append('intro', this.state.data.speakerintro)
               data.append('description', this.state.data.speakerDescription)
               data.append('file', this.state.data.file)
               const config = {
@@ -334,6 +336,10 @@ class Dashboard extends Component {
                             <div className="form-group">
                             <label style={{width:"95px"}} className="p-2" for="speakerTitle">Speaker Title</label>
                             <input type="text" name="speakerTitle" onChange={this.handleRadio}/>
+                            </div>
+                            <div className="form-group">
+                            <label style={{width:"95px"}} className="p-2" for="speakerintro">Speaker Intro</label>
+                            <input type="text" name="speakerintro" onChange={this.handleRadio}/>
                             </div>
                             <div className="form-group">
                             <label style={{width:"95px"}} className="p-2" for="speakerDescription">Description</label>

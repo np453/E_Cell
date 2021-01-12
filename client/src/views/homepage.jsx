@@ -12,16 +12,15 @@ import { Controller, Scene } from 'react-scrollmagic';
 import img_1 from '../assets/img_about_us_1.png';
 import img_2 from '../assets/img_about_us_2.png'
 import ren_logo from '../assets/ren_logo.png'
+import back_collage from '../assets/background_collage.png';
 
 //HomePage Components
 import TopSection from './topSection'
 
+//HomePage components
 import SpeakersSection from '../components/speakersSection'
 import ImgCarousel from '../components/imgCarousel';
 import Socials from '../components/socials'
-
-import back_collage from '../assets/background_collage.png';
-
 
 // homepage component
 const TestPage = props => {
@@ -29,6 +28,7 @@ const TestPage = props => {
     const [content, setContent] = useState("Involve.")
     const [contentClass, setContentClass] = useState("first_content_word")
     const [showArrow, setArrowVisibility] = useState(false)
+
     const scaleAnim = useTransform(scrollYProgress, [0, 0.33], [1, 1.5])
     const yPosAnim = useTransform(scrollYProgress, [0, 0.33], [0, -0])
     const yPosAnim2 = useTransform(scrollYProgress, [0.33, 0.67], [-10, 5])
@@ -36,6 +36,7 @@ const TestPage = props => {
     const opacity = useTransform(scrollYProgress, [0, 0.33, 0.331], [0.8, 1, 0])
     const opacity2 = useTransform(scrollYProgress, [0.33, 0.67, 0.671], [0, 1, 0])
     const opacity3 = useTransform(scrollYProgress, [0.671, 1, 1], [0,1, 0])
+
     const aboutUsRef = useRef(null);
     const executeTopScroll = () => console.log(1)
     const sideBarItems = [
@@ -63,6 +64,8 @@ const TestPage = props => {
           link:""
         },
       ]
+
+    //change content component words
     const contents = [
         {
             contentClass:"content-2",
@@ -94,6 +97,7 @@ const TestPage = props => {
         // const {data} = await axios.get('http://localhost:4444/upload/img')
         // setGallery(data)
         // ScrollReveal().reveal(".landingPage_content_heading", { duration:700, viewFactor:0.85, afterReveal:changeContent })
+        
         ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
         ScrollReveal().reveal('.ren_logo_1', { viewFactor:1, scale:1.2 })
         ScrollReveal().reveal(".change_content_section", {  viewFactor:0.9, afterReveal:changeContent })
@@ -113,6 +117,8 @@ const TestPage = props => {
 
             {/*TopSection of LandingPage*/}
             <TopSection aboutUsRef={aboutUsRef} executeTopScroll={executeTopScroll}/>
+
+            {/*Bottom arrow*/}
             <div className="row m-0">
                 <div className="col-md-12 d-flex justify-content-center">
                     { showArrow && <i className=" fa fa-2x fa-arrow-down"></i> } 

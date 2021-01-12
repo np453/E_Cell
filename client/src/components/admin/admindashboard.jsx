@@ -444,8 +444,10 @@ class Dashboard extends Component {
                         <li onClick={()=>this.handleclick_getapi("workshop")} className="list-group-item dashboard_Link">Workshop API</li>
                         <li onClick={()=>this.handleclick_getapi("seminar")} className="list-group-item dashboard_Link">Seminar API</li>
                     </ul>
+                    <Link style={{ color:"black", textDecoration:"none" }} to="/">Back to Home</Link>
                 </div>
                 {/* displaying element */}
+                
                 <div className="col-md-10">
                     {el}
                 </div>

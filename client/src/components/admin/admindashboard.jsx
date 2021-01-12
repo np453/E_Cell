@@ -195,9 +195,9 @@ class Dashboard extends Component {
                 <div className="row">
                 <ul className="list-group m-3">
                     {this.state.show.map(m=>
-                        <li className="list-group-item">
+                        <li className="d-flex list-group-item">
                             <span>{m.name != undefined ? m.name : (m.title != undefined ? m.title : m.filename)}</span>
-                            <button className="ml-2 btn btn-danger  " onClick={()=>this.handledelete(m._id,m.route)}>Delete</button>
+                            <button className="ml-2 btn btn-danger" onClick={()=>this.handledelete(m._id,m.route)}>Delete</button>
                         </li>
                     )}
                 </ul>
@@ -437,8 +437,10 @@ class Dashboard extends Component {
                         <li onClick={()=>this.handleclick_getapi("sponsor")} className="list-group-item dashboard_Link">Sponsors API</li>
                         <li onclick={()=>this.handleclick_getapi("contact")} className="list-group-item dashboard_Link"> Get Email subs</li>
                     </ul>
+                    <Link style={{ color:"black", textDecoration:"none" }} to="/">Back to Home</Link>
                 </div>
                 {/* displaying element */}
+                
                 <div className="col-md-10">
                     {el}
                 </div>

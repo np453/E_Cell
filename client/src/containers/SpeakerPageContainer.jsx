@@ -57,6 +57,7 @@ class SpeakerPageContainer extends Component {
                         intro="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
                         The app rolled out in early December of 2017 and has since had 15M+ downloads.
                         "
+                        intro={m.description.split('.')[0]}
                         description={m.description}/>
                     )}
                     </div>

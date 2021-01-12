@@ -169,7 +169,9 @@ class Dashboard extends Component {
         // onclick handler for retriving apis and displaying them
     handleclick_getapi=async(route)=>{
         const data= await axios.get(`http://localhost:1212/${route}/`);
+        
         this.setState({show:data.data, showApi:true, hideForms:true});
+        console.log(this.state.show)
         }
 
         // onclick handler for deleting apis
@@ -195,9 +197,9 @@ class Dashboard extends Component {
                 <div className="row">
                 <ul className="list-group m-3">
                     {this.state.show.map(m=>
-                        <li className="d-flex list-group-item">
-                            <span>{m.name != undefined ? m.name : (m.title != undefined ? m.title : m.filename)}</span>
-                            <button className="ml-2 btn btn-danger" onClick={()=>this.handledelete(m._id,m.route)}>Delete</button>
+                        <li className="list-group-item">
+                            <span>{m.name != undefined ? m.name : (m.title != undefined ? m.title : (m.filename != undefined ? m.filename:m.email))}</span>
+                            <button className="ml-2 btn btn-danger  " onClick={()=>this.handledelete(m._id,m.route)}>Delete</button>
                         </li>
                     )}
                 </ul>
@@ -347,7 +349,6 @@ class Dashboard extends Component {
                             <input name="file" id="file" type="file" className="form-control" onChange={this.handleRadio}/>
                         </div>  
                         <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandlerSpeaker}>Upload</button>
-
                     </div>
                 </div>
                 </div>
@@ -415,7 +416,6 @@ class Dashboard extends Component {
         </div>
         {/* sponsor section ends */}
 
-
     </div>
     // API form element ends
 
@@ -429,13 +429,14 @@ class Dashboard extends Component {
                     {/* List displaying Api Including delete feature */}
                     <ul className="admin_dashboard_api_list list-group">
                         <li onClick={()=>this.handleclick_getapi("ispeaker")} className="list-group-item dashboard_Link">Speaker Showcase</li>
-                        {/* <li onClick={()=>this.handleclick_getapi("front")} className="list-group-item dashboard_Link">Front Section</li> */}
+                        <li onClick={()=>this.handleclick_getapi("notifications")} className="list-group-item dashboard_Link">All Notifications API</li>
                         <li onClick={()=>this.handleclick_getapi("carousel")} className="list-group-item dashboard_Link">Carousel</li>
                         <li onClick={()=>this.handleclick_getapi("team")} className="list-group-item dashboard_Link">Team API</li>
                         <li onClick={()=>this.handleclick_getapi("speaker")} className="list-group-item dashboard_Link">Speaker API</li>
-                        <li onClick={()=>this.handleclick_getapi("works")} className="list-group-item dashboard_Link">Works API</li>
-                        <li onClick={()=>this.handleclick_getapi("sponsor")} className="list-group-item dashboard_Link">Sponsors API</li>
-                        <li onclick={()=>this.handleclick_getapi("contact")} className="list-group-item dashboard_Link"> Get Email subs</li>
+                        <li onClick={()=>this.handleclick_getapi("recent")} className="list-group-item dashboard_Link">Recent Notifications API</li>
+                        <li onClick={()=>this.handleclick_getapi("contact")} className="list-group-item dashboard_Link"> Get Email subs</li>
+                        <li onClick={()=>this.handleclick_getapi("workshop")} className="list-group-item dashboard_Link">Workshop API</li>
+                        <li onClick={()=>this.handleclick_getapi("seminar")} className="list-group-item dashboard_Link">Seminar API</li>
                     </ul>
                     <Link style={{ color:"black", textDecoration:"none" }} to="/">Back to Home</Link>
                 </div>

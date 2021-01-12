@@ -20,6 +20,7 @@ router.post('/', upload , async(req, res) => {
             
             name:req.body.name,
             title:req.body.title,
+            intro:req.body.intro,
             description:req.body.description,
             file : {
                 filename:req.file.filename
@@ -41,7 +42,7 @@ router.get('/', async(req, res) => {
   const allspeakers = await speaker.find({ })
   const people = [];
   for(let i=0;i<allspeakers.length;i++) {
-    people.push( {_id:allspeakers[i]._id,route:"speaker",name:allspeakers[i].name,title:allspeakers[i].title,description:allspeakers[i].description,filename:allspeakers[i].file.filename} )
+    people.push( {_id:allspeakers[i]._id,route:"speaker",name:allspeakers[i].name,title:allspeakers[i].title,intro:allspeakers[i].intro,description:allspeakers[i].description,filename:allspeakers[i].file.filename} )
   }
   res.send(people)
     

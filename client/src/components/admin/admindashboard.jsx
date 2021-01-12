@@ -13,9 +13,12 @@ class Dashboard extends Component {
             name:"",
             speakerName:"",
             speakerTitle:"",
+            speakerintro:"",
             workTitle:"",
             workDescription:"",
             speakerDescription:"",
+            notificationcontent:"",
+            recentnotificationcontent:"",
             email:"",
             designation:"",
             facebook:"",
@@ -56,6 +59,42 @@ class Dashboard extends Component {
           })
     }
 
+    // Workshop photos on click handler
+    onClickHandlerWorkshop = () => {
+        const data = new FormData() 
+          data.append('file', this.state.data.file)
+          const config = {
+              headers: {
+                  'content-type': 'multipart/form-data'
+              }
+          };
+        axios.post("http://localhost:1212/workshop", data, config)
+          .then(res => { // then print response status
+            console.log('upload success')
+          })
+          .catch(err => { // then print response status
+              console.log('upload fail')
+          })
+    } 
+
+    // Workshop photos on click handler
+    onClickHandlerSeminar = () => {
+        const data = new FormData() 
+          data.append('file', this.state.data.file)
+          const config = {
+              headers: {
+                  'content-type': 'multipart/form-data'
+              }
+          };
+        axios.post("http://localhost:1212/seminar", data, config)
+          .then(res => { // then print response status
+            console.log('upload success')
+          })
+          .catch(err => { // then print response status
+              console.log('upload fail')
+          })
+    } 
+
     // team onclick handler
     onClickHandlerTeam = () => {
         const data = new FormData() 
@@ -86,6 +125,7 @@ class Dashboard extends Component {
               
               data.append('name', this.state.data.speakerName)
               data.append('title', this.state.data.speakerTitle)
+              data.append('intro', this.state.data.speakerintro)
               data.append('description', this.state.data.speakerDescription)
               data.append('file', this.state.data.file)
               const config = {
@@ -101,6 +141,47 @@ class Dashboard extends Component {
                   console.log('upload fail')
               })
         }
+
+        // on Click Handler Notifications=>ALL
+        onClickHandlerNotification = () => {
+            const data = new FormData() 
+              
+              data.append('content', this.state.data.notificationcontent)
+              
+              const config = {
+                  headers: {
+                      'content-type': 'multipart/form-data'
+                  }
+              };
+            axios.post("http://localhost:1212/notifications", data, config)
+              .then(res => { // then print response status
+                console.log('upload success')
+              })
+              .catch(err => { // then print response status
+                  console.log('upload fail')
+              })
+        }
+
+        // on Click Handler Recent Notifications
+        onClickHandlerRecent = () => {
+            const data = new FormData() 
+              
+              data.append('content', this.state.data.recentnotificationcontent)
+              
+              const config = {
+                  headers: {
+                      'content-type': 'multipart/form-data'
+                  }
+              };
+            axios.post("http://localhost:1212/recent", data, config)
+              .then(res => { // then print response status
+                console.log('upload success')
+              })
+              .catch(err => { // then print response status
+                  console.log('upload fail')
+              })
+        }
+
 
         // sponsor onclick handler
     onClickHandlerSponsor = () => {
@@ -212,25 +293,46 @@ class Dashboard extends Component {
         <div className="row">
         <div className="col m-2 border rounded p-3">
 
-            {/* Front Image Upload form*/}
-            <h3 className="text-center">Speaker showcase Image upload</h3>
-            <div className="container">
-                <div className="row d-flex align-items-center justify-content-center">
-                    <div className="form-group mt-3 mr-2 border p-2 rounded files">
-                        <label htmlFor="file" className="d-flex align-items-center">
-                            <svg className="file_upload_button" width="34" height="27" viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M27.9218 8.71697C26.373 2.54679 20.1156 -1.19951 13.9454 0.34935C9.12353 1.55979 5.62233 5.72723 5.26159 10.6855C1.83788 11.2501 -0.479912 14.4833 0.0846966 17.907C0.586607 20.9507 3.22398 23.1798 6.30874 23.1675H11.5445V21.0732H6.30874C3.99546 21.0732 2.12015 19.1979 2.12015 16.8846C2.12015 14.5714 3.99546 12.6961 6.30874 12.6961C6.88709 12.6961 7.35588 12.2273 7.35588 11.6489C7.35065 6.444 11.5659 2.22034 16.7708 2.21517C21.2764 2.21065 25.155 5.39594 26.0265 9.8164C26.1126 10.2578 26.4708 10.595 26.9166 10.6541C29.7793 11.0618 31.7695 13.713 31.3619 16.5757C30.9959 19.1463 28.8011 21.0603 26.2045 21.0732H22.0159V23.1675H26.2045C30.2528 23.1553 33.5246 19.8636 33.5123 15.8153C33.5021 12.4455 31.1955 9.51666 27.9218 8.71697Z" fill="#686868"/>
-                                <path d="M16.0362 12.9998L11.8477 17.1884L13.3241 18.6649L15.7326 16.2669V26.3091H17.8269V16.2669L20.2248 18.6649L21.7013 17.1884L17.5127 12.9998C17.1043 12.5938 16.4447 12.5938 16.0362 12.9998Z" fill="#686868"/>
-                            </svg>
-                            <span className="m-2">Upload Photo</span>
-                        </label>
-                        <input name="file" id="file" type="file" className="form-control" onChange={this.handleRadio}/>
-                    </div>  
-                    <button type="button" className="btn btn-success" onClick={this.onClickHandler}>Upload</button>
+           {/*Speaker api form */}
+           <div className="container">
+                    <h3 className="text-center p-3">Speaker api</h3>
+                    <div className="row">
+                    <div className="col-md-12">
+                        <div className="form-group files">
+                            <div className="form-group">
+                            <label style={{width:"95px"}} className="p-2" for="speakerName">Name</label>
+                            <input type="text" name="speakerName" onChange={this.handleRadio}/>
+                            </div>
+                            <div className="form-group">
+                            <label style={{width:"95px"}} className="p-2" for="speakerTitle">Speaker Title</label>
+                            <input type="text" name="speakerTitle" onChange={this.handleRadio}/>
+                            </div>
+                            <div className="form-group">
+                            <label style={{width:"95px"}} className="p-2" for="speakerintro">Speaker Intro</label>
+                            <input type="text" name="speakerintro" onChange={this.handleRadio}/>
+                            </div>
+                            <div className="form-group">
+                            <label style={{width:"95px"}} className="p-2" for="speakerDescription">Description</label>
+                            <input type="text" name="speakerDescription" onChange={this.handleRadio}/>
+                            </div>
+                            <label className="p-2 border rounded" for="file">
+                                <svg className="file_upload_button" width="34" height="27" viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M27.9218 8.71697C26.373 2.54679 20.1156 -1.19951 13.9454 0.34935C9.12353 1.55979 5.62233 5.72723 5.26159 10.6855C1.83788 11.2501 -0.479912 14.4833 0.0846966 17.907C0.586607 20.9507 3.22398 23.1798 6.30874 23.1675H11.5445V21.0732H6.30874C3.99546 21.0732 2.12015 19.1979 2.12015 16.8846C2.12015 14.5714 3.99546 12.6961 6.30874 12.6961C6.88709 12.6961 7.35588 12.2273 7.35588 11.6489C7.35065 6.444 11.5659 2.22034 16.7708 2.21517C21.2764 2.21065 25.155 5.39594 26.0265 9.8164C26.1126 10.2578 26.4708 10.595 26.9166 10.6541C29.7793 11.0618 31.7695 13.713 31.3619 16.5757C30.9959 19.1463 28.8011 21.0603 26.2045 21.0732H22.0159V23.1675H26.2045C30.2528 23.1553 33.5246 19.8636 33.5123 15.8153C33.5021 12.4455 31.1955 9.51666 27.9218 8.71697Z" fill="#686868"/>
+                                    <path d="M16.0362 12.9998L11.8477 17.1884L13.3241 18.6649L15.7326 16.2669V26.3091H17.8269V16.2669L20.2248 18.6649L21.7013 17.1884L17.5127 12.9998C17.1043 12.5938 16.4447 12.5938 16.0362 12.9998Z" fill="#686868"/>
+                                </svg>
+                                <span className="m-2">Upload Speaker Photo</span>
+                            </label>
+                            <input name="file" id="file" type="file" className="form-control" onChange={this.handleRadio}/>
+                        </div>  
+                        <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandlerSpeaker}>Upload</button>
+                    </div>
+                </div>
                 </div>
             </div>
-        </div>
-        {/* image upload section ends */}
+            {/* speaker api section ends */}
+           
+           
+            
 
         {/* carousel upload section */}
         <div className="col border rounded m-2 p-3">
@@ -321,39 +423,25 @@ class Dashboard extends Component {
         <div className="row m-0">
             <div className="col border rounded m-2">
 
-                {/*Speaker api form */}
-                <div className="container">
-                    <h3 className="text-center p-3">Speaker api</h3>
-                    <div className="row">
-                    <div className="col-md-12">
-                        <div className="form-group files">
-                            <div className="form-group">
-                            <label style={{width:"95px"}} className="p-2" for="speakerName">Name</label>
-                            <input type="text" name="speakerName" onChange={this.handleRadio}/>
-                            </div>
-                            <div className="form-group">
-                            <label style={{width:"95px"}} className="p-2" for="speakerTitle">Speaker Title</label>
-                            <input type="text" name="speakerTitle" onChange={this.handleRadio}/>
-                            </div>
-                            <div className="form-group">
-                            <label style={{width:"95px"}} className="p-2" for="speakerDescription">Description</label>
-                            <input type="text" name="speakerDescription" onChange={this.handleRadio}/>
-                            </div>
-                            <label className="p-2 border rounded" for="file">
-                                <svg className="file_upload_button" width="34" height="27" viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M27.9218 8.71697C26.373 2.54679 20.1156 -1.19951 13.9454 0.34935C9.12353 1.55979 5.62233 5.72723 5.26159 10.6855C1.83788 11.2501 -0.479912 14.4833 0.0846966 17.907C0.586607 20.9507 3.22398 23.1798 6.30874 23.1675H11.5445V21.0732H6.30874C3.99546 21.0732 2.12015 19.1979 2.12015 16.8846C2.12015 14.5714 3.99546 12.6961 6.30874 12.6961C6.88709 12.6961 7.35588 12.2273 7.35588 11.6489C7.35065 6.444 11.5659 2.22034 16.7708 2.21517C21.2764 2.21065 25.155 5.39594 26.0265 9.8164C26.1126 10.2578 26.4708 10.595 26.9166 10.6541C29.7793 11.0618 31.7695 13.713 31.3619 16.5757C30.9959 19.1463 28.8011 21.0603 26.2045 21.0732H22.0159V23.1675H26.2045C30.2528 23.1553 33.5246 19.8636 33.5123 15.8153C33.5021 12.4455 31.1955 9.51666 27.9218 8.71697Z" fill="#686868"/>
-                                    <path d="M16.0362 12.9998L11.8477 17.1884L13.3241 18.6649L15.7326 16.2669V26.3091H17.8269V16.2669L20.2248 18.6649L21.7013 17.1884L17.5127 12.9998C17.1043 12.5938 16.4447 12.5938 16.0362 12.9998Z" fill="#686868"/>
-                                </svg>
-                                <span className="m-2">Upload Speaker Photo</span>
-                            </label>
-                            <input name="file" id="file" type="file" className="form-control" onChange={this.handleRadio}/>
-                        </div>  
-                        <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandlerSpeaker}>Upload</button>
+                {/* Speaker Showcase Image Upload form*/}
+                    <h3 className="text-center">Speaker showcase Image upload</h3>
+                    <div className="container">
+                        <div className="row d-flex align-items-center justify-content-center">
+                            <div className="form-group mt-3 mr-2 border p-2 rounded files">
+                                <label htmlFor="file" className="d-flex align-items-center">
+                                    <svg className="file_upload_button" width="34" height="27" viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.9218 8.71697C26.373 2.54679 20.1156 -1.19951 13.9454 0.34935C9.12353 1.55979 5.62233 5.72723 5.26159 10.6855C1.83788 11.2501 -0.479912 14.4833 0.0846966 17.907C0.586607 20.9507 3.22398 23.1798 6.30874 23.1675H11.5445V21.0732H6.30874C3.99546 21.0732 2.12015 19.1979 2.12015 16.8846C2.12015 14.5714 3.99546 12.6961 6.30874 12.6961C6.88709 12.6961 7.35588 12.2273 7.35588 11.6489C7.35065 6.444 11.5659 2.22034 16.7708 2.21517C21.2764 2.21065 25.155 5.39594 26.0265 9.8164C26.1126 10.2578 26.4708 10.595 26.9166 10.6541C29.7793 11.0618 31.7695 13.713 31.3619 16.5757C30.9959 19.1463 28.8011 21.0603 26.2045 21.0732H22.0159V23.1675H26.2045C30.2528 23.1553 33.5246 19.8636 33.5123 15.8153C33.5021 12.4455 31.1955 9.51666 27.9218 8.71697Z" fill="#686868"/>
+                                        <path d="M16.0362 12.9998L11.8477 17.1884L13.3241 18.6649L15.7326 16.2669V26.3091H17.8269V16.2669L20.2248 18.6649L21.7013 17.1884L17.5127 12.9998C17.1043 12.5938 16.4447 12.5938 16.0362 12.9998Z" fill="#686868"/>
+                                    </svg>
+                                    <span className="m-2">Upload Photo</span>
+                                </label>
+                                <input name="file" id="file" type="file" className="form-control" onChange={this.handleRadio}/>
+                            </div>  
+                            <button type="button" className="btn btn-success" onClick={this.onClickHandler}>Upload</button>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
-            {/* speaker api section ends */}
+        {/* Speaker image upload section ends */}
 
 
             {/* works api section */}
@@ -387,34 +475,95 @@ class Dashboard extends Component {
 
             {/*Sponsor api form */}
             <div className="col border rounded m-2 p-3">
-                <h3 className="text-center">sponsors api form</h3>
+                <h3 className="text-center">Seminar Photos api form</h3>
                 <div className="container">
                     <div className="row">
                     <div className="col-md-12">
                         <div className="form-group files d-flex flex-column">
-                            <label for="sponsorName">Name</label>
-                            <input type="text" name="sponsorName" onChange={this.handleRadio} />
-
-                            <label for="sponsorlink">Sponsor URL</label>
-                            <input type="text" name="sponsorlink" onChange={this.handleRadio} />
-
+                            
 
                             <label className="mt-3 border rounded p-1" for="file">
                                 <svg className="file_upload_button" width="34" height="27" viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M27.9218 8.71697C26.373 2.54679 20.1156 -1.19951 13.9454 0.34935C9.12353 1.55979 5.62233 5.72723 5.26159 10.6855C1.83788 11.2501 -0.479912 14.4833 0.0846966 17.907C0.586607 20.9507 3.22398 23.1798 6.30874 23.1675H11.5445V21.0732H6.30874C3.99546 21.0732 2.12015 19.1979 2.12015 16.8846C2.12015 14.5714 3.99546 12.6961 6.30874 12.6961C6.88709 12.6961 7.35588 12.2273 7.35588 11.6489C7.35065 6.444 11.5659 2.22034 16.7708 2.21517C21.2764 2.21065 25.155 5.39594 26.0265 9.8164C26.1126 10.2578 26.4708 10.595 26.9166 10.6541C29.7793 11.0618 31.7695 13.713 31.3619 16.5757C30.9959 19.1463 28.8011 21.0603 26.2045 21.0732H22.0159V23.1675H26.2045C30.2528 23.1553 33.5246 19.8636 33.5123 15.8153C33.5021 12.4455 31.1955 9.51666 27.9218 8.71697Z" fill="#686868"/>
                                         <path d="M16.0362 12.9998L11.8477 17.1884L13.3241 18.6649L15.7326 16.2669V26.3091H17.8269V16.2669L20.2248 18.6649L21.7013 17.1884L17.5127 12.9998C17.1043 12.5938 16.4447 12.5938 16.0362 12.9998Z" fill="#686868"/>
                                     </svg>
-                                    <span className="m-2">Upload Sponsor logo</span>
+                                    <span className="m-2">Upload Seminar Photos</span>
                             </label>
                             <input name="file" id="file" type="file" className="form-control" onChange={this.handleRadio}/>
                         </div>  
-                        <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandlerSponsor}>Upload</button>
+                        <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandlerSeminar}>Upload</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         {/* sponsor section ends */}
+
+
+        <div className="row m-0">
+            <div className="col border rounded m-2">
+
+                {/*Notifications api form */}
+                <div className="container">
+                    <h3 className="text-center p-3">Notifications api</h3>
+                    <div className="row">
+                    <div className="col-md-12">
+                        <div className="form-group files">
+                            <div className="form-group">
+                            <label style={{width:"95px"}} className="p-2" for="notificationcontent">Notification Content</label>
+                            <input type="text" name="notificationcontent" onChange={this.handleRadio}/>
+                            </div>
+                        </div>  
+                        <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandlerNotification}>Upload</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            {/* Notifications api section ends */}
+
+
+            {/* Recent Notification API section */}
+            <div className="col border rounded m-2 p-3">
+                <h3 className="text-center">Recent Notification API form</h3>
+            <div className="container">
+                    <div className="row">
+                    <div className="col-md-12">
+                            <div className="form-group">
+                                <label style={{width:"95px"}} className="p-2" for="recentnotificationcontent">Recent Notification Content</label>
+                                <input type="text" name="recentnotificationcontent" onChange={this.handleRadio}/>
+                            </div>
+                        <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandlerRecent}>Upload</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            {/* Recent Notifications API section ends */}
+
+
+            {/*Workshop Photos api form */}
+            <div className="col border rounded m-2 p-3">
+                <h3 className="text-center">Workshop Photos api form</h3>
+                <div className="container">
+                    <div className="row">
+                    <div className="col-md-12">
+                        <div className="form-group files d-flex flex-column">
+                            
+                            <label className="mt-3 border rounded p-1" for="file">
+                                <svg className="file_upload_button" width="34" height="27" viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.9218 8.71697C26.373 2.54679 20.1156 -1.19951 13.9454 0.34935C9.12353 1.55979 5.62233 5.72723 5.26159 10.6855C1.83788 11.2501 -0.479912 14.4833 0.0846966 17.907C0.586607 20.9507 3.22398 23.1798 6.30874 23.1675H11.5445V21.0732H6.30874C3.99546 21.0732 2.12015 19.1979 2.12015 16.8846C2.12015 14.5714 3.99546 12.6961 6.30874 12.6961C6.88709 12.6961 7.35588 12.2273 7.35588 11.6489C7.35065 6.444 11.5659 2.22034 16.7708 2.21517C21.2764 2.21065 25.155 5.39594 26.0265 9.8164C26.1126 10.2578 26.4708 10.595 26.9166 10.6541C29.7793 11.0618 31.7695 13.713 31.3619 16.5757C30.9959 19.1463 28.8011 21.0603 26.2045 21.0732H22.0159V23.1675H26.2045C30.2528 23.1553 33.5246 19.8636 33.5123 15.8153C33.5021 12.4455 31.1955 9.51666 27.9218 8.71697Z" fill="#686868"/>
+                                        <path d="M16.0362 12.9998L11.8477 17.1884L13.3241 18.6649L15.7326 16.2669V26.3091H17.8269V16.2669L20.2248 18.6649L21.7013 17.1884L17.5127 12.9998C17.1043 12.5938 16.4447 12.5938 16.0362 12.9998Z" fill="#686868"/>
+                                    </svg>
+                                    <span className="m-2">Upload Workshop Photos</span>
+                            </label>
+                            <input name="file" id="file" type="file" className="form-control" onChange={this.handleRadio}/>
+                        </div>  
+                        <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandlerWorkshop}>Upload</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {/* Workshop Photos API ends */}
 
     </div>
     // API form element ends

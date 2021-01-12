@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 const speaker = new mongoose.Schema({
     name:String,
     title:String,
+    intro:String,
     description:String,
     file: {
         filename:String 

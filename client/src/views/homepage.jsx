@@ -212,9 +212,9 @@ const TestPage = props => {
                                 exciting E-Talks and become a part of stirring E-Plan! 
                                 Ideate, Pitch and get inspired at the confluence of great minds!
                             </p>
-                            <div className="speakers_section_container">
+                            <div className="homePage_explore_events_button">
                             <div 
-                            style={{ background:"linear-gradient(180deg, #29C2C2 0%, rgba(96, 172, 168, 0.3) 100%)" }} 
+                            // style={{ background:"linear-gradient(180deg, #29C2C2 0%, rgba(96, 172, 168, 0.3) 100%)" }} 
                             className="button_wrapper">
                                 <Link to="/speaker"><button>explore all events</button></Link>
                             </div>

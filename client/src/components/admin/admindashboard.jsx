@@ -144,16 +144,11 @@ class Dashboard extends Component {
 
         // on Click Handler Notifications=>ALL
         onClickHandlerNotification = () => {
-            const data = new FormData() 
-              
-              data.append('content', this.state.data.notificationcontent)
-              
-              const config = {
-                  headers: {
-                      'content-type': 'multipart/form-data'
-                  }
-              };
-            axios.post("http://localhost:1212/notifications", data, config)
+           const payload={
+               content:this.state.data.notificationcontent
+           }
+
+            axios.post("http://localhost:1212/notifications", payload)
               .then(res => { // then print response status
                 console.log('upload success')
               })
@@ -164,16 +159,10 @@ class Dashboard extends Component {
 
         // on Click Handler Recent Notifications
         onClickHandlerRecent = () => {
-            const data = new FormData() 
-              
-              data.append('content', this.state.data.recentnotificationcontent)
-              
-              const config = {
-                  headers: {
-                      'content-type': 'multipart/form-data'
-                  }
-              };
-            axios.post("http://localhost:1212/recent", data, config)
+            const payload={
+                content:this.state.data.recentnotificationcontent
+            }
+            axios.post("http://localhost:1212/recent", payload)
               .then(res => { // then print response status
                 console.log('upload success')
               })
@@ -279,7 +268,7 @@ class Dashboard extends Component {
                 <ul className="list-group m-3">
                     {this.state.show.map(m=>
                         <li className="list-group-item">
-                            <span>{m.name != undefined ? m.name : (m.title != undefined ? m.title : (m.filename != undefined ? m.filename:m.email))}</span>
+                            <span>{m.name != undefined ? m.name : (m.title != undefined ? m.title : (m.filename != undefined ? m.filename:(m.email != undefined ? m.email:m.content)))}</span>
                             <button className="ml-2 btn btn-danger  " onClick={()=>this.handledelete(m._id,m.route)}>Delete</button>
                         </li>
                     )}

@@ -5,7 +5,6 @@ const bp = require('body-parser');
 const notification = require('../model/notification');
 
 router.post('/', async(req, res) => {
-        
         let msg = new notification({ 
             content:req.body.content
         })

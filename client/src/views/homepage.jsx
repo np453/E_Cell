@@ -158,7 +158,7 @@ const TestPage = props => {
                     </Tween>
                     <Timeline target={
                         <div className="container d-flex justify-content-center">
-                            <img src={img_1} className="img img-fluid img_1" alt=""/>
+                            <img src={img_2} className="img img-fluid img_1" alt=""/>
                         </div>
                         }
                     >
@@ -168,7 +168,7 @@ const TestPage = props => {
               </Timeline>
               <Timeline target={
                   <div className="container d-flex justify-content-center">
-                    <img src={img_2} className="img img-fluid img_1" alt=""/>
+                    <img src={img_1} className="img img-fluid img_1" alt=""/>
                   </div>
                 }
               >

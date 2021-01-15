@@ -54,10 +54,8 @@ class SpeakerPageContainer extends Component {
                     <div className=" row m-0 d-flex justify-content-center">
                     {speaker.map(m => 
                         <Speaker borderColor="#1D2B5C" cardColor="#010220" name={m.name} image={base + 'media/' + m.route +'/' + m.filename } designation={m.title} 
-                        intro="The co-founder of LOCO - a real-time mobile quiz show where contestants get a chance to win real money.
-                        The app rolled out in early December of 2017 and has since had 15M+ downloads.
-                        "
-                        intro={m.description.split('.')[0]}
+                        
+                        intro={m.intro}
                         description={m.description}/>
                     )}
                     </div>

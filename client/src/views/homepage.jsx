@@ -18,17 +18,33 @@ import back_collage from '../assets/background_collage.png';
 import TopSection from './topSection'
 
 //HomePage components
-import SpeakersSection from '../components/speakersSection'
+import SpeakersSection from '../components/speakersSection';
 import ImgCarousel from '../components/imgCarousel';
-import Socials from '../components/socials'
+import Socials from '../components/socials';
+import Startups from '../components/startups';
+
+//test images 
+import one from '../assets/ren_photo/1.png';
+import two from '../assets/ren_photo/2.png';
+import three from '../assets/ren_photo/3.png';
+import four from '../assets/ren_photo/4.png';
+import five from '../assets/ren_photo/5.png';
 
 // homepage component
 const TestPage = props => {
+    //scroll progress in Y direction
     const { scrollYProgress } = useViewportScroll()
+
+    //change content initial word
     const [content, setContent] = useState("Involve.")
+
+    //change class of content, once the changing has stopped
     const [contentClass, setContentClass] = useState("first_content_word")
+
+    //initially hide the arrow
     const [showArrow, setArrowVisibility] = useState(false)
 
+    //onScroll animations
     const scaleAnim = useTransform(scrollYProgress, [0, 0.33], [1, 1.5])
     const yPosAnim = useTransform(scrollYProgress, [0, 0.33], [0, -0])
     const yPosAnim2 = useTransform(scrollYProgress, [0.33, 0.67], [-10, 5])
@@ -37,8 +53,13 @@ const TestPage = props => {
     const opacity2 = useTransform(scrollYProgress, [0.33, 0.67, 0.671], [0, 1, 0])
     const opacity3 = useTransform(scrollYProgress, [0.671, 1, 1], [0,1, 0])
 
+    //ref to About us section
     const aboutUsRef = useRef(null);
+
+
     const executeTopScroll = () => console.log(1)
+
+    //items that will appear on sidebar in mobile view
     const sideBarItems = [
         {
           item:"sadsad"
@@ -50,6 +71,8 @@ const TestPage = props => {
           item:"ddsadfdsf"
         }
       ]
+
+      //navbar links in homePage navbar
       const navLinks = [
         {
           navLinkName:"About us",
@@ -92,16 +115,15 @@ const TestPage = props => {
             content:"get ready."
         },
     ]
+
     const showArrowVisibility = () => { setArrowVisibility(true) }
     useEffect(() => {
-        // const {data} = await axios.get('http://localhost:4444/upload/img')
-        // setGallery(data)
-        // ScrollReveal().reveal(".landingPage_content_heading", { duration:700, viewFactor:0.85, afterReveal:changeContent })
-        
         ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
         ScrollReveal().reveal('.ren_logo_1', { viewFactor:1, scale:1.2 })
         ScrollReveal().reveal(".change_content_section", {  viewFactor:0.9, afterReveal:changeContent })
     }, []);
+
+    //change content component function
     const changeContent = () => {
         for(let i=0;i<contents.length;i++) {
             setTimeout(() => {
@@ -124,6 +146,8 @@ const TestPage = props => {
                     { showArrow && <i className=" fa fa-2x fa-arrow-down"></i> } 
                 </div>
             </div>
+
+            {/*About us section*/}
             <Controller>
             <Scene
                 triggerHook="onLeave"
@@ -131,7 +155,7 @@ const TestPage = props => {
                 pin
             >
                 { progress => (
-                <div className="sticky about_us_section">
+                <div className="sticky what_we_do_section about_us_section">
                     <Timeline totalProgress={progress} paused>
                     <Tween
                         from={{ y: 250, opacity:0 }}
@@ -179,6 +203,8 @@ const TestPage = props => {
           </div>
         )}
       </Scene>
+
+    {/*What we do section*/}
     </Controller>  
     <Controller>
             <Scene
@@ -211,19 +237,10 @@ const TestPage = props => {
                                 dynamic panel discussions, a savvy biz-quiz, gripping Mock-IPL auctions, 
                                 exciting E-Talks and become a part of stirring E-Plan! 
                                 Ideate, Pitch and get inspired at the confluence of great minds!
-                            </p>
-                            <div className="homePage_explore_events_button">
-                            <div 
-                            // style={{ background:"linear-gradient(180deg, #29C2C2 0%, rgba(96, 172, 168, 0.3) 100%)" }} 
-                            className="button_wrapper">
-                                <Link to="/speaker"><button>explore all events</button></Link>
-                            </div>
-                            </div>
-                            {/* <img src={ren_logo} className="img img-fluid img_1" alt=""/> */}
+                            </p>   
                         </div>
                         }
-                    >
-                        
+                    >     
                 <Tween from={{  y:0, opacity:0, }} to={{ opacity:1 }}/>
                 <Tween to={{ y: -160, opacity:0.8,  }} />
                 <Tween to={{ y: -180, opacity:0 }} />
@@ -231,12 +248,32 @@ const TestPage = props => {
               </Timeline>
               
             </Timeline>
-            
+            {/* <Timeline target={
+                
+                }
+                    /> */}
           </div>
         )}
       </Scene>
     </Controller>  
-    {/* <Gallery /> */}
+
+    {/*Renissance events image section*/}
+    <div style={{ pointerEvents:"none" }} className="container d-flex justify-content-center flex-column">
+        <div className="row d-flex justify-content-center">
+            <div className="col-md-5 p-2"><img className=" img img-fluid" src={one} alt=""/></div>
+            <div className="col-md-5 p-2"><img className=" img img-fluid" src={two} alt=""/></div>
+            <div className="col-md-5 p-2"><img className=" img img-fluid" src={three} alt=""/></div>
+            <div className="col-md-5 p-2"><img className=" img img-fluid" src={four} alt=""/></div>
+            <div className="col-md-5 p-2"><img className=" img img-fluid" src={five} alt=""/></div>
+        </div>
+        <div className="d-flex justify-content-center homePage_explore_events_button">
+            <div className="button_wrapper">
+                <Link to="/speaker"><button>explore all events</button></Link>
+            </div>
+        </div>
+    </div>
+
+    {/*What we do :: workshops*/}
     <Controller>
             <Scene
                 triggerHook="onLeave"
@@ -250,7 +287,7 @@ const TestPage = props => {
                         from={{ x: -50,y:-20, opacity:0 }}
                         to={{ x: 0,y:0, opacity:1 }}
                     >
-                      <div className="container what_we_do_section d-flex flex-column align-items-center justify-content-center">
+                      <div className="container d-flex flex-column align-items-center justify-content-center">
                         <h1>Workshops</h1>
                         <p style={{ fontFamily:"Ubuntu" }} className="text-center">
                             E-Cell MNNIT presents you workshops related to Design thinking, 
@@ -270,6 +307,68 @@ const TestPage = props => {
         )}
       </Scene>
     </Controller> 
+
+    {/*What we do :: Seminars*/}
+    <Controller>
+            <Scene
+                triggerHook="onLeave"
+                duration={2000}
+                pin
+            >
+                { progress => (
+                <div className="sticky seminar_section">
+                    <Timeline totalProgress={progress} paused>
+                    <Tween
+                        from={{ y:-20, opacity:0 }}
+                        to={{ y:0, opacity:1 }}
+                    >
+                      <div className="container d-flex flex-column align-items-center justify-content-center">
+                        <h1>Seminars</h1>
+                        <div style={{ fontFamily:"Ubuntu" }} className="text-center">
+                            <div className="row d-flex justify-content-center m-0">
+                                <h2>E-cell presents you a series of  seminars on Fundraising, Incubation and Startup policies</h2>
+                                <div className="col-md-4">
+                                    <h3>FUNDRAISING</h3> 
+                                    <p>
+                                    The Seminar details the nuances and the process of seeking funds for
+                                    entrepreneurs and their startups through a series of investments
+                                    to fuel up the business as fundraising plays an important role in 
+                                    defining the success and stability of any enterprise. 
+                                    </p>
+                                </div>
+                                <div className="col-md-4">
+                                    <h3>INCUBATION</h3>
+                                    <p>
+                                        The seminar gives the startups an 
+                                        overview of business incubators which help the start-ups to 
+                                        manage finances, ensure proper utilization of the money and 
+                                        various types of support This seminar educates the entrepreneurs
+                                        about everything related to the incubation process
+                                    </p>
+                                </div>
+                                <div className="col-md-4">
+                                <h3>STARTUP POLICY</h3>
+                                    <p>
+                                        The Seminar  covers the startup schemes and economic 
+                                        goals that help in building a strong ecosystem for 
+                                        nurturing startups by facilitating ease of doing business, 
+                                        promoting foreign investments etc
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </Tween>
+            </Timeline>
+            
+          </div>
+        )}
+      </Scene>
+    </Controller> 
+
+    <Startups/>
+
+    {/* Speaker section */}
     <Controller>
         <Scene
             triggerHook="onLeave"
@@ -293,6 +392,8 @@ const TestPage = props => {
             )}
       </Scene>    
     </Controller>
+
+    {/* Carousel */}
     <Controller>
         <Scene
             triggerHook="onLeave"
@@ -317,6 +418,8 @@ const TestPage = props => {
             )}
       </Scene>    
     </Controller>
+
+    {/*Socials :: we're 10k strong*/}
     <Controller>
         <Scene
             triggerHook="onLeave"
@@ -341,17 +444,18 @@ const TestPage = props => {
             )}
       </Scene>    
     </Controller>
+
+    {/* Change content section */}
     <div style={{background:"black"}}className="row m-0 change_content_section vh-100">
         <img src={back_collage} className="img img-fluid" alt=""/>
         <motion.h1 className="content landingPage_content_heading">
             <span className={contentClass}>{content}</span>
         </motion.h1>
     </div> 
-        
-        
-        </div>    
+
+    </div>    
     
-        </React.Fragment>
+    </React.Fragment>
     );
 }
 

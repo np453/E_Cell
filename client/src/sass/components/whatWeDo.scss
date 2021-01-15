@@ -1,7 +1,7 @@
 // what we do section including events and renaissance section
 
 .what_we_do_section {
-    height: 30vh;
+    // height: 30vh;
     h4 {
         color: rgba(white, 0.9);
         font-family: $font-1;
@@ -27,6 +27,29 @@
         color: rgba(white, 0.8);
         font-family: $font-1;
     }
+}
+
+.seminar_section {
+    h1 {
+        color: rgba(white, 0.8);
+        font-family: $font-1;
+        font-size: 66px;
+    }
+    h2 {
+        color: rgba(white, 0.8);
+        font-family: 'Ubuntu';
+        margin: 1.5rem auto;
+    }
+    h3 {
+        color: rgba(rgb(85, 122, 202), 0.8);
+        font-family: 'Ubuntu';
+        margin: 1.5rem auto;
+    }
+    p {
+        font-family: 'Ubuntu';
+        color: rgba(white, 0.7);
+    }
+
 }
 
 @media (max-width:991.98px) {

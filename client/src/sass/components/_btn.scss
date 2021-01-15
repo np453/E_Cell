@@ -2,6 +2,7 @@
 
 
 .speakers_section_container, .homePage_explore_events_button {
+    pointer-events:none;
     .button_wrapper {
         display: flex;
         justify-content: center;

@@ -435,7 +435,7 @@ class Dashboard extends Component {
 
             {/* works api section */}
             <div className="col border rounded m-2 p-3">
-                <h3 className="text-center">Works api form</h3>
+                <h3 className="text-center">Renaissance Events API form</h3>
             <div className="container">
                     <div className="row">
                     <div className="col-md-12">

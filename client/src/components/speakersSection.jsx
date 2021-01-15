@@ -28,16 +28,16 @@ class SpeakersSection extends Component {
                 </div> 
                 <div className="col-md-12 d-flex justify-content-center">
             <div className="col-md-10 speakers_container">
-            <div class="grid">
+            <div className="grid">
           <ul id="hexGrid">
             {/* maaping each speaker */}
             {speakers.map( m =>
-              <li class="hex">
-              <div class="hexIn">
-                <a class="hexLink" href="#">
-                  <div class='img_speakers' style={{backgroundImage:`url(${ base + 'media/ispeaker/' + m.filename})`}}></div>
+              <li className="hex">
+              <div className="hexIn">
+                <div className="hexLink">
+                  <div className='img_speakers' style={{backgroundImage:`url(${ base + 'media/ispeaker/' + m.filename})`}}></div>
                   <img src={ base + 'media/ispeaker/' + m.filename } alt=""/>
-                </a>
+                </div>
               </div>
             </li>
               )}         

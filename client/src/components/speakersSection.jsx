@@ -14,7 +14,6 @@ class SpeakersSection extends Component {
     componentDidMount = async()=> {
       // getting images for the hex grid
       const { data:speaker } = await axios.get('/ispeaker');
-      console.log(speaker)
       this.setState({speakers:speaker, loadingSpeakers : false })
     }
     

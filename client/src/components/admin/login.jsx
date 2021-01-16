@@ -40,7 +40,7 @@ class Login extends Component {
         // redirecting to admin dashboard post login
         if(this.state.redirect) {
             
-            return <Redirect to="/admin_dashboard"/>
+            return <Redirect to="/admin"/>
         }
         return (
             <div style={{backgroundColor:"#fff"}} className="vh-100 d-flex justify-content-center align-items-center container-fluid p-0">

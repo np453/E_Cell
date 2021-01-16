@@ -25,13 +25,13 @@ class TopSection2 extends Component {
           ],
           sideBarItems : [
             {
-              item:"sadsad"
+              item:"Speakers"
             },
             {
-              item:"ddsadfdsf"
+              item:"Sponsors"
             },
             {
-              item:"ddsadfdsf"
+              item:"Team"
             }
           ]
     }

@@ -21,6 +21,9 @@ import SpeakerPageContainer from './containers/SpeakerPageContainer';
 import Team from './components/team';
 import Sponsors from './components/Sponsors';
 
+//notification
+import Notification from './containers/AllNotificationContainer'
+
 //This component helps in scrolling to top, when a new page loads
 import ScrollToTop from './common/ScrollToTop';
 
@@ -35,12 +38,14 @@ function App() {
           {/*HomePage route*/}
           <Route path="/" exact  component={HomePage} />
 
+          {/*All Notifications route*/}
+          <Route path="/notification" exact  component={Notification} />
 
           <Route path="/admin_login" exact component={Login} />
           {/* <Route path="/admin_register"  component={Register} /> */}
 
           {/*Admin dashboard page route*/}
-          <Route path="/admin_dashboard" exact component={Dashboard} />
+          <Route path="/admin" exact component={Dashboard} />
 
           {/*TeamPage route*/}
           <Route path="/team"  exact component={Team} />

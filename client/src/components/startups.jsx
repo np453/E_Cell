@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import older_startups from '../assets/older_startups.png';
+import startups16_18 from '../assets/startups16_18.png';
+import recent_startups from '../assets/recent_startups.png';
 class Startups extends Component {
 
     state = {
@@ -25,9 +28,18 @@ class Startups extends Component {
                         <input onClick={this.changeRadio} type="radio" value="2" checked={ val==2 ? true : false } className="toggle_option" id="second_toggle" name="toggle_option" />
                         <input onClick={this.changeRadio} type="radio" value="3" checked={ val==3 ? true : false } className="toggle_option" id="third_toggle"  name="toggle_option" />
                         <label htmlFor="first_toggle"><p>Older</p></label>
-                        <label htmlFor="second_toggle"><p>2016-19</p></label>
-                        <label htmlFor="third_toggle"><p>recent</p></label>
+                        <label htmlFor="second_toggle"><p>2016-18</p></label>
+                        <label htmlFor="third_toggle"><p>Recent</p></label>
                         <div className="toggle_option_slider"></div>
+                    </div>
+                </div>
+
+                {/* older startups */}
+                <div className="row d-flex justify-content-center">
+                    <div className="mt-5 startups_by_mnnit col-md-7">
+                        {this.state.defaultRadio === "1" && <img className="img img-fluid" src={older_startups} alt=""/>}
+                        {this.state.defaultRadio === "2" && <img className="img img-fluid" src={startups16_18} alt=""/>}
+                        {this.state.defaultRadio === "3" && <img className="img img-fluid" src={recent_startups} alt=""/>}
                     </div>
                 </div>
             </div>

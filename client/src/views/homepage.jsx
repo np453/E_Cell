@@ -30,6 +30,9 @@ import three from '../assets/ren_photo/3.png';
 import four from '../assets/ren_photo/4.png';
 import five from '../assets/ren_photo/5.png';
 
+import axios from 'axios';
+import { base } from '../base';
+
 // homepage component
 const TestPage = props => {
     //scroll progress in Y direction
@@ -52,7 +55,7 @@ const TestPage = props => {
     const opacity = useTransform(scrollYProgress, [0, 0.33, 0.331], [0.8, 1, 0])
     const opacity2 = useTransform(scrollYProgress, [0.33, 0.67, 0.671], [0, 1, 0])
     const opacity3 = useTransform(scrollYProgress, [0.671, 1, 1], [0,1, 0])
-
+    const [gallery, setGallery] = useState([])
     //ref to About us section
     const aboutUsRef = useRef(null);
 
@@ -62,13 +65,13 @@ const TestPage = props => {
     //items that will appear on sidebar in mobile view
     const sideBarItems = [
         {
-          item:"sadsad"
+          item:"Speakers"
         },
         {
-          item:"ddsadfdsf"
+          item:"Sponsors"
         },
         {
-          item:"ddsadfdsf"
+          item:"Team"
         }
       ]
 
@@ -121,6 +124,7 @@ const TestPage = props => {
         ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
         ScrollReveal().reveal('.ren_logo_1', { viewFactor:1, scale:1.2 })
         ScrollReveal().reveal(".change_content_section", {  viewFactor:0.9, afterReveal:changeContent })
+        axios.get('/works/').then(data => {setGallery(data.data)})
     }, []);
 
     //change content component function
@@ -133,6 +137,7 @@ const TestPage = props => {
             ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
         }
     }
+    
     return (
         <React.Fragment>
             <div className="container-fluid landingPage p-0"> 
@@ -258,13 +263,15 @@ const TestPage = props => {
     </Controller>  
 
     {/*Renissance events image section*/}
-    <div className="container d-flex justify-content-center flex-column">
+    <div className="container renissance_image_gallery d-flex justify-content-center flex-column">
         <div style={{ pointerEvents:"none" }} className="row d-flex justify-content-center">
-            <div className="col-md-5 p-2"><img className=" img img-fluid" src={one} alt=""/></div>
-            <div className="col-md-5 p-2"><img className=" img img-fluid" src={two} alt=""/></div>
-            <div className="col-md-5 p-2"><img className=" img img-fluid" src={three} alt=""/></div>
-            <div className="col-md-5 p-2"><img className=" img img-fluid" src={four} alt=""/></div>
-            <div className="col-md-5 p-2"><img className=" img img-fluid" src={five} alt=""/></div>
+            {gallery.map(m => 
+                <div className="col-md-5 mb-4 d-flex flex-column align-items-center justify-content-center p-2">
+                    <img className="img img-fluid" src={base + 'media/' + m.route + '/' + m.filename} alt={"mnnit renaissance" + m.title}/>
+                    <h4>{m.title}</h4>
+                    <p className="text-center">{m.description}</p>
+                </div>    
+            )}
         </div>
         <div className="d-flex justify-content-center homePage_explore_events_button">
             <div className="button_wrapper">
@@ -366,7 +373,31 @@ const TestPage = props => {
       </Scene>
     </Controller> 
 
-    <Startups/>
+    <Controller>
+        <Scene
+            triggerHook="onLeave"
+            duration={2000}
+            pin
+            >
+                { progress => (
+                <div className="">
+                    <Timeline totalProgress={progress} paused>
+                        <Tween
+                            from={{ y:100, opacity:0 }}
+                            to={{ y:20, opacity:1 }}
+                        >
+                        <div>
+                            <Startups/>
+                        </div>
+                        
+                        </Tween>
+                    </Timeline>
+                </div>
+            )}
+      </Scene>    
+    </Controller>
+
+    
 
     {/* Speaker section */}
     <Controller>

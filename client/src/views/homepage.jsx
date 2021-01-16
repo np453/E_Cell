@@ -258,8 +258,8 @@ const TestPage = props => {
     </Controller>  
 
     {/*Renissance events image section*/}
-    <div style={{ pointerEvents:"none" }} className="container d-flex justify-content-center flex-column">
-        <div className="row d-flex justify-content-center">
+    <div className="container d-flex justify-content-center flex-column">
+        <div style={{ pointerEvents:"none" }} className="row d-flex justify-content-center">
             <div className="col-md-5 p-2"><img className=" img img-fluid" src={one} alt=""/></div>
             <div className="col-md-5 p-2"><img className=" img img-fluid" src={two} alt=""/></div>
             <div className="col-md-5 p-2"><img className=" img img-fluid" src={three} alt=""/></div>

@@ -18,7 +18,6 @@ router.post('/', async(req, res) => {
 router.get('/', async(req, res) => {
   const allnotifications = await notification.find({ })
   const notifications = [];
-  console.log(allnotifications)
   for(let i=0;i<allnotifications.length;i++) {
     notifications.push( {_id:allnotifications[i]._id,route:"notification",content:allnotifications[i].content, created_at:allnotifications[i].created_at } )
   }

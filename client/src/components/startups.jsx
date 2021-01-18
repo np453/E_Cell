@@ -35,7 +35,7 @@ class Startups extends Component {
                 </div>
 
                 {/* older startups */}
-                <div className="row d-flex justify-content-center">
+                <div style={{ pointerEvents:"none" }} className="row d-flex justify-content-center">
                     <div className="mt-5 startups_by_mnnit col-md-7">
                         {this.state.defaultRadio === "1" && <img className="img img-fluid" src={older_startups} alt=""/>}
                         {this.state.defaultRadio === "2" && <img className="img img-fluid" src={startups16_18} alt=""/>}

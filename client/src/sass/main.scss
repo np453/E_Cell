@@ -37,8 +37,18 @@
 //text selection color
 @import "./components/selection";
 
+//rotating cube
+@import "./components/cube";
+
 //notification
 @import "./components/notification";
+
+//contact form
+@import "./components/contact";
+
+//homepage video
+@import "./components/video";
+
 //general changes in page
 html {
     scroll-behavior: smooth;

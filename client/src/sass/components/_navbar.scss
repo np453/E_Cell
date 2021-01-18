@@ -41,11 +41,30 @@
         .sideBar-item {
             padding: 1rem;
         }
-
+        .back_to_home_sideBar {
+            margin-top: 3rem;
+            font-size: 14px;
+            padding: 0.4rem;
+            text-align: center;
+            background-color: rgba(rgb(18, 45, 56), 0.5);
+            &:hover {
+                cursor: pointer;
+            }
+        }
         .close_sidebar {
             text-align: right;
             .fa-times {
                 font-size: 23px;
+                padding: 0.3rem;
+                background-color: rgba(rgb(9, 13, 34), 0.9);
+                width: 30px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
 
@@ -91,9 +110,6 @@
             color: rgba(rgb(128, 128, 128), 0.9);
         }
 
-        .close_sidebar {
-            border-bottom: 2px solid rgba(white, 0.3);
-        }
     }
     .navbar-nav {
         .nav-links {

@@ -2,6 +2,7 @@
 
 .what_we_do_section {
     // height: 30vh;
+    z-index: 0 !important;
     h4 {
         color: rgba(white, 0.9);
         font-family: $font-1;
@@ -11,6 +12,7 @@
     .ren_logo {
         margin-top: 4rem;
         // height: 140vh;
+        
     }
     .ren_logo_1 {
         width:15rem;
@@ -29,14 +31,47 @@
     }
 }
 
+.workshops_section {
+    img {
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
 .seminar_section {
+
+    .seminar_card {
+        margin: 2.5rem auto;
+    }
+
+    .seminar_card_img, .seminar_card_content {
+        background-color: #202020;
+    }
+    .seminar_card_img {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        img {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .seminar_card_content {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
     h1 {
-        color: rgba(white, 0.8);
+        color: rgba(rgb(85, 122, 202), 0.8);
         font-family: $font-1;
         font-size: 66px;
     }
     h2 {
-        color: rgba(white, 0.8);
+        font-size: 23px;
+        color: rgba(white, 0.9);
         font-family: 'Ubuntu';
         margin: 1.5rem auto;
     }
@@ -51,8 +86,22 @@
     }
 
 }
+@media (min-width:768px) {
+    .seminar_card {
+        height: 300px;
+    }
+}
 
 @media (max-width:991.98px) {
+    .workshops_section {
+        img {
+            border-radius: 50%;
+            width: 270px;
+            height: 270px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
     .what_we_do_section {
         height: 30vh;
         h4 {
@@ -78,6 +127,22 @@
 }
 
 @media (max-width:767.98px) {
+    
+    .seminar_card_img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px !important;
+        img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 0px !important;
+        }
+    }
+    .seminar_card_content {
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
     .what_we_do_section {
         height: 30vh;
         h4 {
@@ -101,8 +166,45 @@
         }
     } 
 }
+@media (max-width:500px) {
+    .workshops_section {
+        img {
+            margin-top: 1.2rem;
+            width: 260px;
+            height: 260px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%
+        }
+    }
+    .seminar_card{
+        width: 80%;
+        p {
+            font-size: 14px;
+            padding-bottom: 1rem;
+            
+        }
+    }
+    .seminar_section {
+        h1 {
+            font-size: 43px;
+        }
+        h2 {
+            font-size: 18px;
+        }
+    }
 
+}
 @media (max-width:320px) {
+    .workshops_section {
+        img {
+            border-radius: 50%;
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
     .what_we_do_section {
         height: 60vh;
         h4 {
@@ -117,4 +219,30 @@
             font-size: 14px;
         }
     } 
+    .seminar_section {
+        h1 {
+            font-size: 40px;
+        }
+        h2 {
+            font-size: 17px;
+        }
+    }
+    .seminar_card {
+        h3 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 13px;
+            padding-bottom: 1rem;
+            
+        }
+    }
+
+    .ren_logo {
+        p {
+            max-width: 16.5rem;
+        }
+    }
+    
 }
+

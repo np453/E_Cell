@@ -24,6 +24,9 @@ import Sponsors from './components/Sponsors';
 //notification
 import Notification from './containers/AllNotificationContainer'
 
+//contact form
+import Contact from './components/contact';
+
 //This component helps in scrolling to top, when a new page loads
 import ScrollToTop from './common/ScrollToTop';
 
@@ -52,6 +55,9 @@ function App() {
 
           {/*Speaker page route*/}
           <Route path="/speaker"  exact component={SpeakerPageContainer} />
+
+          {/*Contact page route*/}
+          <Route path="/contact"  exact component={Contact} />
 
           {/*Sponsor page route*/}
           <Route path="/sponsor"  exact component={Sponsors} />

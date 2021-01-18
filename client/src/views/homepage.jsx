@@ -19,16 +19,20 @@ import TopSection from './topSection'
 
 //HomePage components
 import SpeakersSection from '../components/speakersSection';
+import SpeakerSectionForMobile from '../containers/speakerSectionForMobile';
 import ImgCarousel from '../components/imgCarousel';
 import Socials from '../components/socials';
 import Startups from '../components/startups';
 
 //test images 
-import one from '../assets/ren_photo/1.png';
-import two from '../assets/ren_photo/2.png';
-import three from '../assets/ren_photo/3.png';
-import four from '../assets/ren_photo/4.png';
-import five from '../assets/ren_photo/5.png';
+import workshop_img_1 from '../assets/workshop_img_1.png';
+import workshop_img_2 from '../assets/workshop_img_2.png';
+import seminar_img from '../assets/seminar_img.png';
+import seminar_img1 from '../assets/seminar_img1.png';
+import seminar_img2 from '../assets/seminar_img2.png';
+
+//common components
+import SeminarCard from '../common/seminarCard';
 
 import axios from 'axios';
 import { base } from '../base';
@@ -218,7 +222,7 @@ const TestPage = props => {
                 pin
             >
                 { progress => (
-                <div className="sticky what_we_do_section">
+                <div className="what_we_do_section">
                     <Timeline totalProgress={progress} paused>
                     <Tween
                         from={{ y: 550, opacity:0 }}
@@ -284,7 +288,7 @@ const TestPage = props => {
     <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={2000}
+                duration={1000}
                 pin
             >
                 { progress => (
@@ -294,7 +298,7 @@ const TestPage = props => {
                         from={{ x: -50,y:-20, opacity:0 }}
                         to={{ x: 0,y:0, opacity:1 }}
                     >
-                      <div className="container d-flex flex-column align-items-center justify-content-center">
+                      <div className="workshops_section container d-flex flex-column align-items-center justify-content-center">
                         <h1>Workshops</h1>
                         <p style={{ fontFamily:"Ubuntu" }} className="text-center">
                             E-Cell MNNIT presents you workshops related to Design thinking, 
@@ -306,6 +310,14 @@ const TestPage = props => {
                             You will also be enlightened to various opportunities, challenges, and facets 
                             related to fields of Design Thinking, Intellectual Property Rights (IPR) and Innovations.
                         </p>
+                        <div style={{ pointerEvents:"none" }} className=" row workshop_images">
+                            <div className="col-md-6 d-flex justify-content-center align-items-center">
+                                <img className="workshop_image1 img img-fluid" src={workshop_img_1} alt=""/>
+                            </div>
+                            <div className="col-md-6 d-flex justify-content-center align-items-center">
+                                <img className="workshop_image2 img img-fluid" src={workshop_img_2} alt=""/>
+                            </div>
+                        </div>
                     </div>
                     </Tween>
             </Timeline>
@@ -319,7 +331,7 @@ const TestPage = props => {
     <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={2000}
+                duration={1600}
                 pin
             >
                 { progress => (
@@ -329,40 +341,48 @@ const TestPage = props => {
                         from={{ y:-20, opacity:0 }}
                         to={{ y:0, opacity:1 }}
                     >
-                      <div className="container d-flex flex-column align-items-center justify-content-center">
-                        <h1>Seminars</h1>
+                      <div className="container">
+                        <h1 className="text-center">Seminars</h1>
                         <div style={{ fontFamily:"Ubuntu" }} className="text-center">
-                            <div className="row d-flex justify-content-center m-0">
                                 <h2>E-cell presents you a series of  seminars on Fundraising, Incubation and Startup policies</h2>
-                                <div className="col-md-4">
-                                    <h3>FUNDRAISING</h3> 
-                                    <p>
+                            <div className="d-flex justify-content-center flex-column">
+                                <SeminarCard title="FUNDRAISING" content="
                                     The Seminar details the nuances and the process of seeking funds for
                                     entrepreneurs and their startups through a series of investments
                                     to fuel up the business as fundraising plays an important role in 
-                                    defining the success and stability of any enterprise. 
-                                    </p>
-                                </div>
-                                <div className="col-md-4">
-                                    <h3>INCUBATION</h3>
-                                    <p>
-                                        The seminar gives the startups an 
-                                        overview of business incubators which help the start-ups to 
-                                        manage finances, ensure proper utilization of the money and 
-                                        various types of support This seminar educates the entrepreneurs
-                                        about everything related to the incubation process
-                                    </p>
-                                </div>
-                                <div className="col-md-4">
-                                <h3>STARTUP POLICY</h3>
-                                    <p>
-                                        The Seminar  covers the startup schemes and economic 
-                                        goals that help in building a strong ecosystem for 
-                                        nurturing startups by facilitating ease of doing business, 
-                                        promoting foreign investments etc
-                                    </p>
-                                </div>
+                                    defining the success and stability of any enterprise.
+                                "
+                                    image={seminar_img}
+                                />
+                                <SeminarCard title="INCUBATION" content="
+                                    The seminar gives the startups an 
+                                    overview of business incubators which help the start-ups to 
+                                    manage finances, ensure proper utilization of the money and 
+                                    various types of support This seminar educates the entrepreneurs
+                                    about everything related to the incubation process
+                                "
+                                    image={seminar_img1}
+                                />
+                                <SeminarCard title="STARTUP POLICY" content="
+                                    The Seminar  covers the startup schemes and economic 
+                                    goals that help in building a strong ecosystem for 
+                                    nurturing startups by facilitating ease of doing business, 
+                                    promoting foreign investments etc
+                                "
+                                    image={seminar_img2}
+                                />
                             </div>
+
+                            {/* <div className="row p-0 d-flex">
+                                <div className="d-flex col-md-9 bg-dark">
+                                <div className="col-md-3 p-0">
+                                    
+                                </div>
+                                <div className="col-md-6 mx-auto text-center">
+                                    
+                                </div>
+                                </div>
+                            </div> */}
                         </div>
                     </div>
                     </Tween>
@@ -373,6 +393,8 @@ const TestPage = props => {
       </Scene>
     </Controller> 
 
+
+    {/* Startups by MNNITians */}
     <Controller>
         <Scene
             triggerHook="onLeave"
@@ -414,7 +436,12 @@ const TestPage = props => {
                             to={{ x: 0,y:-4, opacity:1 }}
                         >
                         <div>
-                        <SpeakersSection />
+                        <div className="speaker_section_for_laptop">
+                            <SpeakersSection />
+                        </div>
+                        <div className="speaker_section_for_mobile">
+                            {/* <SpeakerSectionForMobile /> */}
+                        </div>
                         </div>
                         
                         </Tween>

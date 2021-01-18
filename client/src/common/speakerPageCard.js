@@ -51,7 +51,7 @@ const Speaker = props => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body ref={modalRef}>
-        <div  className="row">
+        <div className="row">
             <div className="col-md-4 d-flex justify-content-center align-items-center flex-column">
                 <img className="img img-fluid rounded-circle" src={props.image}></img>
                 <h5 className="text-center mt-4">{props.name}</h5>

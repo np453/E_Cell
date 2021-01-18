@@ -1,0 +1,27 @@
+.main_page_heading_container {
+    .background_networks_section {
+        .homePage_video_for_mobile {
+            padding-top: 6rem;
+        }
+    }
+}
+
+@media (min-width:767.98px) {
+    .main_page_heading_container {
+        .background_networks_section {
+            .homePage_video_for_mobile {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width:767.98px) {
+    .main_page_heading_container {
+        .background_networks_section {
+            .homePage_video_for_laptop {
+                display: none;
+            }
+        }
+    }
+}

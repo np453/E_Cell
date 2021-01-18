@@ -100,7 +100,7 @@ const Navbar = props => {
                             </form> 
                         </div>
                     </div>  
-                    
+                    <Link to="/"><h6 className="back_to_home_sideBar"><span>Back to Home</span></h6></Link>
                 </ul>
                 <div className={"container " + "navbar-"+props.position}>
                 <nav className={"navbar navbar-expand-lg " + "navbar-"+props.position}>

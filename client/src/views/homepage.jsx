@@ -160,7 +160,7 @@ const TestPage = props => {
             <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={4000}
+                duration={3000}
                 pin
             >
                 { progress => (
@@ -218,7 +218,7 @@ const TestPage = props => {
     <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={3500}
+                duration={3000}
                 pin
             >
                 { progress => (

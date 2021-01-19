@@ -150,7 +150,7 @@ const TestPage = props => {
             <TopSection aboutUsRef={aboutUsRef} executeTopScroll={executeTopScroll}/>
 
             {/* Change content section */}
-            <div style={{background:"black"}}className="row m-0 change_content_section vh-100">
+            <div style={{background:"black"}}className="row pt-5 m-0 change_content_section vh-100">
                     <img src={back_collage} className="img img-fluid" alt=""/>
                     <motion.h1 className="content landingPage_content_heading">
                         <span className={contentClass}>{content}</span>
@@ -418,7 +418,7 @@ const TestPage = props => {
             pin
             >
                 { progress => (
-                <div className="">
+                <div className="speaker_section_for_laptop_wrapper">
                     <Timeline totalProgress={progress} paused>
                         <Tween
                             from={{ y:80, opacity:0 }}
@@ -428,9 +428,9 @@ const TestPage = props => {
                         <div className="speaker_section_for_laptop">
                             <SpeakersSection />
                         </div>
-                        <div className="speaker_section_for_mobile">
-                            {/* <SpeakerSectionForMobile /> */}
-                        </div>
+                        {/* <div className="speaker_section_for_mobile">
+                            <SpeakerSectionForMobile />
+                        </div> */}
                         </div>
                         
                         </Tween>

@@ -8,7 +8,8 @@ import { base } from '../base'
 // speaker container page
 class SpeakerPageContainer extends Component {
     state = {
-        speaker : []
+        speaker : [],
+        loadingSpeaker:true
     }
     navLinks = [
         {
@@ -28,12 +29,15 @@ class SpeakerPageContainer extends Component {
       executeBackToTopScroll = () => this.backToTop.current.scrollIntoView()
       componentDidMount = async() => {
           const { data : speaker } = await axios.get('/api/speaker')
-          this.setState({ speaker })
+          this.setState({ speaker, loadingSpeaker:false })
       }
       
     render() {
         const speaker = this.state.speaker === undefined ? null : this.state.speaker
-        return (
+        const el = this.state.loadingSpeaker === true ? 
+        <div style={{ height:"100vh", background:"black", }} className="container-fluid p-0 d-flex justify-content-center align-items-center">
+            <h3 style={{ color:"#f6f6f6" }}>Loading...</h3>
+        </div> : 
             <div className="speaker_page_main_background">
                 <Navbar 
                 sidebarBackground="#333" 
@@ -65,6 +69,8 @@ class SpeakerPageContainer extends Component {
                     <Link to="/">Back to Home</Link>
                 </div>
             </div>
+        return (
+            el
         );
     }
 }

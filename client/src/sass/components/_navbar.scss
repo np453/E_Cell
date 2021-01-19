@@ -8,12 +8,12 @@
     .sideBar {
         background-color: #081b24;
         list-style: none;
-        position: absolute;
+        position: fixed;
         top: 0;
         // left: 0;
         width: 0;
         height: 100%;
-        z-index: 1;
+        z-index: 1000;
         overflow-x: hidden;
         transition: all 0.3s;
         .sideBar_speakers_row {
@@ -149,3 +149,21 @@ button.navbar-toggler:focus, .navbar-toggler:active, .navbar-toggler-icon:focus{
     border:none;
     box-shadow:none;
 }
+
+@media (max-width:320px) {
+    .navbar-toggler {
+        position: absolute;
+        right: 0;
+        top: 13.6%;
+      }
+    .icon-bar {
+        width: 2rem;
+        height: 0.2rem;
+        // margin: 0.3rem;
+        border-radius: 6px;
+        background-color: #797777;
+        // display: block;
+        transition: all 0.2s;
+        // margin-top: 4px
+    }
+} 

@@ -56,7 +56,7 @@ class AllNotificationContainer extends Component {
                 </tr>
             </thead>
             <tbody>
-            {this.state.notification.map(m => 
+            {this.state.notification.slice(0).reverse().map(m => 
                 // <Link style={{color:"#1D8EB1"}} to={'/notification/'+m.slug}>
                     <tr className=''>
                         <td>

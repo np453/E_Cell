@@ -67,7 +67,7 @@ class TopSection2 extends Component {
     render() {
       // document.body.style.overflow = this.state.showScroll === false ? "hidden" : "visible"
         return (
-            <div className="container-fluid p-0 landing_page_top_section__container2">
+            <div style={{ minHeight:"100vh" }} className="container-fluid p-0 landing_page_top_section__container2">
                 {<Navbar 
                 sidebarBackground="#333" 
                 sideBarItems={this.state.sideBarItems} 

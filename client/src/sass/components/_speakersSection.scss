@@ -267,13 +267,9 @@ opacity: 1;
   }
 }
 
-@media (min-width:767px) {
-  .speaker_section_for_mobile {
-    display: none;
-  }
-}
+
 @media (max-width:767px) {
-  .speaker_section_for_laptop {
+  .speaker_section_for_laptop_wrapper {
     display: none;
   }
 }

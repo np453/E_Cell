@@ -241,7 +241,7 @@ class Dashboard extends Component {
         const data= await axios.get(`http://localhost:1212/api/${route}/`);
         
         this.setState({show:data.data, showApi:true, hideForms:true});
-        console.log(this.state.show)
+        
         }
 
         // onclick handler for deleting apis
@@ -575,6 +575,7 @@ class Dashboard extends Component {
                         <li onClick={()=>this.handleclick_getapi("contact")} className="list-group-item dashboard_Link"> Get Email subs</li>
                         <li onClick={()=>this.handleclick_getapi("workshop")} className="list-group-item dashboard_Link">Workshop API</li>
                         <li onClick={()=>this.handleclick_getapi("seminar")} className="list-group-item dashboard_Link">Seminar API</li>
+                        <li onClick={()=>this.handleclick_getapi("getintouch")} className="list-group-item dashboard_Link">Get in Touch API</li>
                     </ul>
                     <Link style={{ color:"black", textDecoration:"none" }} to="/">Back to Home</Link>
                 </div>

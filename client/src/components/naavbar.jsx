@@ -36,8 +36,8 @@ const Navbar = props => {
         document.addEventListener('click', handleClickOutside, true);
         document.addEventListener('click', handleClickOutsideNotificationBox, true);
 
-        axios.get('/recent/').then(data => { setRecent(data.data) })
-        axios.get('/speaker/').then(data => { setSpeaker(data.data) })
+        axios.get('/api/recent/').then(data => { setRecent(data.data) })
+        axios.get('/api/speaker/').then(data => { setSpeaker(data.data) })
 
         return () => document.removeEventListener('click', handleClickOutsideNotificationBox, true);
     }, []);

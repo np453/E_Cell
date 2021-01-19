@@ -35,30 +35,28 @@ dotenv.config();
 
 //Middlewaress
 app.use(cors());
-
 app.use(bodyParser.json());
-
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json());
 
 
 
 // Routes initialization
-app.use('/gallery', gallery);
-app.use('/admin', auth);
-app.use('/team', team);
-app.use('/speaker', speaker);
-app.use('/works', whatwedo);
-// app.use('/sponsor', sponsor);
-app.use('/ispeaker', ispeaker);
-app.use('/front', front);
-app.use('/contact', contact);
-app.use('/showcase', showcase);
-app.use('/carousel', carousel);
-app.use('/notifications', notifications);
-app.use('/recent', recent);
-app.use('/workshop', workshop);
-app.use('/seminar', seminar);
+app.use('/api/gallery', gallery);
+app.use('/api/admin', auth);
+app.use('/api/team', team);
+app.use('/api/speaker', speaker);
+app.use('/api/works', whatwedo);
+// app.use('/api/sponsor', sponsor);
+app.use('/api/ispeaker', ispeaker);
+app.use('/api/front', front);
+app.use('/api/contact', contact);
+app.use('/api/showcase', showcase);
+app.use('/api/carousel', carousel);
+app.use('/api/notifications', notifications);
+app.use('/api/recent', recent);
+app.use('/api/workshop', workshop);
+app.use('/api/seminar', seminar);
 
 
 //connect to DB

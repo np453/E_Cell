@@ -50,7 +50,7 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("http://localhost:1212/ispeaker", data, config)
+        axios.post("http://localhost:1212/api/ispeaker", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
@@ -68,7 +68,7 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("http://localhost:1212/workshop", data, config)
+        axios.post("http://localhost:1212/api/workshop", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
@@ -86,7 +86,7 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("http://localhost:1212/seminar", data, config)
+        axios.post("http://localhost:1212/api/seminar", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
@@ -110,7 +110,7 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("http://localhost:1212/team", data, config)
+        axios.post("http://localhost:1212/api/team", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
@@ -133,7 +133,7 @@ class Dashboard extends Component {
                       'content-type': 'multipart/form-data'
                   }
               };
-            axios.post("http://localhost:1212/speaker", data, config)
+            axios.post("http://localhost:1212/api/speaker", data, config)
               .then(res => { // then print response status
                 console.log('upload success')
               })
@@ -148,7 +148,7 @@ class Dashboard extends Component {
                content:this.state.data.notificationcontent
            }
 
-            axios.post("http://localhost:1212/notifications", payload)
+            axios.post("http://localhost:1212/api/notifications", payload)
               .then(res => { // then print response status
                 console.log('upload success')
               })
@@ -162,7 +162,7 @@ class Dashboard extends Component {
             const payload={
                 content:this.state.data.recentnotificationcontent
             }
-            axios.post("http://localhost:1212/recent", payload)
+            axios.post("http://localhost:1212/api/recent", payload)
               .then(res => { // then print response status
                 console.log('upload success')
               })
@@ -184,7 +184,7 @@ class Dashboard extends Component {
                           'content-type': 'multipart/form-data'
                       }
                   };
-                axios.post("http://localhost:1212/sponsor", data, config)
+                axios.post("http://localhost:1212/api/sponsor", data, config)
                   .then(res => { // then print response status
                     console.log('upload success')
                   })
@@ -205,7 +205,7 @@ class Dashboard extends Component {
                               'content-type': 'multipart/form-data'
                           }
                       };
-                    axios.post("http://localhost:1212/works", data, config)
+                    axios.post("http://localhost:1212/api/works", data, config)
                       .then(res => { // then print response status
                         console.log('upload success')
                       })
@@ -227,7 +227,7 @@ class Dashboard extends Component {
                               'content-type': 'multipart/form-data'
                           }
                       };
-                    axios.post("http://localhost:1212/carousel", data, config)
+                    axios.post("http://localhost:1212/api/carousel", data, config)
                       .then(res => { // then print response status
                         console.log('upload success')
                       })
@@ -238,7 +238,7 @@ class Dashboard extends Component {
 
         // onclick handler for retriving apis and displaying them
     handleclick_getapi=async(route)=>{
-        const data= await axios.get(`http://localhost:1212/${route}/`);
+        const data= await axios.get(`http://localhost:1212/api/${route}/`);
         
         this.setState({show:data.data, showApi:true, hideForms:true});
         console.log(this.state.show)
@@ -246,7 +246,7 @@ class Dashboard extends Component {
 
         // onclick handler for deleting apis
      handledelete=async(id,route)=>{
-        await axios.put(`http://localhost:1212/${route}/delete/${id}`);
+        await axios.put(`http://localhost:1212/api/${route}/delete/${id}`);
         const data = axios.get(`/${route}`);
         }
 

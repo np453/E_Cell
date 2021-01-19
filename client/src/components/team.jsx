@@ -50,7 +50,7 @@ class Team extends Component {
         }
     } 
     componentDidMount = async() => {
-        const { data: team } = await axios.get('/team/')
+        const { data: team } = await axios.get('/api/team/')
         this.setState({ team })
         console.log(team)
         window.addEventListener('scroll', this.handleScroll);

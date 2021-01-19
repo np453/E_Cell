@@ -39,7 +39,7 @@ class AllNotificationContainer extends Component {
     }
 
     componentDidMount = async() => {
-        const { data:notification } = await axios.get('/notifications')
+        const { data:notification } = await axios.get('/api/notifications')
         this.setState({ notification, loadingAllNotifications : false })
     }
     

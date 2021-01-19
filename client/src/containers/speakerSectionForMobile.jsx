@@ -3,9 +3,6 @@ import axios from 'axios';
 import { base } from '../base';
 import {Link} from 'react-router-dom';
 
-import s1 from '../assets/s1.png';
-import s2 from '../assets/s2.png';
-
 class SpeakerSectionForMobile extends Component {
 
     state = {
@@ -13,7 +10,7 @@ class SpeakerSectionForMobile extends Component {
     }
 
     componentDidMount = async() => {
-        const { data : speaker } = await axios.get('/ispeaker/')
+        const { data : speaker } = await axios.get('/api/ispeaker/')
         this.setState({ speaker })
     }
     

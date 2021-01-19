@@ -12,7 +12,7 @@ class TopSection extends Component {
         rightSideImages : []
     }
     componentDidMount = async() => {
-        const {data : rightSideImages } = await axios.get('/front/');
+        const {data : rightSideImages } = await axios.get('/api/front/');
         console.log(rightSideImages)
         this.setState({rightSideImages});
     }

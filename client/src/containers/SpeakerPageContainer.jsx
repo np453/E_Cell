@@ -27,7 +27,7 @@ class SpeakerPageContainer extends Component {
       backToTop = React.createRef();
       executeBackToTopScroll = () => this.backToTop.current.scrollIntoView()
       componentDidMount = async() => {
-          const { data : speaker } = await axios.get('/speaker')
+          const { data : speaker } = await axios.get('/api/speaker')
           this.setState({ speaker })
       }
       

@@ -22,7 +22,7 @@ class Login extends Component {
             email:this.state.data.email,
             password:this.state.data.password
         }
-        const {data} = await axios.post('http://calces.org.in/admin',admindata);
+        const {data} = await axios.post('http://localhost:1212/api/admin',admindata);
         console.log(data);
         this.setState({id:jwt_decode(data)._id})
         Cookies.set('admintoken',this.state.id, { expires: 1 });

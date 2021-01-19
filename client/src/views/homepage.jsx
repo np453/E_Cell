@@ -127,7 +127,7 @@ const TestPage = props => {
     useEffect(() => {
         ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
         ScrollReveal().reveal('.ren_logo_1', { viewFactor:1, scale:1.2 })
-        ScrollReveal().reveal(".change_content_section", {  viewFactor:0.9, afterReveal:changeContent })
+        ScrollReveal().reveal(".change_content_section", { viewFactor:0.6, afterReveal:changeContent, reset:true })
         axios.get('/works/').then(data => {setGallery(data.data)})
     }, []);
 
@@ -149,18 +149,18 @@ const TestPage = props => {
             {/*TopSection of LandingPage*/}
             <TopSection aboutUsRef={aboutUsRef} executeTopScroll={executeTopScroll}/>
 
-            {/*Bottom arrow*/}
-            <div className="row m-0">
-                <div className="col-md-12 d-flex justify-content-center">
-                    { showArrow && <i className=" fa fa-2x fa-arrow-down"></i> } 
+            {/* Change content section */}
+            <div style={{background:"black"}}className="row m-0 change_content_section vh-100">
+                    <img src={back_collage} className="img img-fluid" alt=""/>
+                    <motion.h1 className="content landingPage_content_heading">
+                        <span className={contentClass}>{content}</span>
+                    </motion.h1>
                 </div>
-            </div>
-
             {/*About us section*/}
             <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={6000}
+                duration={4000}
                 pin
             >
                 { progress => (
@@ -218,7 +218,7 @@ const TestPage = props => {
     <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={3000}
+                duration={3500}
                 pin
             >
                 { progress => (
@@ -279,7 +279,7 @@ const TestPage = props => {
         </div>
         <div className="d-flex justify-content-center homePage_explore_events_button">
             <div className="button_wrapper">
-                <Link to="/speaker"><button>explore all events</button></Link>
+                <a href="http://renaissance.mnnit.ac.in/"><button>explore all events</button></a>
             </div>
         </div>
     </div>
@@ -288,15 +288,15 @@ const TestPage = props => {
     <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={1000}
+                duration={600}
                 pin
             >
                 { progress => (
                 <div className="sticky what_we_do_section">
                     <Timeline totalProgress={progress} paused>
                     <Tween
-                        from={{ x: -50,y:-20, opacity:0 }}
-                        to={{ x: 0,y:0, opacity:1 }}
+                        from={{ y:100, opacity:0 }}
+                        to={{ y:0, opacity:1 }}
                     >
                       <div className="workshops_section container d-flex flex-column align-items-center justify-content-center">
                         <h1>Workshops</h1>
@@ -331,14 +331,14 @@ const TestPage = props => {
     <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={1600}
+                duration={950}
                 pin
             >
                 { progress => (
                 <div className="sticky seminar_section">
                     <Timeline totalProgress={progress} paused>
                     <Tween
-                        from={{ y:-20, opacity:0 }}
+                        from={{ y:20, opacity:0 }}
                         to={{ y:0, opacity:1 }}
                     >
                       <div className="container">
@@ -372,17 +372,6 @@ const TestPage = props => {
                                     image={seminar_img2}
                                 />
                             </div>
-
-                            {/* <div className="row p-0 d-flex">
-                                <div className="d-flex col-md-9 bg-dark">
-                                <div className="col-md-3 p-0">
-                                    
-                                </div>
-                                <div className="col-md-6 mx-auto text-center">
-                                    
-                                </div>
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                     </Tween>
@@ -398,15 +387,15 @@ const TestPage = props => {
     <Controller>
         <Scene
             triggerHook="onLeave"
-            duration={2000}
+            duration={800}
             pin
             >
                 { progress => (
                 <div className="">
                     <Timeline totalProgress={progress} paused>
                         <Tween
-                            from={{ y:100, opacity:0 }}
-                            to={{ y:20, opacity:1 }}
+                            from={{ y:80, opacity:0 }}
+                            to={{ y:0, opacity:1 }}
                         >
                         <div>
                             <Startups/>
@@ -425,15 +414,15 @@ const TestPage = props => {
     <Controller>
         <Scene
             triggerHook="onLeave"
-            duration={1000}
+            duration={1600}
             pin
             >
                 { progress => (
                 <div className="">
                     <Timeline totalProgress={progress} paused>
                         <Tween
-                            from={{ x: -50,y:30, opacity:0 }}
-                            to={{ x: 0,y:-4, opacity:1 }}
+                            from={{ y:80, opacity:0 }}
+                            to={{ y:-4, opacity:1 }}
                         >
                         <div>
                         <div className="speaker_section_for_laptop">
@@ -455,15 +444,15 @@ const TestPage = props => {
     <Controller>
         <Scene
             triggerHook="onLeave"
-            duration={800}
+            duration={900}
             pin
             >
                 { progress => (
                 <div className="">
                     <Timeline totalProgress={progress} paused>
                         <Tween
-                            from={{ x: -50,y:-20, scale:0 }}
-                            to={{ x: 0,y:100, scale:1 }}
+                            from={{ y:250, opacity:0 }}
+                            to={{ y:150, opacity:1 }}
                             // to={{ x: 0,y:50, opacity:1 }}
                         >
                         <div className="vh-100 d-flex justify-content-center align-items-center">
@@ -481,15 +470,15 @@ const TestPage = props => {
     <Controller>
         <Scene
             triggerHook="onLeave"
-            duration={800}
+            duration={900}
             pin
             >
                 { progress => (
                 <div className="">
                     <Timeline totalProgress={progress} paused>
                         <Tween
-                            from={{ x: -50,y:-20, opacity:0 }}
-                            to={{ x: 0,y:200, opacity:1 }}
+                            from={{y:300, opacity:0 }}
+                            to={{ y:150, opacity:1 }}
                             // to={{ x: 0,y:50, opacity:1 }}
                         >
                         <div className="vh-100 d-flex justify-content-center align-items-center">
@@ -501,15 +490,7 @@ const TestPage = props => {
                 </div>
             )}
       </Scene>    
-    </Controller>
-
-    {/* Change content section */}
-    <div style={{background:"black"}}className="row m-0 change_content_section vh-100">
-        <img src={back_collage} className="img img-fluid" alt=""/>
-        <motion.h1 className="content landingPage_content_heading">
-            <span className={contentClass}>{content}</span>
-        </motion.h1>
-    </div> 
+    </Controller> 
 
     </div>    
     

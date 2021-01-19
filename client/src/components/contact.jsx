@@ -39,7 +39,7 @@ class Contact extends Component {
                 sidebarBackground="#333" 
                 sideBarItems={[]} 
                 navLinks={ this.navLinks } 
-                brand="Sponsors"
+                brand="E-cell MNNIT"
                 navbarColor="transparent" 
                 navbarBrandColor="#fff"
                 linkColor="#c4c4c4"

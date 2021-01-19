@@ -33,10 +33,18 @@ class Sponsors extends Component {
                 // navBrandLogo={LandingPageLogo}
                 />
                 <div className="container sponsor_page_wrapper">
-                    <div className="sponsor_page_heading">
+                    <div className="container sponsor_page_heading">
                         <h1>Thanks to our</h1>
                         <h2>Sponsors</h2>
-                        <h3>Companies which made all this possible</h3>
+                        <div className="subheading_wrapper">
+                          <h3>
+                            Companies which made all this possible
+                          </h3>
+                          <i className="fa fa-heart fa-heart-1" aria-hidden="true"></i>
+                          <i className="fa fa-heart fa-heart-2" aria-hidden="true"></i>
+                          <i className="fa fa-heart fa-heart-3" aria-hidden="true"></i>
+                        </div>
+                        
                     </div>
                     <img src={sponsors_page_banner} className="img img-fluid" alt="ecell mnnit allahabad sponsors page banner "/>
                 </div>

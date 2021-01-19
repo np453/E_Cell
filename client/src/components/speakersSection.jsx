@@ -25,7 +25,7 @@ class SpeakersSection extends Component {
                 <div className="col-md-12 d-flex justify-content-center">
                     <h1 className="speakers_section_main_page_heading">Prominant Speakers</h1>
                 </div> 
-                <div className="col-md-12 d-flex justify-content-center">
+                <div style={{ pointerEvents:"none" }} className="col-md-12 d-flex justify-content-center">
             <div className="col-md-10 speakers_container">
             <div className="grid">
           <ul id="hexGrid">

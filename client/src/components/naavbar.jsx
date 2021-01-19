@@ -76,30 +76,19 @@ const Navbar = props => {
                         </div>
                     </li>
                     <li className="sideBar-item">Speakers</li>
-                    <div className="row sideBar_speakers_row d-flex align-items-center m-0">
+                    <div className="row sideBar_speakers_row flex-row d-flex align-items-center m-0">
                         {speaker.slice(0, 3).map(m => 
-                        <div className="col-md-3 p-0">
+
                             <div className="m-2">
                                 <img className="sideBar_speakers img img-fluid" src={ base + 'media/' + m.route + '/' + m.filename } alt=""/>
                             </div>
-                        </div>
                         )}
                         <Link to="/speaker"><i className="d-flex align-items-center justify-content-center fa fa-arrow-right"></i></Link>
                     </div>
                     <Link to="/sponsor"><li className="sideBar-item">Sponsors</li> </Link>
                     <Link to="/team"><li className="sideBar-item">Team</li></Link> 
                     <hr/>
-                    <div className="row d-flex justify-content-center">
-                        <div className="col-md-10">
-                            <form className="form">
-                                <div className="form-group d-flex flex-column">
-                                    <label htmlFor="">Join us</label>
-                                    <input placeholder="email" className="" type="text" name="email" id="email" value={email} onChange={handleForm}/>
-                                </div>
-                                <button>Submit</button>
-                            </form> 
-                        </div>
-                    </div>  
+                    <Link to="/contact"><li className="sideBar-item">Get in touch</li></Link> 
                     <Link to="/"><h6 className="back_to_home_sideBar"><span>Back to Home</span></h6></Link>
                 </ul>
                 <div className={"container " + "navbar-"+props.position}>

@@ -18,6 +18,10 @@
         transition: all 0.3s;
         .sideBar_speakers_row {
             background-color: rgba(black, 0.5);
+            img {
+                width: 50px;
+                height: 50px;
+            }
         }
         .fa-arrow-right {
             color: rgba(white, 0.5);

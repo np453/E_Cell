@@ -29,6 +29,7 @@ import Contact from './components/contact';
 
 //This component helps in scrolling to top, when a new page loads
 import ScrollToTop from './common/ScrollToTop';
+import NotFoundPage from './views/404';
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
           {/*Sponsor page route*/}
           <Route path="/sponsor"  exact component={Sponsors} />
           
+
         </switch>
         </ScrollToTop>
         <Footer />

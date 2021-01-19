@@ -128,3 +128,34 @@
     }
     
 }
+
+@media (max-width:1025px) {
+    .contact_form_wrapper {
+        width: 55%;
+    }    
+}
+@media (max-width:991px) {
+    .contact_form_wrapper {
+        width: 60%;
+    }    
+}
+@media (max-width:768px) {
+    .contact_form_wrapper {
+        width: 50%;
+    }    
+}
+@media (max-width:426px) {
+    .contact_form_wrapper {
+        width: 86%;
+    }    
+}
+@media (max-width:375px) {
+    .contact_form_wrapper {
+        width: 90%;
+    }    
+}
+@media (max-width:320px) {
+    .contact_form_wrapper {
+        width: 90%;
+    }    
+}

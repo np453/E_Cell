@@ -1,7 +1,7 @@
 // scroll scss
 
 body {
-    overflow: overlay;
+    overflow: overlay !important;
   }
   ::-webkit-scrollbar {
       overflow-y: auto; 

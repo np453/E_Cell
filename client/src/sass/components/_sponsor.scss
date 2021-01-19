@@ -30,6 +30,67 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent; 
         }
+
+        .subheading_wrapper {
+            position: relative;
+            .fa-heart-1, .fa-heart-2, .fa-heart-3 {
+                color: pink;
+                font-size: 22px;
+                position: absolute;
+                right: 20%;
+                top: -6%;
+                transition: all 0.5s;
+                
+            }
+            .fa-heart-1 {
+                animation: heart1 6s cubic-bezier(.535,.15,.425,1) -2s infinite;
+            }
+            .fa-heart-2 {
+                animation: heart2 6s cubic-bezier(.535,.15,.425,1) -2s infinite;
+            }
+            .fa-heart-3 {
+                animation: heart3 6s cubic-bezier(.535,.15,.425,1) -2s infinite;
+            }
+            @keyframes heart1 {
+                0% {
+                    opacity: 0;
+                    transform: scale3d(.7,.7,.7) translate3d(-85%,60%,0) rotate(0);
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                    transform: scaleX(1) translate3d(-25%,-160%,0) rotate(-25deg);
+                }
+            }
+            @keyframes heart2 {
+                0% {
+                    opacity: 0;
+                    transform: scale3d(.7,.7,.7) translate3d(-45%,-80%,0) rotate(0);
+                }
+                50% {
+                    opacity: 0.7;
+                }
+                100% {
+                    opacity: 0;
+                    transform: scaleX(1) translate3d(-25%,-80%,0) rotate(-25deg);
+                }
+            }
+            @keyframes heart3 {
+                0% {
+                    opacity: 0;
+                    transform: scale3d(.7,.7,.7) translateZ(0) rotate(0);
+                }
+                50% {
+                    opacity: 0.9;
+                }
+                100% {
+                    opacity: 0;
+                    transform: scaleX(1) translate3d(25%,10%,0) rotate(35deg);
+                }
+            }
+        }
     }
 }
 

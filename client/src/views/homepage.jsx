@@ -33,6 +33,7 @@ import seminar_img2 from '../assets/seminar_img2.png';
 
 //common components
 import SeminarCard from '../common/seminarCard';
+import Cube from '../common/cube';
 
 import axios from 'axios';
 import { base } from '../base';
@@ -491,7 +492,20 @@ const TestPage = props => {
             )}
       </Scene>    
     </Controller> 
-
+    
+    {/* Image gallery */}
+    <div className="image_gallery">
+        <h1>Memorable moments captured</h1>
+        <Cube />
+        <div className="gallery_button">
+            <div className="row m-0 d-flex justify-content-center">
+            <div className="button_wrapper">
+                <Link to="/gallery"><button>visit gallery</button></Link>
+            </div>
+            </div>
+        </div>
+        
+    </div>
     </div>    
     
     </React.Fragment>

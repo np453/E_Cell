@@ -20,6 +20,7 @@ import Loading from './components/loading';
 import SpeakerPageContainer from './containers/SpeakerPageContainer';
 import Team from './components/team';
 import Sponsors from './components/Sponsors';
+import Gallery from './components/Gallery';
 
 //notification
 import Notification from './containers/AllNotificationContainer'
@@ -61,6 +62,9 @@ const addClass = () => loader.classList.add("loader-hide");
 
           {/*TeamPage route*/}
           <Route path="/team"  exact component={Team} />
+
+          {/*Gallery page route*/}
+          <Route path="/team"  exact component={Gallery} />
 
           {/*Speaker page route*/}
           <Route path="/speaker"  exact component={SpeakerPageContainer} />

@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import img from '../assets/img_about_us_1.png';
 import axios from 'axios';
-class Testpage extends Component {
+class Gallery extends Component {
   state = {
     galleryImg : []
 }
@@ -52,26 +52,31 @@ class Testpage extends Component {
  
     render() {
         return (
-            <div>
-              <div>
+    //         <div>
+    //           <div>
            
 
-    <section class="section portfolio">
-    {/* <h2 class="portfolio_title text-stroke parallax">Gallery</h2> */}
-        {this.state.galleryImg.map(m => 
-        <div class="panel">
-        <div class="panel_item">
-          <img className="panel_img firstAn img img-fluid" src={`data:${m.contentType};base64,`+m.buffer} alt=""/>
-        </div>
-      </div>  
+    // <section class="section portfolio">
+    // {/* <h2 class="portfolio_title text-stroke parallax">Gallery</h2> */}
+    //     {this.state.galleryImg.map(m => 
+    //     <div class="panel">
+    //     <div class="panel_item">
+    //       <img className="panel_img firstAn img img-fluid" src={`data:${m.contentType};base64,`+m.buffer} alt=""/>
+    //     </div>
+    //   </div>  
           
-        )}
-    </section>
+    //     )}
+    // </section>
 
-        </div>  
-            </div>
+    //     </div>  
+    //         </div>
+
+
+    <div className="container-fluid p-0 gallery_main_page">
+
+    </div>
         );
     }
 }
 
-export default Testpage;
+export default Gallery;

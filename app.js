@@ -25,6 +25,7 @@ const notifications = require('./routes/notifications');
 const recent = require('./routes/recent');
 const workshop = require('./routes/workshop');
 const seminar = require('./routes/seminar');
+const getintouch = require('./routes/get_in_touch');
  
 //Port
 const PORT = 1212;
@@ -57,6 +58,7 @@ app.use('/api/notifications', notifications);
 app.use('/api/recent', recent);
 app.use('/api/workshop', workshop);
 app.use('/api/seminar', seminar);
+app.use('/api/getintouch', getintouch);
 
 
 //connect to DB

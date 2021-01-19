@@ -6,13 +6,12 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/naavbar';
 
 class Contact extends Component {
-    satte = {
+    state = {
         data : {
             name:"",
             email : "",
             description:""
-        },
-        
+        }        
     }
     navLinks = [
         {
@@ -32,6 +31,21 @@ class Contact extends Component {
             link:"/sponsor"
           },
       ]
+      handleChange = ({currentTarget:input}) => {
+        const data = {...this.state.data};
+        data[input.name] = input.value;
+    };
+      handleSubmit=async(e)=>{
+          e.preventDefault();
+          const payload={
+              name:this.state.data.name,
+              email:this.state.data.email,
+              description:this.state.data.description
+          }
+          console.log(payload)
+          await axios.post('/api/getintouch',payload);
+
+      }
     render() {
         return (
             <div className="main_background_wrapper container-fluid p-0 d-flex flex-column justify-content-center">
@@ -53,16 +67,16 @@ class Contact extends Component {
                 <form className="d-flex justify-content-center align-items-center  flex-column contact_form_container">
                     
                     <div className="wrapper mt-3 mb-5">
-                        <input name="name" onChange={this.handleChange} id="name" required="true" type="text"/>
+                        <input name="name" onChange={this.handleChange} value={this.state.data.name} id="name" required="true" type="text"/>
                         <div className="placeholder">Your Name</div>
                     </div>
                     <div className="wrapper mb-5">
-                        <input name="email" onChange={this.handleChange} id="email" required="true" type="text"/>
+                        <input name="email" onChange={this.handleChange} value={this.state.data.email} id="email" required="true" type="text"/>
                         <div className="placeholder">Email</div>
                     </div>
                     <label htmlFor="description">description</label>
-                    <textarea className="" name="description" id="description" rows="15" />
-                    <button>Submit</button>
+                    <textarea className="" name="description" id="description" onChange={this.handleChange} value={this.state.data.description} rows="15" />
+                    <button onClick={this.handleSubmit}>Submit</button>
                 </form>
                 <h6><Link to="/"><span>back to home</span></Link></h6>
                 </div>

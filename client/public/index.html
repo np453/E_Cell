@@ -29,8 +29,91 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>ECell MNNIT</title>
+    <style>
+      .preloader {
+        display: flex;
+        justify-content: center;
+      }
+  
+      .rotate {
+        animation: rotation 1s infinite linear;
+      }
+  
+      .loader-hide {
+        display: none;
+      }
+  
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+  
+        to {
+          transform: rotate(359deg);
+        }
+      }
+      .dot-flashing {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: #9880ff;
+  }
+  50%,
+  100% {
+    background-color: #ebe6ff;
+  }
+}
+
+    </style>
   </head>
   <body>
+    <div class="preloader" style="height:'100vh';">
+      <div class="col-3" style="width:'33.33%'; background-color:'white'; justify-content:'center'; align-items:'center'">
+        <div class="snippet" data-title=".dot-flashing">
+          <div class="stage">
+            <div class="dot-flashing"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <noscript>Script Error</noscript>
     <div id="root"></div>
     <!--

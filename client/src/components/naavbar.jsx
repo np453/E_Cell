@@ -111,7 +111,7 @@ const Navbar = props => {
                                         <div>
                                             <h3 className="p-2 border-bottom">Notifications</h3>
                                             <ul>
-                                                {recent.map(m =>
+                                                {recent.slice(0).reverse().map(m =>
                                                     <Link onClick={() => setOpenNotificationBox(false)} style={{ color: "#444" }} to={'/notification/' + m.slug + '/'}><li className="notification_item">{m.content}</li></Link>
                                                 )}
                                                 <Link onClick={() => setOpenNotificationBox(false)} style={{ fontSize: "13px" }} className="read_all_notifications_external_link" to='/notification'><li style={{ color: "#2a85ad" }}>Read all <i className="fa fa-external-link"></i></li></Link>

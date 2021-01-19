@@ -10,7 +10,7 @@ class Startups extends Component {
     }
 
     componentDidMount = async() => {
-        const { data:startup } = await axios.get('/recent-startup/')
+        // const { data:startup } = await axios.get('/recent-startup/')
     }
     
     changeRadio = e => {

@@ -128,7 +128,7 @@ const TestPage = props => {
         ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
         ScrollReveal().reveal('.ren_logo_1', { viewFactor:1, scale:1.2 })
         ScrollReveal().reveal(".change_content_section", {  viewFactor:0.9, afterReveal:changeContent })
-        axios.get('/works/').then(data => {setGallery(data.data)})
+        axios.get('/api/works/').then(data => {setGallery(data.data)})
     }, []);
 
     //change content component function

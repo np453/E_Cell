@@ -13,7 +13,7 @@ class ImgCarousel extends Component {
     }
 
     componentDidMount = async() => {
-        const { data : carousel } = await axios.get('/carousel')
+        const { data : carousel } = await axios.get('/api/carousel')
         this.setState({ carousel, loadingCarousel : false })
     }
     

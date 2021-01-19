@@ -13,7 +13,7 @@ class SpeakersSection extends Component {
 
     componentDidMount = async()=> {
       // getting images for the hex grid
-      const { data:speaker } = await axios.get('/ispeaker');
+      const { data:speaker } = await axios.get('/api/ispeaker');
       this.setState({speakers:speaker, loadingSpeakers : false })
     }
     

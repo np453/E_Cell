@@ -50,7 +50,7 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("http://localhost:1212/api/ispeaker", data, config)
+        axios.post("/api/ispeaker", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
@@ -68,7 +68,7 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("http://localhost:1212/api/workshop", data, config)
+        axios.post("/api/workshop", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
@@ -86,7 +86,7 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("http://localhost:1212/api/seminar", data, config)
+        axios.post("/api/seminar", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
@@ -110,7 +110,7 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("http://localhost:1212/api/team", data, config)
+        axios.post("/api/team", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
@@ -133,7 +133,7 @@ class Dashboard extends Component {
                       'content-type': 'multipart/form-data'
                   }
               };
-            axios.post("http://localhost:1212/api/speaker", data, config)
+            axios.post("/api/speaker", data, config)
               .then(res => { // then print response status
                 console.log('upload success')
               })
@@ -148,7 +148,7 @@ class Dashboard extends Component {
                content:this.state.data.notificationcontent
            }
 
-            axios.post("http://localhost:1212/api/notifications", payload)
+            axios.post("/api/notifications", payload)
               .then(res => { // then print response status
                 console.log('upload success')
               })
@@ -162,7 +162,7 @@ class Dashboard extends Component {
             const payload={
                 content:this.state.data.recentnotificationcontent
             }
-            axios.post("http://localhost:1212/api/recent", payload)
+            axios.post("/api/recent", payload)
               .then(res => { // then print response status
                 console.log('upload success')
               })
@@ -184,7 +184,7 @@ class Dashboard extends Component {
                           'content-type': 'multipart/form-data'
                       }
                   };
-                axios.post("http://localhost:1212/api/sponsor", data, config)
+                axios.post("/api/sponsor", data, config)
                   .then(res => { // then print response status
                     console.log('upload success')
                   })
@@ -205,7 +205,7 @@ class Dashboard extends Component {
                               'content-type': 'multipart/form-data'
                           }
                       };
-                    axios.post("http://localhost:1212/api/works", data, config)
+                    axios.post("/api/works", data, config)
                       .then(res => { // then print response status
                         console.log('upload success')
                       })
@@ -227,7 +227,7 @@ class Dashboard extends Component {
                               'content-type': 'multipart/form-data'
                           }
                       };
-                    axios.post("http://localhost:1212/api/carousel", data, config)
+                    axios.post("/api/carousel", data, config)
                       .then(res => { // then print response status
                         console.log('upload success')
                       })
@@ -238,7 +238,7 @@ class Dashboard extends Component {
 
         // onclick handler for retriving apis and displaying them
     handleclick_getapi=async(route)=>{
-        const data= await axios.get(`http://localhost:1212/api/${route}/`);
+        const data= await axios.get(`/api/${route}/`);
         
         this.setState({show:data.data, showApi:true, hideForms:true});
         
@@ -246,7 +246,7 @@ class Dashboard extends Component {
 
         // onclick handler for deleting apis
      handledelete=async(id,route)=>{
-        await axios.put(`http://localhost:1212/api/${route}/delete/${id}`);
+        await axios.put(`/api/${route}/delete/${id}`);
         const data = axios.get(`/${route}`);
         }
 
@@ -573,8 +573,8 @@ class Dashboard extends Component {
                         <li onClick={()=>this.handleclick_getapi("speaker")} className="list-group-item dashboard_Link">Speaker API</li>
                         <li onClick={()=>this.handleclick_getapi("recent")} className="list-group-item dashboard_Link">Recent Notifications API</li>
                         <li onClick={()=>this.handleclick_getapi("contact")} className="list-group-item dashboard_Link"> Get Email subs</li>
-                        <li onClick={()=>this.handleclick_getapi("workshop")} className="list-group-item dashboard_Link">Workshop API</li>
-                        <li onClick={()=>this.handleclick_getapi("seminar")} className="list-group-item dashboard_Link">Seminar API</li>
+                        <li onClick={()=>this.handleclick_getapi("works")} className="list-group-item dashboard_Link">Events Api</li>
+                        {/* <li onClick={()=>this.handleclick_getapi("seminar")} className="list-group-item dashboard_Link">Seminar API</li> */}
                         <li onClick={()=>this.handleclick_getapi("getintouch")} className="list-group-item dashboard_Link">Get in Touch API</li>
                     </ul>
                     <Link style={{ color:"black", textDecoration:"none" }} to="/">Back to Home</Link>

@@ -28,7 +28,7 @@ router.get('/', async(req, res) => {
   for(let i=0;i<allgetintouch.length;i++) {
     getintouch_.push( {_id:allgetintouch[i]._id,route:"getintouch",name:allgetintouch[i].name,email:allgetintouch[i].email,description:allgetintouch[i].description} )
   }
-  res.send(getintouch);
+  res.send(getintouch_);
     
  });
  router.put('/delete/:id',async(req,res)=>{

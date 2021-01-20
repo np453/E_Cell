@@ -23,7 +23,6 @@ class Login extends Component {
             password:this.state.data.password
         }
         const {data} = await axios.post('/api/admin',admindata);
-        console.log(data);
         this.setState({id:jwt_decode(data)._id})
         Cookies.set('admintoken',this.state.id, { expires: 1 });
         this.setState({redirect:true})

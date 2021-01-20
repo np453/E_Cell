@@ -162,8 +162,34 @@ h1 {
   
 
 }
+@media (max-width:500px){
+  .image_gallery {
 
+    .masked_text {
+      h1 {
+       
+        font-size: 50px;
+        
+      }
+    }
+    
+  }
+}
 @media (max-width:320px) {
+  .image_gallery {
+
+    .masked_text {
+      h1 {
+       
+        font-size: 40px;
+        
+      }
+    }
+    
+  }
+
+
+
   .renissance_image_gallery {
     img {
       border-radius: 50%;
@@ -177,5 +203,18 @@ h1 {
       font-size: 14px;
       max-width: 16rem;
     }
+  }
+}
+@media (max-width:300px){
+  .image_gallery {
+
+    .masked_text {
+      h1 {
+       
+        font-size: 25px;
+        
+      }
+    }
+    
   }
 }

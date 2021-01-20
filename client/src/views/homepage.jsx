@@ -495,7 +495,9 @@ const TestPage = props => {
     
     {/* Image gallery */}
     <div className="image_gallery">
-        <h1>Memorable moments captured</h1>
+        <div className="masked_text">
+            <h1>Memorable moments captured</h1>
+        </div>
         <Cube />
         <div className="gallery_button">
             <div className="row m-0 d-flex justify-content-center">

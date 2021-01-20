@@ -33,6 +33,12 @@
       .preloader {
         display: flex;
         justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: black;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
       }
   
       .rotate {
@@ -41,6 +47,10 @@
   
       .loader-hide {
         display: none;
+      }
+
+      body {
+        margin: 0;
       }
   
       @keyframes rotation {
@@ -105,15 +115,15 @@
     </style>
   </head>
   <body>
-    <div class="preloader" style="height:'100vh';">
-      <div class="col-3" style="width:'33.33%'; background-color:'white'; justify-content:'center'; align-items:'center'">
-        <div class="snippet" data-title=".dot-flashing">
-          <div class="stage">
-            <div class="dot-flashing"></div>
+      <div style="margin:'0px'; padding:'0px';" class="preloader">
+        <div class="col-3" style="width:'33.33%'; background-color:'white'; justify-content:'center'; align-items:'center'">
+          <div class="snippet" data-title=".dot-flashing">
+            <div class="stage">
+              <div class="dot-flashing"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     <noscript>Script Error</noscript>
     <div id="root"></div>
     <!--

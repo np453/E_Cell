@@ -112,6 +112,57 @@ h1 {
   
 }
 
+.gallery_main_page {
+  background-color: rgba(black, 0.9);
+  .gallery_page_main_heading {
+    font-size: 56px;
+    color: rgba(white, 0.8);
+    font-family: $font-3;
+    margin-top: 5rem;
+    color: #C87D5C;
+    height: 27vh;
+  }
+  .to_gallery_top {
+    background-color:#C87D5C;
+    border-radius: 50%;
+    padding: 0.3rem;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    color: black;
+    font-size: 24px;
+    z-index: 1000;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+  }
+  .gallery_img_wrapper {
+    .img_wrapper {
+      width: 100%;
+      height: 100%;
+
+      img {
+        z-index: 200;
+        // clip-path: inset(0.9rem 0.9rem);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s;
+    
+        &:hover {
+            // clip-path: inset(-0.05rem -0.05rem);
+        }
+      }
+    }
+    // background: black;
+    
+  }
+  
+
+}
+
 @media (max-width:320px) {
   .renissance_image_gallery {
     img {

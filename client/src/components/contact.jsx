@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Navbar from '../components/naavbar';
 
@@ -34,6 +36,7 @@ class Contact extends Component {
       handleChange = ({currentTarget:input}) => {
         const data = {...this.state.data};
         data[input.name] = input.value;
+        this.setState({ data })
     };
       handleSubmit=async(e)=>{
           e.preventDefault();
@@ -44,6 +47,13 @@ class Contact extends Component {
           }
           console.log(payload)
           await axios.post('/api/getintouch',payload);
+          this.setState({ 
+              data:{
+                  name:"",
+                  email:"",
+                  description:""
+              }
+          }, () => {toast.success("Response received! We'll contact you shortly")})
 
       }
     render() {
@@ -80,6 +90,7 @@ class Contact extends Component {
                 </form>
                 <h6><Link to="/"><span>back to home</span></Link></h6>
                 </div>
+                <ToastContainer autoClose={3000}/>
             </div>
         );
     }

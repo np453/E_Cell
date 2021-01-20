@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import React, { Component } from 'react'
 import axios from 'axios';
 import iice_logo from '../assets/iice_logo.png'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default class Footer extends Component {
     state={
         email:""
@@ -20,6 +22,9 @@ export default class Footer extends Component {
             email:this.state.email
         }
         await axios.post('/api/contact',payload);
+        this.setState({
+            email:""
+        },() => {toast.success("Response received! We'll contact you shortly")})
 
     }
     render() {
@@ -44,19 +49,20 @@ export default class Footer extends Component {
                         <div className="footer_links col-md-2">
                             <h5>Important Links</h5>
                             <Link to="/team"><h6>Our Team</h6></Link>
-                            <Link to="/sponser"><h6>Our Sponsers</h6></Link>
-                            <h6>Rennisance</h6>
+                            <Link to="/sponsor"><h6>Our Sponsers</h6></Link>
+                            <a href="http://renaissance.mnnit.ac.in/" style={{color:'#535252'}}><h6>Rennisance</h6></a>
                             <Link to="/speaker"><h6>Past Speakers</h6></Link>
+                            <Link to="/faq"><h6>FAQs</h6></Link>
                         </div>
                         {/* social Media links */}
                         
                         <div className="social_media_links_footer col-md-2">
                             <h5>Social Media</h5>
-                            <h6>Facebook</h6>
-                            <h6>Instagram</h6>
-                            <h6>Linkedin</h6>
-                            <h6>twitter</h6>
-                            <h6>Youtube</h6>
+                            <a className="social_media_links_footer" href="https://www.facebook.com/mnnitecell"><h6>Facebook</h6></a>
+                            <a className="social_media_links_footer" href="https://www.instagram.com/ecellmnnit/"><h6>Instagram</h6></a>
+                            <a className="social_media_links_footer" href="https://www.linkedin.com/in/ecellmnnit/"><h6>Linkedin</h6></a>
+                            <a className="social_media_links_footer" href="https://twitter.com/ECellMNNIT"><h6>twitter</h6></a>
+                            <a className="social_media_links_footer" href="https://www.youtube.com/c/PixelsMNNIT"><h6>Youtube</h6></a>
                         </div>
                         <div className="col-md-3">
                             <div className="col-md-12 ecell_newsletter_section_footer">
@@ -80,6 +86,7 @@ export default class Footer extends Component {
                                 <i className="fa fa-send-o" style={{cursor:'pointer',zIndex:"1"}} onClick={this.handleSubmit}></i>
                             </form>
                             </div>
+                            <ToastContainer autoClose={3000}/>
                         </div>
                     </div>
                     {/* website credits */}

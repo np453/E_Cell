@@ -117,6 +117,13 @@ footer {
         }
     }
 }
+.social_media_links_footer{
+            
+            color: #535252;
+            &:hover{
+                text-decoration: none;
+            }
+}
 
 @media (max-width:500px) {
     footer {

@@ -20,8 +20,7 @@ class Register extends Component {
             email:this.state.data.email,
             password:this.state.data.password
         }
-        const {data} = await axios.post('http://localhost:1212/admin/register',payload);
-        console.log(data);
+        const {data} = await axios.post('/admin/register',payload);
         this.setState({redirect:true})
     }
 

@@ -1,7 +1,7 @@
 .scene {
     width: 20rem;
     height: 20rem;
-    border: 1px solid #CCC;
+    border: 1px solid rgb(78, 78, 78);
     margin: 80px;
     perspective: 700px;
     border: none;
@@ -26,7 +26,7 @@
     position: absolute;
     width: 18rem;
     height: 18rem;
-    border: 2px solid rgba(black, 0.4);
+//     border: 2px solid rgba(black, 0.4);
     line-height: 200px;
     font-size: 40px;
     font-weight: bold;
@@ -34,18 +34,24 @@
     color: white;
     text-align: center;
     outline: 0;
-    border: 1px solid rgba(#000, 0.5);
+//     border: 1px solid rgba(#000, 0.5);
     span {
        opacity:0.5;
+    }
+
+    .cube__img {
+         object-fit: cover;
+         height: 100%;
+         width: 100%;
     }
   }
   
   .cube__face--front, .cube__face--right, .cube__face--back, .cube__face--left, .cube__face--top, .cube__face--bottom {
-       background: rgba(#001530, 0.6); 
+       background: rgba(#1f1f1f, 0.8); 
   }
   
   .cube__face--bottom {
-       background: rgba(#001530, 0.7); 
+       background: rgba(#1f1f1f, 0.7); 
        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
   

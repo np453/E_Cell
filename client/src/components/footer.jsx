@@ -52,7 +52,7 @@ export default class Footer extends Component {
                             <Link to="/sponsor"><h6>Our Sponsers</h6></Link>
                             <a href="http://renaissance.mnnit.ac.in/" style={{color:'#535252'}}><h6>Rennisance</h6></a>
                             <Link to="/speaker"><h6>Past Speakers</h6></Link>
-                            <Link to="/faq"><h6>FAQs</h6></Link>
+                            {/* <Link to="/faq"><h6>FAQs</h6></Link> */}
                         </div>
                         {/* social Media links */}
                         

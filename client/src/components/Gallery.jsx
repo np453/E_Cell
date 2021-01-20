@@ -11,7 +11,7 @@ class Gallery extends Component {
 // horizontal gallery section 
  componentDidMount = async() => {
   //  retriving images on component did mount
-  const {data:Img} = await axios.get("/upload/img")
+  const {data:Img} = await axios.get("http://localhost:4444/upload/img")
   this.setState({galleryImg:Img})
     gsap.registerPlugin(ScrollTrigger);
 
@@ -73,7 +73,7 @@ class Gallery extends Component {
 
 
     <div className="container-fluid p-0 gallery_main_page">
-
+      
     </div>
         );
     }

@@ -2,7 +2,7 @@
     width: 20rem;
     height: 20rem;
     border: 1px solid rgb(78, 78, 78);
-    margin: 80px;
+    margin: 80px 0 60px 0;
     perspective: 700px;
     border: none;
   }
@@ -95,7 +95,7 @@
   
   @media (min-width:375.98px) and (max-width:400px) {
      .scene {
-          // margin-bottom: 1.5rem;
+          margin: 80px 0 0px 0;
      }
      .cube, .cube__face {
           width: 13rem;

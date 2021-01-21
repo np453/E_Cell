@@ -289,16 +289,17 @@ const TestPage = props => {
     <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={600}
+                duration={1000}
                 pin
             >
                 { progress => (
-                <div className="sticky what_we_do_section">
+                <div className="vh-100 what_we_do_section">
                     <Timeline totalProgress={progress} paused>
                     <Tween
-                        from={{ y:100, opacity:0 }}
+                        from={{ y:0, opacity:0 }}
                         to={{ y:0, opacity:1 }}
                     >
+                    
                       <div className="workshops_section container d-flex flex-column align-items-center justify-content-center">
                         <h1>Workshops</h1>
                         <p style={{ fontFamily:"Ubuntu" }} className="text-center">
@@ -321,6 +322,7 @@ const TestPage = props => {
                         </div>
                     </div>
                     </Tween>
+                    <Tween to={{ y:0, opacity:0 }} />
             </Timeline>
             
           </div>
@@ -332,7 +334,7 @@ const TestPage = props => {
     <Controller>
             <Scene
                 triggerHook="onLeave"
-                duration={950}
+                duration={750}
                 pin
             >
                 { progress => (

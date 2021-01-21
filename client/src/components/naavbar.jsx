@@ -22,6 +22,7 @@ const Navbar = props => {
     // const [ sideBarOpacity, setSideBarOpacity ] = useState(0);
     const [recent, setRecent] = useState([])
     const [speaker, setSpeaker] = useState([])
+    const [gallery, setGallery] = useState([])
     const [email, setEmail] = useState("")
     const ref = useRef();
     const ref1 = useRef();
@@ -38,6 +39,7 @@ const Navbar = props => {
 
         axios.get('/api/recent/').then(data => { setRecent(data.data) })
         axios.get('/api/speaker/').then(data => { setSpeaker(data.data) })
+        axios.get('/api/gallery/img').then(data => { setGallery(data.data) })
 
         return () => document.removeEventListener('click', handleClickOutsideNotificationBox, true);
     }, []);
@@ -75,6 +77,8 @@ const Navbar = props => {
                             <div className="col-md-2 d-flex justify-content-end"><i className="fa fa-times"></i></div>
                         </div>
                     </li>
+
+                    {/* Speaker in sidebar */}
                     <li className="sideBar-item">Speakers</li>
                     <div className="row sideBar_speakers_row flex-row d-flex align-items-center m-0">
                         {speaker.slice(0, 3).map(m => 
@@ -85,8 +89,30 @@ const Navbar = props => {
                         )}
                         <Link to="/speaker"><i className="d-flex align-items-center justify-content-center fa fa-arrow-right"></i></Link>
                     </div>
+                     
+
+                    {/* Gallery in sidebar */}
+                    <li className="sideBar-item">Gallery</li>
+                    <div className="row sideBar_speakers_row flex-row d-flex align-items-center m-0">
+                        {gallery.slice(0, 3).map(m => 
+
+                            <div className="m-2">
+                                <img className="sideBar_speakers img img-fluid" src={ base + 'media/' + m.route + '/' + m.filename } alt=""/>
+                            </div>
+                        )}
+                        <Link to="/gallery"><i className="d-flex align-items-center justify-content-center fa fa-arrow-right"></i></Link>
+                    </div>
+                    <hr />
                     <Link to="/sponsor"><li className="sideBar-item">Sponsors</li> </Link>
-                    <Link to="/team"><li className="sideBar-item">Team</li></Link> 
+                    <Link to="/team"><li className="sideBar-item">Team</li></Link>
+                    <hr/>
+                    <li className="sideBar-item">Recent Notifications</li>
+                    <ul>
+                        {recent.slice(0, 3).reverse().map(m =>
+                            <li onClick={() => setOpenNotificationBox(false)} className="notification_item">{m.content}</li>
+                        )}
+                        <Link onClick={() => setOpenNotificationBox(false)} style={{ fontSize: "13px" }} className="read_all_notifications_external_link" to='/notification'><li style={{ color: "#2a85ad" }}>Read all <i className="fa fa-external-link"></i></li></Link>
+                    </ul>        
                     <hr/>
                     <Link to="/contact"><li className="sideBar-item">Get in touch</li></Link> 
                     <Link to="/"><h6 className="back_to_home_sideBar"><span>Back to Home</span></h6></Link>
@@ -112,7 +138,7 @@ const Navbar = props => {
                                             <h3 className="p-2 border-bottom">Notifications</h3>
                                             <ul>
                                                 {recent.slice(0).reverse().map(m =>
-                                                    <Link onClick={() => setOpenNotificationBox(false)} style={{ color: "#444" }} to={'/notification/' + m.slug + '/'}><li className="notification_item">{m.content}</li></Link>
+                                                    <Link onClick={() => setOpenNotificationBox(false)} style={{ color: "#444" }}><li className="notification_item">{m.content}</li></Link>
                                                 )}
                                                 <Link onClick={() => setOpenNotificationBox(false)} style={{ fontSize: "13px" }} className="read_all_notifications_external_link" to='/notification'><li style={{ color: "#2a85ad" }}>Read all <i className="fa fa-external-link"></i></li></Link>
                                             </ul>
@@ -120,16 +146,15 @@ const Navbar = props => {
                                     </div>
                                 }
                         </div>
-
                     </div>
                     </div>
                     <button onClick={toggleSideBar} className="ml-auto pr-0 navbar-toggler" type="button" 
-                            data-toggle="collapse" 
-                             aria-controls="nav__links" aria-expanded="false" 
-                             aria-label="Toggle navigation">
-                                <span className="icon-bar top-bar" ></span>
-                                <span className="icon-bar middle-bar" ></span>
-                                <span className="icon-bar bottom-bar" ></span>
+                        data-toggle="collapse" 
+                        aria-controls="nav__links" aria-expanded="false" 
+                        aria-label="Toggle navigation">
+                        <span className="icon-bar top-bar" ></span>
+                        <span className="icon-bar middle-bar" ></span>
+                        <span className="icon-bar bottom-bar" ></span>
                     </button>
                 </nav>
             </div>

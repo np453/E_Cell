@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {Carousel} from 'react-bootstrap'
-import s1 from '../assets/s1.png'
-import bq from '../assets/blockquote.svg';
 import axios from 'axios'
 import { base } from '../base'
 

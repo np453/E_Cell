@@ -1,8 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import jwt_decode from 'jwt-decode';
-import Cookies from 'js-cookie';
 import { Redirect } from 'react-router-dom';
 
 class Register extends Component {

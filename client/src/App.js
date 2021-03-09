@@ -42,7 +42,7 @@ const addClass = () => loader.classList.add("loader-hide");
     addClass();
   }, []);
   return (
-    <div>
+    <div> 
        <Router>
         <ScrollToTop>
         <switch>

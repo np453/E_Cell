@@ -17,7 +17,6 @@ const storage = multer.diskStorage({
   
 const upload = multer({ storage: storage }).single('file')
 
-
 //post request for sending gallery img
 router.post('/', upload , async(req, res) => {
 

@@ -280,7 +280,7 @@ const TestPage = props => {
         </div>
         <div className="d-flex justify-content-center homePage_explore_events_button">
             <div className="button_wrapper">
-                <a href="http://renaissance.mnnit.ac.in/"><button>explore all events</button></a>
+                <a href="http://ecellmnnit.com/renaissance/"><button>explore all events</button></a>
             </div>
         </div>
     </div>

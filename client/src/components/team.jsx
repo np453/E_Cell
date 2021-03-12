@@ -20,10 +20,7 @@ class Team extends Component {
           navLinkName:"Speakers",
           link:"/speaker"
         },
-        {
-          navLinkName:"Rennisance",
-          link:"/team"
-        },
+        
         {
             navLinkName:"Sponsors",
             link:"/sponsor"

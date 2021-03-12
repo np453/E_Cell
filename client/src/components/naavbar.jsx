@@ -117,6 +117,7 @@ const Navbar = props => {
                     <Link to="/contact"><li className="sideBar-item">Get in touch</li></Link> 
                     <Link to="/"><h6 className="back_to_home_sideBar"><span>Back to Home</span></h6></Link>
                 </ul>
+                
                 <div className={"container " + "navbar-"+props.position}>
                 <nav className={"navbar navbar-expand-lg " + "navbar-"+props.position}>
                     <div className="navbar-brand" style={{color:props.navbarBrandColor}}>

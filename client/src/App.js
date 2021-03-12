@@ -31,6 +31,7 @@ import Contact from './components/contact';
 //This component helps in scrolling to top, when a new page loads
 import ScrollToTop from './common/ScrollToTop';
 import NotFoundPage from './views/404';
+import TestComp from './common/testComp';
 
 function App() {
   const loader = document.querySelector(".preloader");
@@ -74,7 +75,10 @@ const addClass = () => loader.classList.add("loader-hide");
 
           {/*Sponsor page route*/}
           <Route path="/sponsor"  exact component={Sponsors} />
-          
+
+
+          {/*Test component*/}
+          <Route path="/test"  exact component={TestComp} />
 
         </switch>
         </ScrollToTop>

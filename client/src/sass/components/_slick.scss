@@ -1,0 +1,10 @@
+.slick-slide {
+    opacity: 0.5;
+    transform: scale(0.8);
+    transition: 0.3s all;
+}
+.slick-current {
+    transition: 0.3s all;
+    transform: scale(1);
+    opacity: 1;
+}

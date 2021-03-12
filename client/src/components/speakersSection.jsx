@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import blob from '../assets/speakers_blob.png';
+
 import { Link } from 'react-router-dom';
 import { base } from '../base';
 

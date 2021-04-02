@@ -9,8 +9,8 @@ import { VideoScroll } from 'react-video-scroll'
 import { Controller, Scene } from 'react-scrollmagic';
 
 //HomePage assets
-import img_1 from '../assets/img_about_us_1.png';
-import img_2 from '../assets/img_about_us_2.png'
+import img_1 from '../assets/img_about_us_1.jpg';
+import img_2 from '../assets/img_about_us_2.jpg'
 import ren_logo from '../assets/ren_logo.png'
 import back_collage from '../assets/background_collage.png';
 
@@ -25,11 +25,11 @@ import Socials from '../components/socials';
 import Startups from '../components/startups';
 
 //test images 
-import workshop_img_1 from '../assets/workshop_img_1.png';
-import workshop_img_2 from '../assets/workshop_img_2.png';
-import seminar_img from '../assets/seminar_img.png';
-import seminar_img1 from '../assets/seminar_img1.png';
-import seminar_img2 from '../assets/seminar_img2.png';
+import workshop_img_1 from '../assets/workshop_img_1.jpg';
+import workshop_img_2 from '../assets/workshop_img_2.jpg';
+import seminar_img from '../assets/seminar_img.jpg';
+import seminar_img1 from '../assets/seminar_img1.jpg';
+import seminar_img2 from '../assets/seminar_img2.jpg';
 
 //common components
 import SeminarCard from '../common/seminarCard';

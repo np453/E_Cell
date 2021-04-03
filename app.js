@@ -100,6 +100,9 @@ app.get('/media/showcase/:file_name',(req,res)=>{
 app.get('/media/assets/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/assets/"+req.params.file_name));
 })
+app.get('/media/gallery/:file_name',(req,res)=>{
+  res.sendFile(path.join(__dirname+"/media/gallery/"+req.params.file_name));
+})
 
 app.use(express.static('client/build'));
 

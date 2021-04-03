@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Slider from "react-slick";
-import i1 from '../assets/cube_images/1.png'
-import i2 from '../assets/cube_images/2.png'
-import i3 from '../assets/cube_images/3.png'
-import i4 from '../assets/cube_images/4.png'
+import i1 from '../assets/cube_images/1.jpg'
+import i2 from '../assets/cube_images/2.jpg'
+import i3 from '../assets/cube_images/3.jpg'
+import i4 from '../assets/cube_images/4.jpg'
 
 class TestComp extends Component {
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import img from '../assets/cube_images/1.png';
-import img1 from '../assets/cube_images/2.png';
-import img2 from '../assets/cube_images/3.png';
-import img3 from '../assets/cube_images/4.png';
+import img from '../assets/cube_images/1.jpg';
+import img1 from '../assets/cube_images/2.jpg';
+import img2 from '../assets/cube_images/3.jpg';
+import img3 from '../assets/cube_images/4.jpg';
 export default class Cube extends Component {
     state = {
         classVal: "cube"

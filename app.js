@@ -64,12 +64,6 @@ app.use('/api/getintouch', getintouch);
 //connect to DB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));
 
-app.use(express.static('client/build'));
-
-app.get('*', (req,res) =>{
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
-
 
 
 // Media APIs
@@ -103,6 +97,16 @@ app.get('/media/works/:file_name',(req,res)=>{
 app.get('/media/showcase/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/showcase/"+req.params.file_name));
 })
+app.get('/media/assets/:file_name',(req,res)=>{
+  res.sendFile(path.join(__dirname+"/media/assets/"+req.params.file_name));
+})
+
+app.use(express.static('client/build'));
+
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");

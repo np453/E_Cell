@@ -103,6 +103,9 @@ app.get('/media/assets/:file_name',(req,res)=>{
 app.get('/media/gallery/:file_name',(req,res)=>{
   res.sendFile(path.join(__dirname+"/media/gallery/"+req.params.file_name));
 })
+app.get('/media/carousel/:file_name',(req,res)=>{
+  res.sendFile(path.join(__dirname+"/media/carousel/"+req.params.file_name));
+})
 
 app.use(express.static('client/build'));
 

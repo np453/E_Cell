@@ -28,7 +28,7 @@ class GalleryHome extends Component {
     ref = React.createRef();
     executeTopScroll = () => this.ref.current.scrollIntoView()
     componentDidMount= async() => {
-        const { data : gallery } = await axios.get('/api/gallery/img')
+        const { data : gallery } = await axios.get('/api/gallery/')
         this.setState({ gallery, loadingGallery : false })
         window.addEventListener('scroll', this.handleScroll);
     }
@@ -67,7 +67,7 @@ class GalleryHome extends Component {
         <h1 className="text-center gallery_page_main_heading" ref={this.ref}>Glimpse</h1>
         <i style={{ opacity:`${this.state.opacity}` }} onClick={this.executeTopScroll} className="fa to_gallery_top fa-arrow-up"></i>
         <div className="row m-0">
-            {gallery.map(m => //.slice(0).reverse()
+            {gallery.slice(0).reverse().map(m =>
             <div className="col-md-4 gallery_img_wrapper p-0">
                 <div className="img_wrapper p-2">
                 <img src={base + 'media/' + m.route + '/' + m.filename} className=" img img-fluid" alt=""/>

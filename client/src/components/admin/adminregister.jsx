@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
+import { base } from '../../base'
 
 class Register extends Component {
     state={
@@ -18,7 +19,8 @@ class Register extends Component {
             email:this.state.data.email,
             password:this.state.data.password
         }
-        const {data} = await axios.post('/admin/register',payload);
+        const {data} = await axios.post(base + 'api/admin/register',payload);
+        console.log(data)
         this.setState({redirect:true})
     }
 

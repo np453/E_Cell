@@ -7,7 +7,7 @@ const ispeaker = require('../model/ispeaker');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'client/public/media/ispeaker')
+    cb(null, 'media/ispeaker')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )

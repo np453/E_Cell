@@ -8,7 +8,7 @@ const bp = require('body-parser')
 //multer for image storage in public folder
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'client/public/media/gallery')
+      cb(null, 'media/gallery')
     },
     filename: function (req, file, cb) {
       cb(null, Date.now() + '-' +file.originalname )
@@ -39,7 +39,7 @@ router.post('/', upload , async(req, res) => {
 });
 
 //get request for gallery img
- router.get('/img', async(req, res) => {
+ router.get('/', async(req, res) => {
   const imData = await gallery.find({ })
   const img = [];
   for(let i=0;i<imData.length;i++) {

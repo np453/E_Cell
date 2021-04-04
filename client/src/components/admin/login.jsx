@@ -4,6 +4,7 @@ import jwt_decode from 'jwt-decode';
 import Cookies from 'js-cookie';
 import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { base } from '../../base';
 
 class Login extends Component {
     state={
@@ -22,8 +23,10 @@ class Login extends Component {
             email:this.state.data.email,
             password:this.state.data.password
         }
-        const {data} = await axios.post('/api/admin',admindata);
-        this.setState({id:jwt_decode(data)._id})
+        const {data} = await axios.post(base + 'api/admin/',admindata);
+        // this.setState({id:jwt_decode(data)._id})
+        console.log(data)
+        this.setState({id:data});
         Cookies.set('admintoken',this.state.id, { expires: 1 });
         this.setState({redirect:true})
 

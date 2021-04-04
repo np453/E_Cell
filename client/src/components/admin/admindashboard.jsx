@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { Redirect } from 'react-router-dom';
+import { base } from '../../base';
 
 class Dashboard extends Component {
     state={
@@ -50,7 +51,7 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("/api/ispeaker", data, config)
+        axios.post(base + "api/ispeaker", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
@@ -68,7 +69,7 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("/api/workshop", data, config)
+        axios.post(base + "api/workshop", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
@@ -86,12 +87,13 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("/api/gallery", data, config)
+        axios.post(base + "api/gallery/", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
           .catch(err => { // then print response status
               console.log('upload fail')
+              console.log(err)
           })
     } 
 
@@ -110,7 +112,7 @@ class Dashboard extends Component {
                   'content-type': 'multipart/form-data'
               }
           };
-        axios.post("/api/team", data, config)
+        axios.post(base + "api/team", data, config)
           .then(res => { // then print response status
             console.log('upload success')
           })
@@ -133,7 +135,7 @@ class Dashboard extends Component {
                       'content-type': 'multipart/form-data'
                   }
               };
-            axios.post("/api/speaker", data, config)
+            axios.post(base + "api/speaker", data, config)
               .then(res => { // then print response status
                 console.log('upload success')
               })
@@ -148,7 +150,7 @@ class Dashboard extends Component {
                content:this.state.data.notificationcontent
            }
 
-            axios.post("/api/notifications", payload)
+            axios.post(base + "api/notifications", payload)
               .then(res => { // then print response status
                 console.log('upload success')
               })
@@ -162,7 +164,7 @@ class Dashboard extends Component {
             const payload={
                 content:this.state.data.recentnotificationcontent
             }
-            axios.post("/api/recent", payload)
+            axios.post(base + "api/recent", payload)
               .then(res => { // then print response status
                 console.log('upload success')
               })
@@ -184,7 +186,7 @@ class Dashboard extends Component {
                           'content-type': 'multipart/form-data'
                       }
                   };
-                axios.post("/api/sponsor", data, config)
+                axios.post(base + "api/sponsor", data, config)
                   .then(res => { // then print response status
                     console.log('upload success')
                   })
@@ -205,7 +207,7 @@ class Dashboard extends Component {
                               'content-type': 'multipart/form-data'
                           }
                       };
-                    axios.post("/api/works", data, config)
+                    axios.post(base + "api/works", data, config)
                       .then(res => { // then print response status
                         console.log('upload success')
                       })
@@ -227,7 +229,7 @@ class Dashboard extends Component {
                               'content-type': 'multipart/form-data'
                           }
                       };
-                    axios.post("/api/carousel", data, config)
+                    axios.post(base + "api/carousel", data, config)
                       .then(res => { // then print response status
                         console.log('upload success')
                       })
@@ -238,7 +240,7 @@ class Dashboard extends Component {
 
         // onclick handler for retriving apis and displaying them
     handleclick_getapi=async(route)=>{
-        const data= await axios.get(`/api/${route}/`);
+        const data= await axios.get(base + `api/${route}/`);
         
         this.setState({show:data.data, showApi:true, hideForms:true});
         
@@ -246,8 +248,8 @@ class Dashboard extends Component {
 
         // onclick handler for deleting apis
      handledelete=async(id,route)=>{
-        await axios.put(`/api/${route}/delete/${id}`);
-        const data = axios.get(`/${route}`);
+        await axios.put(base + `api/${route}/delete/${id}`);
+        // const data = axios.get(`/${route}`);
         }
 
         loadForms = () => {

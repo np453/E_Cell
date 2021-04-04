@@ -8,7 +8,7 @@ const bp = require('body-parser')
 //multer for image storage in public folder
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'client/public/media/workshop')
+      cb(null, 'media/workshop')
     },
     filename: function (req, file, cb) {
       cb(null, Date.now() + '-' +file.originalname )

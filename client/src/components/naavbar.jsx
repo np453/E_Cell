@@ -37,9 +37,9 @@ const Navbar = props => {
         document.addEventListener('click', handleClickOutside, true);
         document.addEventListener('click', handleClickOutsideNotificationBox, true);
 
-        axios.get('/api/recent/').then(data => { setRecent(data.data) })
-        axios.get('/api/speaker/').then(data => { setSpeaker(data.data) })
-        axios.get('/api/gallery/img').then(data => { setGallery(data.data) })
+        axios.get(base + 'api/recent/').then(data => { setRecent(data.data) })
+        axios.get(base + 'api/speaker/').then(data => { setSpeaker(data.data) })
+        axios.get(base + 'api/gallery/').then(data => { setGallery(data.data.reverse()) })
 
         return () => document.removeEventListener('click', handleClickOutsideNotificationBox, true);
     }, []);

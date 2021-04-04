@@ -46,7 +46,7 @@ const addClass = () => loader.classList.add("loader-hide");
     <div> 
        <Router>
         <ScrollToTop>
-        <switch>
+        <Switch>
           <Route path="/lg" exact component={Loading} />
 
           {/*HomePage route*/}
@@ -78,9 +78,11 @@ const addClass = () => loader.classList.add("loader-hide");
 
 
           {/*Test component*/}
-          <Route path="/test"  exact component={TestComp} />
+          <Route path="*" component={NotFoundPage} />
 
-        </switch>
+
+
+        </Switch>
         </ScrollToTop>
         <Footer />
       </Router>

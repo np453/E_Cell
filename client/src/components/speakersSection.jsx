@@ -4,6 +4,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { base } from '../base';
 
+import ReactGA from 'react-ga';
+
 // speaker Section 
 class SpeakersSection extends Component {
     state = {
@@ -15,6 +17,13 @@ class SpeakersSection extends Component {
       // getting images for the hex grid
       const { data:speaker } = await axios.get('/api/ispeaker');
       this.setState({speakers:speaker, loadingSpeakers : false })
+    }
+
+    trackThisButton = () => {
+      ReactGA.event({
+        category : 'B',
+        action  : 'blog button'
+      })
     }
     
     render() {
@@ -47,7 +56,7 @@ class SpeakersSection extends Component {
           </div>
               <div className="row d-flex justify-content-center">
                 <div className="button_wrapper">
-                  <Link to="/speaker"><button>view all speakers</button></Link>
+                  <Link to="/speaker"><button onClick={this.trackThisButton}>view all speakers</button></Link>
                 </div>
               </div>
             </div>

@@ -32,6 +32,7 @@ import Contact from './components/contact';
 import ScrollToTop from './common/ScrollToTop';
 import NotFoundPage from './views/404';
 import TestComp from './common/testComp';
+import ReactGA, { initialize } from 'react-ga'
 
 function App() {
   const loader = document.querySelector(".preloader");
@@ -41,6 +42,9 @@ const addClass = () => loader.classList.add("loader-hide");
   useEffect(() => {
     showLoader();
     addClass();
+    ReactGA.initialize(process.env.REACT_APP_TRACKING_ID)
+    ReactGA.pageview(window.location.pathname + window.location.search)
+
   }, []);
   return (
     <div> 

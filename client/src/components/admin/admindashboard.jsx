@@ -4,6 +4,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import { Redirect } from 'react-router-dom';
 import { base } from '../../base';
+import moment from 'moment-js';
 
 class Dashboard extends Component {
     state={
@@ -146,8 +147,10 @@ class Dashboard extends Component {
 
         // on Click Handler Notifications=>ALL
         onClickHandlerNotification = () => {
+            console.log(moment().format("DD/MM/yyyy"));
            const payload={
-               content:this.state.data.notificationcontent
+               content:this.state.data.notificationcontent,
+               created_at:moment().format("DD/MM/yyyy")
            }
 
             axios.post(base + "api/notifications", payload)

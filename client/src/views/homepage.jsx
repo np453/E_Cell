@@ -12,7 +12,7 @@ import { Controller, Scene } from 'react-scrollmagic';
 import img_1 from '../assets/img_about_us_1.jpg';
 import img_2 from '../assets/img_about_us_2.jpg'
 import ren_logo from '../assets/ren_logo.png'
-import back_collage from '../assets/background_collage.png';
+import back_collage from '../assets/background_collage.jpg';
 
 //HomePage Components
 import TopSection from './topSection'

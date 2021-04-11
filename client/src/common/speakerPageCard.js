@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react'
-import s1 from '../assets/s1.png'
 import Scrollreveal from 'scrollreveal';
 import M from './modal';
 import { Modal } from 'react-bootstrap'

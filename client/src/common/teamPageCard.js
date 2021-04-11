@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react'
-import s1 from '../assets/s1.png'
 import { Modal } from 'react-bootstrap'
 import Scrollreveal from 'scrollreveal';
 
@@ -54,7 +53,7 @@ const TeamCard = props => {
       <Modal.Body ref={modalRef}>
         <div  className="row">
             <div className="col-md-4 d-flex justify-content-center align-items-center flex-column">
-                <img className="img img-fluid rounded-circle" src={s1}></img>
+                <img className="img img-fluid rounded-circle" src={props.image}></img>
                 <h5 className="text-center mt-4">{props.name}</h5>
                 <h6 className="text-center">{props.designation}</h6>
             </div>

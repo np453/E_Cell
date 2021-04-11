@@ -6,7 +6,8 @@ const notification = require('../model/notification');
 
 router.post('/', async(req, res) => {
         let msg = new notification({ 
-            content:req.body.content
+            content:req.body.content,
+            created_at:req.body.created_at
         })
         const savednotification = await msg.save()
 

@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import gsap from "gsap";
-import Navbar from '../components/naavbar';
-import { useMediaPredicate } from "react-media-hook";
+// import Navbar from '../components/naavbar';
+
+// import { useMediaPredicate } from "react-media-hook";
 import { base } from '../base';
+import { Suspense } from 'react';
+
+const Navbar = React.lazy(()=>import('../components/naavbar'));
 class TopSection2 extends Component {
     state = {
         displayNav:false,
@@ -67,6 +71,7 @@ class TopSection2 extends Component {
       // document.body.style.overflow = this.state.showScroll === false ? "hidden" : "visible"
         return (
             <div style={{ minHeight:"100vh" }} className="container-fluid p-0 landing_page_top_section__container2">
+              <Suspense fallback={<div>Loading....</div>}>
                 {<Navbar 
                 sidebarBackground="#333" 
                 sideBarItems={this.state.sideBarItems} 
@@ -78,6 +83,8 @@ class TopSection2 extends Component {
                 linkOpacity="0.9"
                 // navBrandLogo={LandingPageLogo}
                 />}
+              </Suspense>
+                
                 <div className=" main_page_heading_container container2">
                 <div className="background_networks_section m-0">
                         <div className="row d-flex justify-content-center m-0">

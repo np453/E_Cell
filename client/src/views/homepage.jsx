@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import { Tween, Timeline } from 'react-gsap';
 import ScrollReveal from 'scrollreveal';
-import { VideoScroll } from 'react-video-scroll'
+// import { VideoScroll } from 'react-video-scroll'
 import { Controller, Scene } from 'react-scrollmagic';
 
 //HomePage assets
@@ -19,8 +19,8 @@ import TopSection from './topSection'
 
 //HomePage components
 import SpeakersSection from '../components/speakersSection';
-import SpeakerSectionForMobile from '../containers/speakerSectionForMobile';
-import ImgCarousel from '../components/imgCarousel';
+// import SpeakerSectionForMobile from '../containers/speakerSectionForMobile';
+// import ImgCarousel from '../components/imgCarousel';
 import Socials from '../components/socials';
 import Startups from '../components/startups';
 
@@ -37,6 +37,9 @@ import Cube from '../common/cube';
 
 import axios from 'axios';
 import { base } from '../base';
+import { Suspense } from 'react';
+const ImgCarousel = React.lazy(()=>import('../components/imgCarousel'));
+
 
 // homepage component
 const TestPage = props => {
@@ -128,7 +131,7 @@ const TestPage = props => {
     useEffect(() => {
         ScrollReveal().reveal(".last_content_word", { afterReveal:showArrowVisibility })
         ScrollReveal().reveal('.ren_logo_1', { viewFactor:1, scale:1.2 })
-        ScrollReveal().reveal(".change_content_section", {  viewFactor:0.9, afterReveal:changeContent })
+        ScrollReveal().reveal(".change_content_section", {  viewFactor:0.5, afterReveal:changeContent })
         axios.get('/api/works/').then(data => {setGallery(data.data)})
     }, []);
 
@@ -459,7 +462,10 @@ const TestPage = props => {
                             // to={{ x: 0,y:50, opacity:1 }}
                         >
                         <div className="vh-100 d-flex justify-content-center align-items-center">
-                        <ImgCarousel />
+                            <Suspense fallback={<div>Loading.....</div>}>
+                                <ImgCarousel />
+                            </Suspense>
+                        
                         </div>
                         
                         </Tween>

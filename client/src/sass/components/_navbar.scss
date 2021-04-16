@@ -149,7 +149,10 @@ button.navbar-toggler:focus, .navbar-toggler:active, .navbar-toggler-icon:focus{
     border:none;
     box-shadow:none;
 }
-
+.navbar_brand_link_{
+    text-decoration: none !important;
+    color: rgba(white, 0.9) !important;
+}
 @media (max-width:320px) {
     .navbar-toggler {
         position: absolute;

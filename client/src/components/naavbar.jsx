@@ -121,8 +121,8 @@ const Navbar = props => {
                 <div className={"container " + "navbar-"+props.position}>
                 <nav className={"navbar navbar-expand-lg " + "navbar-"+props.position}>
                     <div className="navbar-brand" style={{color:props.navbarBrandColor}}>
-                    <img src={props.navBrandLogo} alt=""/>
-                        {props.brand}
+                    <Link to='/'><img src={props.navBrandLogo} alt=""/>
+                        {props.brand}</Link>
                     </div>
                     <div className="collapse navbar-collapse">
                     <div className="navbar-nav ml-auto">
